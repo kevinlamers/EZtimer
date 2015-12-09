@@ -1,0 +1,2539 @@
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"servos.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.UpdateServoPWM,"ax",%progbits
+  18              		.align	2
+  19              		.global	UpdateServoPWM
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	UpdateServoPWM, %function
+  23              	UpdateServoPWM:
+  24              	.LFB35:
+  25              		.file 1 ".\\servos.c"
+   1:.\servos.c    **** /* ========================================
+   2:.\servos.c    ****  *
+   3:.\servos.c    ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\servos.c    ****  * All Rights Reserved
+   5:.\servos.c    ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\servos.c    ****  *
+   7:.\servos.c    ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\servos.c    ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\servos.c    ****  *
+  10:.\servos.c    ****  * ========================================
+  11:.\servos.c    **** */
+  12:.\servos.c    **** #include "main.h"
+  13:.\servos.c    **** 
+  14:.\servos.c    **** void UpdateServoPWM(uint8* DataSet)
+  15:.\servos.c    **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28              	.LVL0:
+  29 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  30              		.cfi_def_cfa_offset 20
+  31              		.cfi_offset 4, -20
+  32              		.cfi_offset 5, -16
+  33              		.cfi_offset 6, -12
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 5F46     		mov	r7, fp
+  37 0004 5646     		mov	r6, r10
+  38 0006 4D46     		mov	r5, r9
+  39 0008 4446     		mov	r4, r8
+  40 000a F0B4     		push	{r4, r5, r6, r7}
+  41              		.cfi_def_cfa_offset 36
+  42              		.cfi_offset 8, -36
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 2
+
+
+  43              		.cfi_offset 9, -32
+  44              		.cfi_offset 10, -28
+  45              		.cfi_offset 11, -24
+  46 000c 91B0     		sub	sp, sp, #68
+  47              		.cfi_def_cfa_offset 104
+  48 000e 031C     		mov	r3, r0
+  16:.\servos.c    ****     // all data is Little Endian: least significant byte first
+  17:.\servos.c    ****     uint16 time1 = DataSet[TIME1_INDEX] | (DataSet[TIME1_INDEX+1]<<8);
+  49              		.loc 1 17 0
+  50 0010 8279     		ldrb	r2, [r0, #6]
+  51 0012 C079     		ldrb	r0, [r0, #7]
+  52              	.LVL1:
+  53 0014 0002     		lsl	r0, r0, #8
+  54 0016 0243     		orr	r2, r0
+  55 0018 9146     		mov	r9, r2
+  56              	.LVL2:
+  18:.\servos.c    ****     uint16 time2 = DataSet[TIME2_INDEX] | (DataSet[TIME2_INDEX+1]<<8);
+  57              		.loc 1 18 0
+  58 001a 1A7A     		ldrb	r2, [r3, #8]
+  59 001c 587A     		ldrb	r0, [r3, #9]
+  60 001e 0002     		lsl	r0, r0, #8
+  61 0020 0243     		orr	r2, r0
+  62 0022 9046     		mov	r8, r2
+  63              	.LVL3:
+  19:.\servos.c    ****     uint16 time3 = DataSet[TIME3_INDEX] | (DataSet[TIME3_INDEX+1]<<8);
+  64              		.loc 1 19 0
+  65 0024 987A     		ldrb	r0, [r3, #10]
+  66 0026 DF7A     		ldrb	r7, [r3, #11]
+  67 0028 3F02     		lsl	r7, r7, #8
+  68 002a 0743     		orr	r7, r0
+  69              	.LVL4:
+  20:.\servos.c    ****     uint16 time4 = DataSet[TIME4_INDEX] | (DataSet[TIME4_INDEX+1]<<8);
+  70              		.loc 1 20 0
+  71 002c 187B     		ldrb	r0, [r3, #12]
+  72 002e 5E7B     		ldrb	r6, [r3, #13]
+  73 0030 3602     		lsl	r6, r6, #8
+  74 0032 0643     		orr	r6, r0
+  75              	.LVL5:
+  21:.\servos.c    ****     uint16 time5 = DataSet[TIME5_INDEX] | (DataSet[TIME5_INDEX+1]<<8);
+  76              		.loc 1 21 0
+  77 0034 987B     		ldrb	r0, [r3, #14]
+  78 0036 DD7B     		ldrb	r5, [r3, #15]
+  79 0038 2D02     		lsl	r5, r5, #8
+  80 003a 0543     		orr	r5, r0
+  81              	.LVL6:
+  22:.\servos.c    ****     uint16 time6 = DataSet[TIME6_INDEX] | (DataSet[TIME6_INDEX+1]<<8);
+  82              		.loc 1 22 0
+  83 003c 1A7C     		ldrb	r2, [r3, #16]
+  84 003e 587C     		ldrb	r0, [r3, #17]
+  85 0040 0002     		lsl	r0, r0, #8
+  86 0042 0243     		orr	r2, r0
+  87 0044 0092     		str	r2, [sp]
+  88              	.LVL7:
+  23:.\servos.c    ****     uint16 time7 = DataSet[TIME7_INDEX] | (DataSet[TIME7_INDEX+1]<<8);
+  89              		.loc 1 23 0
+  90 0046 9A7C     		ldrb	r2, [r3, #18]
+  91 0048 D87C     		ldrb	r0, [r3, #19]
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 3
+
+
+  92 004a 0002     		lsl	r0, r0, #8
+  93 004c 0243     		orr	r2, r0
+  94 004e 0192     		str	r2, [sp, #4]
+  95              	.LVL8:
+  24:.\servos.c    ****     uint16 time8 = DataSet[TIME8_INDEX] | (DataSet[TIME8_INDEX+1]<<8);
+  96              		.loc 1 24 0
+  97 0050 1A7D     		ldrb	r2, [r3, #20]
+  98 0052 587D     		ldrb	r0, [r3, #21]
+  99 0054 0002     		lsl	r0, r0, #8
+ 100 0056 141C     		mov	r4, r2
+ 101 0058 0443     		orr	r4, r0
+ 102 005a 0294     		str	r4, [sp, #8]
+ 103              	.LVL9:
+  25:.\servos.c    ****     uint16 time9 = DataSet[TIME9_INDEX] | (DataSet[TIME9_INDEX+1]<<8);
+ 104              		.loc 1 25 0
+ 105 005c 9A7D     		ldrb	r2, [r3, #22]
+ 106 005e D87D     		ldrb	r0, [r3, #23]
+ 107 0060 0002     		lsl	r0, r0, #8
+ 108 0062 141C     		mov	r4, r2
+ 109 0064 0443     		orr	r4, r0
+ 110 0066 A246     		mov	r10, r4
+ 111              	.LVL10:
+  26:.\servos.c    ****     uint16 time10 = DataSet[TIME10_INDEX] | (DataSet[TIME10_INDEX+1]<<8);
+ 112              		.loc 1 26 0
+ 113 0068 1A7E     		ldrb	r2, [r3, #24]
+ 114 006a 587E     		ldrb	r0, [r3, #25]
+ 115 006c 0002     		lsl	r0, r0, #8
+ 116 006e 141C     		mov	r4, r2
+ 117 0070 0443     		orr	r4, r0
+ 118 0072 A346     		mov	fp, r4
+ 119              	.LVL11:
+  27:.\servos.c    ****     uint16 timeDT = DataSet[TIMEDT_INDEX] | (DataSet[TIMEDT_INDEX+1]<<8);
+ 120              		.loc 1 27 0
+ 121 0074 987E     		ldrb	r0, [r3, #26]
+ 122 0076 DC7E     		ldrb	r4, [r3, #27]
+ 123 0078 2402     		lsl	r4, r4, #8
+ 124 007a 2043     		orr	r0, r4
+ 125 007c 0490     		str	r0, [sp, #16]
+ 126              	.LVL12:
+  28:.\servos.c    ****     
+  29:.\servos.c    ****     uint16 servo1_posStart = DataSet[SERVO1_POSSTART_INDEX] | (DataSet[SERVO1_POSSTART_INDEX+1]<<8)
+ 127              		.loc 1 29 0
+ 128 007e 197F     		ldrb	r1, [r3, #28]
+ 129 0080 5A7F     		ldrb	r2, [r3, #29]
+ 130 0082 1202     		lsl	r2, r2, #8
+ 131 0084 1143     		orr	r1, r2
+ 132 0086 0391     		str	r1, [sp, #12]
+ 133              	.LVL13:
+  30:.\servos.c    ****     uint16 servo1_pos1 = DataSet[SERVO1_POS1_INDEX] | (DataSet[SERVO1_POS1_INDEX+1]<<8);
+ 134              		.loc 1 30 0
+ 135 0088 997F     		ldrb	r1, [r3, #30]
+ 136 008a DA7F     		ldrb	r2, [r3, #31]
+ 137 008c 1202     		lsl	r2, r2, #8
+ 138 008e 0C1C     		mov	r4, r1
+ 139 0090 1443     		orr	r4, r2
+ 140 0092 0594     		str	r4, [sp, #20]
+ 141              	.LVL14:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 4
+
+
+  31:.\servos.c    ****     uint16 servo1_pos2 = DataSet[SERVO1_POS2_INDEX] | (DataSet[SERVO1_POS2_INDEX+1]<<8);
+ 142              		.loc 1 31 0
+ 143 0094 2022     		mov	r2, #32
+ 144 0096 995C     		ldrb	r1, [r3, r2]
+ 145 0098 0132     		add	r2, r2, #1
+ 146 009a 9A5C     		ldrb	r2, [r3, r2]
+ 147 009c 1202     		lsl	r2, r2, #8
+ 148 009e 1143     		orr	r1, r2
+ 149 00a0 0691     		str	r1, [sp, #24]
+ 150              	.LVL15:
+  32:.\servos.c    ****     uint16 servo1_pos3 = DataSet[SERVO1_POS3_INDEX] | (DataSet[SERVO1_POS3_INDEX+1]<<8);
+ 151              		.loc 1 32 0
+ 152 00a2 2222     		mov	r2, #34
+ 153 00a4 995C     		ldrb	r1, [r3, r2]
+ 154 00a6 0132     		add	r2, r2, #1
+ 155 00a8 9A5C     		ldrb	r2, [r3, r2]
+ 156 00aa 1202     		lsl	r2, r2, #8
+ 157 00ac 0C1C     		mov	r4, r1
+ 158 00ae 1443     		orr	r4, r2
+ 159 00b0 0794     		str	r4, [sp, #28]
+ 160              	.LVL16:
+  33:.\servos.c    ****     uint16 servo1_pos4 = DataSet[SERVO1_POS4_INDEX] | (DataSet[SERVO1_POS4_INDEX+1]<<8);
+ 161              		.loc 1 33 0
+ 162 00b2 2422     		mov	r2, #36
+ 163 00b4 995C     		ldrb	r1, [r3, r2]
+ 164 00b6 0132     		add	r2, r2, #1
+ 165 00b8 9A5C     		ldrb	r2, [r3, r2]
+ 166 00ba 1202     		lsl	r2, r2, #8
+ 167 00bc 1143     		orr	r1, r2
+ 168 00be 0891     		str	r1, [sp, #32]
+ 169              	.LVL17:
+  34:.\servos.c    ****     uint16 servo1_pos5 = DataSet[SERVO1_POS5_INDEX] | (DataSet[SERVO1_POS5_INDEX+1]<<8);
+ 170              		.loc 1 34 0
+ 171 00c0 2622     		mov	r2, #38
+ 172 00c2 995C     		ldrb	r1, [r3, r2]
+ 173 00c4 0132     		add	r2, r2, #1
+ 174 00c6 9A5C     		ldrb	r2, [r3, r2]
+ 175 00c8 1202     		lsl	r2, r2, #8
+ 176 00ca 0C1C     		mov	r4, r1
+ 177 00cc 1443     		orr	r4, r2
+ 178 00ce 0994     		str	r4, [sp, #36]
+ 179              	.LVL18:
+  35:.\servos.c    ****     uint16 servo1_pos6 = DataSet[SERVO1_POS6_INDEX] | (DataSet[SERVO1_POS6_INDEX+1]<<8);
+ 180              		.loc 1 35 0
+ 181 00d0 2822     		mov	r2, #40
+ 182 00d2 995C     		ldrb	r1, [r3, r2]
+ 183 00d4 0132     		add	r2, r2, #1
+ 184 00d6 9A5C     		ldrb	r2, [r3, r2]
+ 185 00d8 1202     		lsl	r2, r2, #8
+ 186 00da 1143     		orr	r1, r2
+ 187 00dc 0A91     		str	r1, [sp, #40]
+ 188              	.LVL19:
+  36:.\servos.c    ****     uint16 servo1_pos7 = DataSet[SERVO1_POS7_INDEX] | (DataSet[SERVO1_POS7_INDEX+1]<<8);
+ 189              		.loc 1 36 0
+ 190 00de 2A22     		mov	r2, #42
+ 191 00e0 995C     		ldrb	r1, [r3, r2]
+ 192 00e2 0132     		add	r2, r2, #1
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 5
+
+
+ 193 00e4 9A5C     		ldrb	r2, [r3, r2]
+ 194 00e6 1202     		lsl	r2, r2, #8
+ 195 00e8 0C1C     		mov	r4, r1
+ 196 00ea 1443     		orr	r4, r2
+ 197 00ec 0B94     		str	r4, [sp, #44]
+ 198              	.LVL20:
+  37:.\servos.c    ****     uint16 servo1_pos8 = DataSet[SERVO1_POS8_INDEX] | (DataSet[SERVO1_POS8_INDEX+1]<<8);
+ 199              		.loc 1 37 0
+ 200 00ee 2C22     		mov	r2, #44
+ 201 00f0 995C     		ldrb	r1, [r3, r2]
+ 202 00f2 0132     		add	r2, r2, #1
+ 203 00f4 9A5C     		ldrb	r2, [r3, r2]
+ 204 00f6 1202     		lsl	r2, r2, #8
+ 205 00f8 1143     		orr	r1, r2
+ 206 00fa 0C91     		str	r1, [sp, #48]
+ 207              	.LVL21:
+  38:.\servos.c    ****     uint16 servo1_pos9 = DataSet[SERVO1_POS9_INDEX] | (DataSet[SERVO1_POS9_INDEX+1]<<8);
+ 208              		.loc 1 38 0
+ 209 00fc 2E22     		mov	r2, #46
+ 210 00fe 995C     		ldrb	r1, [r3, r2]
+ 211 0100 0132     		add	r2, r2, #1
+ 212 0102 9A5C     		ldrb	r2, [r3, r2]
+ 213 0104 1202     		lsl	r2, r2, #8
+ 214 0106 0C1C     		mov	r4, r1
+ 215 0108 1443     		orr	r4, r2
+ 216 010a 0D94     		str	r4, [sp, #52]
+ 217              	.LVL22:
+  39:.\servos.c    ****     uint16 servo1_pos10 = DataSet[SERVO1_POS10_INDEX] | (DataSet[SERVO1_POS10_INDEX+1]<<8);
+ 218              		.loc 1 39 0
+ 219 010c 3022     		mov	r2, #48
+ 220 010e 995C     		ldrb	r1, [r3, r2]
+ 221 0110 0132     		add	r2, r2, #1
+ 222 0112 9A5C     		ldrb	r2, [r3, r2]
+ 223 0114 1202     		lsl	r2, r2, #8
+ 224 0116 1143     		orr	r1, r2
+ 225 0118 0E91     		str	r1, [sp, #56]
+ 226              	.LVL23:
+  40:.\servos.c    ****     uint16 servo1_posDT = DataSet[SERVO1_POSDT_INDEX] | (DataSet[SERVO1_POSDT_INDEX+1]<<8);
+ 227              		.loc 1 40 0
+ 228 011a 3222     		mov	r2, #50
+ 229 011c 9A5C     		ldrb	r2, [r3, r2]
+ 230 011e 3321     		mov	r1, #51
+ 231 0120 5B5C     		ldrb	r3, [r3, r1]
+ 232              	.LVL24:
+ 233 0122 1B02     		lsl	r3, r3, #8
+ 234 0124 1A43     		orr	r2, r3
+ 235 0126 0F92     		str	r2, [sp, #60]
+ 236              	.LVL25:
+  41:.\servos.c    **** 
+  42:.\servos.c    ****     uint16 timecum = time1+time2+time3+time4+time5+time6+time7+time8+time9+time10;
+ 237              		.loc 1 42 0
+ 238 0128 CC46     		mov	ip, r9
+ 239 012a C444     		add	ip, ip, r8
+ 240 012c 6446     		mov	r4, ip
+ 241 012e 3C19     		add	r4, r7, r4
+ 242 0130 3419     		add	r4, r6, r4
+ 243 0132 2C19     		add	r4, r5, r4
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 6
+
+
+ 244 0134 009B     		ldr	r3, [sp]
+ 245 0136 9C46     		mov	ip, r3
+ 246 0138 6444     		add	r4, r4, ip
+ 247 013a 0199     		ldr	r1, [sp, #4]
+ 248 013c 8C46     		mov	ip, r1
+ 249 013e 6444     		add	r4, r4, ip
+ 250 0140 029A     		ldr	r2, [sp, #8]
+ 251 0142 9446     		mov	ip, r2
+ 252 0144 6444     		add	r4, r4, ip
+ 253 0146 5444     		add	r4, r4, r10
+ 254 0148 5C44     		add	r4, r4, fp
+ 255 014a A4B2     		uxth	r4, r4
+ 256              	.LVL26:
+  43:.\servos.c    ****     
+  44:.\servos.c    **** //    Pin_2_Write(0u); //Green
+  45:.\servos.c    **** //    CyDelay(300u);
+  46:.\servos.c    **** //    Pin_2_Write(1u);
+  47:.\servos.c    **** //    CyDelay(300u);
+  48:.\servos.c    ****                 
+  49:.\servos.c    ****     PWM_1_Start();
+ 257              		.loc 1 49 0
+ 258 014c FFF7FEFF 		bl	PWM_1_Start
+ 259              	.LVL27:
+  50:.\servos.c    ****     PWM_1_WriteCompare(servo1_posStart);
+ 260              		.loc 1 50 0
+ 261 0150 0398     		ldr	r0, [sp, #12]
+ 262 0152 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 263              	.LVL28:
+  51:.\servos.c    ****     CyDelay(time1*10u);
+ 264              		.loc 1 51 0
+ 265 0156 4B46     		mov	r3, r9
+ 266 0158 9800     		lsl	r0, r3, #2
+ 267 015a 4844     		add	r0, r0, r9
+ 268 015c 4000     		lsl	r0, r0, #1
+ 269 015e FFF7FEFF 		bl	CyDelay
+ 270              	.LVL29:
+  52:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos1);
+ 271              		.loc 1 52 0
+ 272 0162 0598     		ldr	r0, [sp, #20]
+ 273 0164 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 274              	.LVL30:
+  53:.\servos.c    ****     CyDelay(time2*10u);
+ 275              		.loc 1 53 0
+ 276 0168 4346     		mov	r3, r8
+ 277 016a 9800     		lsl	r0, r3, #2
+ 278 016c 4044     		add	r0, r0, r8
+ 279 016e 4000     		lsl	r0, r0, #1
+ 280 0170 FFF7FEFF 		bl	CyDelay
+ 281              	.LVL31:
+  54:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos2);
+ 282              		.loc 1 54 0
+ 283 0174 0698     		ldr	r0, [sp, #24]
+ 284 0176 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 285              	.LVL32:
+  55:.\servos.c    ****     CyDelay(time3*10u);
+ 286              		.loc 1 55 0
+ 287 017a B800     		lsl	r0, r7, #2
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 7
+
+
+ 288 017c C019     		add	r0, r0, r7
+ 289 017e 4000     		lsl	r0, r0, #1
+ 290 0180 FFF7FEFF 		bl	CyDelay
+ 291              	.LVL33:
+  56:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos3);
+ 292              		.loc 1 56 0
+ 293 0184 0798     		ldr	r0, [sp, #28]
+ 294 0186 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 295              	.LVL34:
+  57:.\servos.c    ****     CyDelay(time4*10u);
+ 296              		.loc 1 57 0
+ 297 018a B000     		lsl	r0, r6, #2
+ 298 018c 8019     		add	r0, r0, r6
+ 299 018e 4000     		lsl	r0, r0, #1
+ 300 0190 FFF7FEFF 		bl	CyDelay
+ 301              	.LVL35:
+  58:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos4);
+ 302              		.loc 1 58 0
+ 303 0194 0898     		ldr	r0, [sp, #32]
+ 304 0196 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 305              	.LVL36:
+  59:.\servos.c    ****     CyDelay(time5*10u);
+ 306              		.loc 1 59 0
+ 307 019a A800     		lsl	r0, r5, #2
+ 308 019c 4019     		add	r0, r0, r5
+ 309 019e 4000     		lsl	r0, r0, #1
+ 310 01a0 FFF7FEFF 		bl	CyDelay
+ 311              	.LVL37:
+  60:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos5);
+ 312              		.loc 1 60 0
+ 313 01a4 0998     		ldr	r0, [sp, #36]
+ 314 01a6 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 315              	.LVL38:
+  61:.\servos.c    ****     CyDelay(time6*10u);
+ 316              		.loc 1 61 0
+ 317 01aa 009B     		ldr	r3, [sp]
+ 318 01ac 9800     		lsl	r0, r3, #2
+ 319 01ae 9C46     		mov	ip, r3
+ 320 01b0 6044     		add	r0, r0, ip
+ 321 01b2 4000     		lsl	r0, r0, #1
+ 322 01b4 FFF7FEFF 		bl	CyDelay
+ 323              	.LVL39:
+  62:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos6);
+ 324              		.loc 1 62 0
+ 325 01b8 0A98     		ldr	r0, [sp, #40]
+ 326 01ba FFF7FEFF 		bl	PWM_1_WriteCompare
+ 327              	.LVL40:
+  63:.\servos.c    ****     CyDelay(time7*10u);
+ 328              		.loc 1 63 0
+ 329 01be 0199     		ldr	r1, [sp, #4]
+ 330 01c0 8800     		lsl	r0, r1, #2
+ 331 01c2 8C46     		mov	ip, r1
+ 332 01c4 6044     		add	r0, r0, ip
+ 333 01c6 4000     		lsl	r0, r0, #1
+ 334 01c8 FFF7FEFF 		bl	CyDelay
+ 335              	.LVL41:
+  64:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos7);
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 8
+
+
+ 336              		.loc 1 64 0
+ 337 01cc 0B98     		ldr	r0, [sp, #44]
+ 338 01ce FFF7FEFF 		bl	PWM_1_WriteCompare
+ 339              	.LVL42:
+  65:.\servos.c    ****     CyDelay(time8*10u);
+ 340              		.loc 1 65 0
+ 341 01d2 029A     		ldr	r2, [sp, #8]
+ 342 01d4 9000     		lsl	r0, r2, #2
+ 343 01d6 9446     		mov	ip, r2
+ 344 01d8 6044     		add	r0, r0, ip
+ 345 01da 4000     		lsl	r0, r0, #1
+ 346 01dc FFF7FEFF 		bl	CyDelay
+ 347              	.LVL43:
+  66:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos8);
+ 348              		.loc 1 66 0
+ 349 01e0 0C98     		ldr	r0, [sp, #48]
+ 350 01e2 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 351              	.LVL44:
+  67:.\servos.c    ****     CyDelay(time9*10u);
+ 352              		.loc 1 67 0
+ 353 01e6 5346     		mov	r3, r10
+ 354 01e8 9800     		lsl	r0, r3, #2
+ 355 01ea 5044     		add	r0, r0, r10
+ 356 01ec 4000     		lsl	r0, r0, #1
+ 357 01ee FFF7FEFF 		bl	CyDelay
+ 358              	.LVL45:
+  68:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos9);
+ 359              		.loc 1 68 0
+ 360 01f2 0D98     		ldr	r0, [sp, #52]
+ 361 01f4 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 362              	.LVL46:
+  69:.\servos.c    ****     CyDelay(time10*10u);
+ 363              		.loc 1 69 0
+ 364 01f8 5B46     		mov	r3, fp
+ 365 01fa 9800     		lsl	r0, r3, #2
+ 366 01fc 5844     		add	r0, r0, fp
+ 367 01fe 4000     		lsl	r0, r0, #1
+ 368 0200 FFF7FEFF 		bl	CyDelay
+ 369              	.LVL47:
+  70:.\servos.c    ****     PWM_1_WriteCompare(servo1_pos10);
+ 370              		.loc 1 70 0
+ 371 0204 0E98     		ldr	r0, [sp, #56]
+ 372 0206 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 373              	.LVL48:
+  71:.\servos.c    ****     if (timecum<timeDT){
+ 374              		.loc 1 71 0
+ 375 020a 0498     		ldr	r0, [sp, #16]
+ 376 020c 8442     		cmp	r4, r0
+ 377 020e 05D2     		bcs	.L2
+  72:.\servos.c    ****         CyDelay((timeDT-timecum)*10u);
+ 378              		.loc 1 72 0
+ 379 0210 041B     		sub	r4, r0, r4
+ 380              	.LVL49:
+ 381 0212 A000     		lsl	r0, r4, #2
+ 382 0214 0019     		add	r0, r0, r4
+ 383 0216 4000     		lsl	r0, r0, #1
+ 384 0218 FFF7FEFF 		bl	CyDelay
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 9
+
+
+ 385              	.LVL50:
+ 386              	.L2:
+  73:.\servos.c    ****     }
+  74:.\servos.c    ****     PWM_1_WriteCompare(servo1_posDT);
+ 387              		.loc 1 74 0
+ 388 021c 0F98     		ldr	r0, [sp, #60]
+ 389 021e FFF7FEFF 		bl	PWM_1_WriteCompare
+ 390              	.LVL51:
+  75:.\servos.c    ****     CyDelay(1000u);
+ 391              		.loc 1 75 0
+ 392 0222 FA24     		mov	r4, #250
+ 393 0224 A400     		lsl	r4, r4, #2
+ 394 0226 201C     		mov	r0, r4
+ 395 0228 FFF7FEFF 		bl	CyDelay
+ 396              	.LVL52:
+  76:.\servos.c    ****     PWM_1_WriteCompare(servo1_posStart);
+ 397              		.loc 1 76 0
+ 398 022c 0398     		ldr	r0, [sp, #12]
+ 399 022e FFF7FEFF 		bl	PWM_1_WriteCompare
+ 400              	.LVL53:
+  77:.\servos.c    ****     CyDelay(1000u);
+ 401              		.loc 1 77 0
+ 402 0232 201C     		mov	r0, r4
+ 403 0234 FFF7FEFF 		bl	CyDelay
+ 404              	.LVL54:
+  78:.\servos.c    ****     PWM_1_Stop();
+ 405              		.loc 1 78 0
+ 406 0238 FFF7FEFF 		bl	PWM_1_Stop
+ 407              	.LVL55:
+  79:.\servos.c    **** }
+ 408              		.loc 1 79 0
+ 409 023c 11B0     		add	sp, sp, #68
+ 410              	.LVL56:
+ 411              		@ sp needed
+ 412              	.LVL57:
+ 413              	.LVL58:
+ 414              	.LVL59:
+ 415              	.LVL60:
+ 416              	.LVL61:
+ 417              	.LVL62:
+ 418              	.LVL63:
+ 419 023e 3CBC     		pop	{r2, r3, r4, r5}
+ 420 0240 9046     		mov	r8, r2
+ 421 0242 9946     		mov	r9, r3
+ 422 0244 A246     		mov	r10, r4
+ 423 0246 AB46     		mov	fp, r5
+ 424 0248 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 425              		.cfi_endproc
+ 426              	.LFE35:
+ 427              		.size	UpdateServoPWM, .-UpdateServoPWM
+ 428              		.comm	DataSet,52,4
+ 429 024a C046     		.text
+ 430              	.Letext0:
+ 431              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 432              		.file 3 "Generated_Source\\PSoC4/PWM_1.h"
+ 433              		.file 4 "Generated_Source\\PSoC4/CyLib.h"
+ 434              		.file 5 "Generated_Source\\PSoC4/BLE_Stack.h"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 10
+
+
+ 435              		.file 6 ".\\main.h"
+ 436              		.section	.debug_info,"",%progbits
+ 437              	.Ldebug_info0:
+ 438 0000 9A060000 		.4byte	0x69a
+ 439 0004 0400     		.2byte	0x4
+ 440 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 441 000a 04       		.byte	0x4
+ 442 000b 01       		.uleb128 0x1
+ 443 000c 45030000 		.4byte	.LASF101
+ 444 0010 01       		.byte	0x1
+ 445 0011 14030000 		.4byte	.LASF102
+ 446 0015 A1020000 		.4byte	.LASF103
+ 447 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 448 001d 00000000 		.4byte	0
+ 449 0021 00000000 		.4byte	.Ldebug_line0
+ 450 0025 02       		.uleb128 0x2
+ 451 0026 01       		.byte	0x1
+ 452 0027 06       		.byte	0x6
+ 453 0028 A8040000 		.4byte	.LASF0
+ 454 002c 02       		.uleb128 0x2
+ 455 002d 01       		.byte	0x1
+ 456 002e 08       		.byte	0x8
+ 457 002f 3E040000 		.4byte	.LASF1
+ 458 0033 02       		.uleb128 0x2
+ 459 0034 02       		.byte	0x2
+ 460 0035 05       		.byte	0x5
+ 461 0036 5C000000 		.4byte	.LASF2
+ 462 003a 02       		.uleb128 0x2
+ 463 003b 02       		.byte	0x2
+ 464 003c 07       		.byte	0x7
+ 465 003d E9050000 		.4byte	.LASF3
+ 466 0041 02       		.uleb128 0x2
+ 467 0042 04       		.byte	0x4
+ 468 0043 05       		.byte	0x5
+ 469 0044 58020000 		.4byte	.LASF4
+ 470 0048 02       		.uleb128 0x2
+ 471 0049 04       		.byte	0x4
+ 472 004a 07       		.byte	0x7
+ 473 004b 75050000 		.4byte	.LASF5
+ 474 004f 02       		.uleb128 0x2
+ 475 0050 08       		.byte	0x8
+ 476 0051 05       		.byte	0x5
+ 477 0052 42020000 		.4byte	.LASF6
+ 478 0056 02       		.uleb128 0x2
+ 479 0057 08       		.byte	0x8
+ 480 0058 07       		.byte	0x7
+ 481 0059 A7000000 		.4byte	.LASF7
+ 482 005d 03       		.uleb128 0x3
+ 483 005e 04       		.byte	0x4
+ 484 005f 05       		.byte	0x5
+ 485 0060 696E7400 		.ascii	"int\000"
+ 486 0064 02       		.uleb128 0x2
+ 487 0065 04       		.byte	0x4
+ 488 0066 07       		.byte	0x7
+ 489 0067 35050000 		.4byte	.LASF8
+ 490 006b 04       		.uleb128 0x4
+ 491 006c 12040000 		.4byte	.LASF9
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 11
+
+
+ 492 0070 02       		.byte	0x2
+ 493 0071 C2       		.byte	0xc2
+ 494 0072 2C000000 		.4byte	0x2c
+ 495 0076 04       		.uleb128 0x4
+ 496 0077 3F010000 		.4byte	.LASF10
+ 497 007b 02       		.byte	0x2
+ 498 007c C3       		.byte	0xc3
+ 499 007d 3A000000 		.4byte	0x3a
+ 500 0081 04       		.uleb128 0x4
+ 501 0082 AD060000 		.4byte	.LASF11
+ 502 0086 02       		.byte	0x2
+ 503 0087 C4       		.byte	0xc4
+ 504 0088 48000000 		.4byte	0x48
+ 505 008c 02       		.uleb128 0x2
+ 506 008d 04       		.byte	0x4
+ 507 008e 04       		.byte	0x4
+ 508 008f 1E000000 		.4byte	.LASF12
+ 509 0093 02       		.uleb128 0x2
+ 510 0094 08       		.byte	0x8
+ 511 0095 04       		.byte	0x4
+ 512 0096 F5060000 		.4byte	.LASF13
+ 513 009a 02       		.uleb128 0x2
+ 514 009b 01       		.byte	0x1
+ 515 009c 08       		.byte	0x8
+ 516 009d 25060000 		.4byte	.LASF14
+ 517 00a1 02       		.uleb128 0x2
+ 518 00a2 04       		.byte	0x4
+ 519 00a3 07       		.byte	0x7
+ 520 00a4 9E000000 		.4byte	.LASF15
+ 521 00a8 05       		.uleb128 0x5
+ 522 00a9 01       		.byte	0x1
+ 523 00aa 05       		.byte	0x5
+ 524 00ab 9D       		.byte	0x9d
+ 525 00ac 2D020000 		.4byte	0x22d
+ 526 00b0 06       		.uleb128 0x6
+ 527 00b1 AA010000 		.4byte	.LASF16
+ 528 00b5 00       		.sleb128 0
+ 529 00b6 06       		.uleb128 0x6
+ 530 00b7 0E010000 		.4byte	.LASF17
+ 531 00bb 01       		.sleb128 1
+ 532 00bc 06       		.uleb128 0x6
+ 533 00bd ED070000 		.4byte	.LASF18
+ 534 00c1 02       		.sleb128 2
+ 535 00c2 06       		.uleb128 0x6
+ 536 00c3 6B070000 		.4byte	.LASF19
+ 537 00c7 03       		.sleb128 3
+ 538 00c8 06       		.uleb128 0x6
+ 539 00c9 D8000000 		.4byte	.LASF20
+ 540 00cd 04       		.sleb128 4
+ 541 00ce 06       		.uleb128 0x6
+ 542 00cf F8020000 		.4byte	.LASF21
+ 543 00d3 05       		.sleb128 5
+ 544 00d4 06       		.uleb128 0x6
+ 545 00d5 C9070000 		.4byte	.LASF22
+ 546 00d9 20       		.sleb128 32
+ 547 00da 06       		.uleb128 0x6
+ 548 00db 94050000 		.4byte	.LASF23
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 12
+
+
+ 549 00df 21       		.sleb128 33
+ 550 00e0 06       		.uleb128 0x6
+ 551 00e1 1F070000 		.4byte	.LASF24
+ 552 00e5 22       		.sleb128 34
+ 553 00e6 06       		.uleb128 0x6
+ 554 00e7 1F030000 		.4byte	.LASF25
+ 555 00eb 23       		.sleb128 35
+ 556 00ec 06       		.uleb128 0x6
+ 557 00ed 19050000 		.4byte	.LASF26
+ 558 00f1 24       		.sleb128 36
+ 559 00f2 06       		.uleb128 0x6
+ 560 00f3 66000000 		.4byte	.LASF27
+ 561 00f7 25       		.sleb128 37
+ 562 00f8 06       		.uleb128 0x6
+ 563 00f9 43070000 		.4byte	.LASF28
+ 564 00fd 26       		.sleb128 38
+ 565 00fe 06       		.uleb128 0x6
+ 566 00ff 82020000 		.4byte	.LASF29
+ 567 0103 27       		.sleb128 39
+ 568 0104 06       		.uleb128 0x6
+ 569 0105 1F090000 		.4byte	.LASF30
+ 570 0109 28       		.sleb128 40
+ 571 010a 06       		.uleb128 0x6
+ 572 010b CC050000 		.4byte	.LASF31
+ 573 010f 29       		.sleb128 41
+ 574 0110 06       		.uleb128 0x6
+ 575 0111 FC050000 		.4byte	.LASF32
+ 576 0115 2A       		.sleb128 42
+ 577 0116 06       		.uleb128 0x6
+ 578 0117 95080000 		.4byte	.LASF33
+ 579 011b 2B       		.sleb128 43
+ 580 011c 06       		.uleb128 0x6
+ 581 011d 46010000 		.4byte	.LASF34
+ 582 0121 2C       		.sleb128 44
+ 583 0122 06       		.uleb128 0x6
+ 584 0123 BE000000 		.4byte	.LASF35
+ 585 0127 C000     		.sleb128 64
+ 586 0129 06       		.uleb128 0x6
+ 587 012a 5A050000 		.4byte	.LASF36
+ 588 012e C100     		.sleb128 65
+ 589 0130 06       		.uleb128 0x6
+ 590 0131 80000000 		.4byte	.LASF37
+ 591 0135 C200     		.sleb128 66
+ 592 0137 06       		.uleb128 0x6
+ 593 0138 21010000 		.4byte	.LASF38
+ 594 013c C300     		.sleb128 67
+ 595 013e 06       		.uleb128 0x6
+ 596 013f 44080000 		.4byte	.LASF39
+ 597 0143 C400     		.sleb128 68
+ 598 0145 06       		.uleb128 0x6
+ 599 0146 FF070000 		.4byte	.LASF40
+ 600 014a C500     		.sleb128 69
+ 601 014c 06       		.uleb128 0x6
+ 602 014d ED000000 		.4byte	.LASF41
+ 603 0151 C600     		.sleb128 70
+ 604 0153 06       		.uleb128 0x6
+ 605 0154 8A040000 		.4byte	.LASF42
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 13
+
+
+ 606 0158 C700     		.sleb128 71
+ 607 015a 06       		.uleb128 0x6
+ 608 015b E6040000 		.4byte	.LASF43
+ 609 015f C800     		.sleb128 72
+ 610 0161 06       		.uleb128 0x6
+ 611 0162 0F020000 		.4byte	.LASF44
+ 612 0166 C900     		.sleb128 73
+ 613 0168 06       		.uleb128 0x6
+ 614 0169 64060000 		.4byte	.LASF45
+ 615 016d CA00     		.sleb128 74
+ 616 016f 06       		.uleb128 0x6
+ 617 0170 6A010000 		.4byte	.LASF46
+ 618 0174 CB00     		.sleb128 75
+ 619 0176 06       		.uleb128 0x6
+ 620 0177 C0040000 		.4byte	.LASF47
+ 621 017b CC00     		.sleb128 76
+ 622 017d 06       		.uleb128 0x6
+ 623 017e 28020000 		.4byte	.LASF48
+ 624 0182 CD00     		.sleb128 77
+ 625 0184 06       		.uleb128 0x6
+ 626 0185 26080000 		.4byte	.LASF49
+ 627 0189 CE00     		.sleb128 78
+ 628 018b 06       		.uleb128 0x6
+ 629 018c 4C040000 		.4byte	.LASF50
+ 630 0190 CF00     		.sleb128 79
+ 631 0192 06       		.uleb128 0x6
+ 632 0193 3D000000 		.4byte	.LASF51
+ 633 0197 D000     		.sleb128 80
+ 634 0199 06       		.uleb128 0x6
+ 635 019a 8E060000 		.4byte	.LASF52
+ 636 019e D100     		.sleb128 81
+ 637 01a0 06       		.uleb128 0x6
+ 638 01a1 D7020000 		.4byte	.LASF53
+ 639 01a5 D200     		.sleb128 82
+ 640 01a7 06       		.uleb128 0x6
+ 641 01a8 61020000 		.4byte	.LASF54
+ 642 01ac D300     		.sleb128 83
+ 643 01ae 06       		.uleb128 0x6
+ 644 01af 89010000 		.4byte	.LASF55
+ 645 01b3 D400     		.sleb128 84
+ 646 01b5 06       		.uleb128 0x6
+ 647 01b6 51090000 		.4byte	.LASF56
+ 648 01ba D500     		.sleb128 85
+ 649 01bc 06       		.uleb128 0x6
+ 650 01bd DD080000 		.4byte	.LASF57
+ 651 01c1 D600     		.sleb128 86
+ 652 01c3 06       		.uleb128 0x6
+ 653 01c4 B4080000 		.4byte	.LASF58
+ 654 01c8 D700     		.sleb128 87
+ 655 01ca 06       		.uleb128 0x6
+ 656 01cb 18040000 		.4byte	.LASF59
+ 657 01cf F000     		.sleb128 112
+ 658 01d1 06       		.uleb128 0x6
+ 659 01d2 A3070000 		.4byte	.LASF60
+ 660 01d6 F100     		.sleb128 113
+ 661 01d8 06       		.uleb128 0x6
+ 662 01d9 35060000 		.4byte	.LASF61
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 14
+
+
+ 663 01dd F200     		.sleb128 114
+ 664 01df 06       		.uleb128 0x6
+ 665 01e0 C1010000 		.4byte	.LASF62
+ 666 01e4 F300     		.sleb128 115
+ 667 01e6 06       		.uleb128 0x6
+ 668 01e7 E6030000 		.4byte	.LASF63
+ 669 01eb F400     		.sleb128 116
+ 670 01ed 06       		.uleb128 0x6
+ 671 01ee AB050000 		.4byte	.LASF64
+ 672 01f2 F500     		.sleb128 117
+ 673 01f4 06       		.uleb128 0x6
+ 674 01f5 DF010000 		.4byte	.LASF65
+ 675 01f9 F600     		.sleb128 118
+ 676 01fb 06       		.uleb128 0x6
+ 677 01fc 84070000 		.4byte	.LASF66
+ 678 0200 F700     		.sleb128 119
+ 679 0202 06       		.uleb128 0x6
+ 680 0203 D2060000 		.4byte	.LASF67
+ 681 0207 F800     		.sleb128 120
+ 682 0209 06       		.uleb128 0x6
+ 683 020a FC060000 		.4byte	.LASF68
+ 684 020e F900     		.sleb128 121
+ 685 0210 06       		.uleb128 0x6
+ 686 0211 71080000 		.4byte	.LASF69
+ 687 0215 FA00     		.sleb128 122
+ 688 0217 06       		.uleb128 0x6
+ 689 0218 B4060000 		.4byte	.LASF70
+ 690 021c FA01     		.sleb128 250
+ 691 021e 06       		.uleb128 0x6
+ 692 021f 6B040000 		.4byte	.LASF71
+ 693 0223 FB01     		.sleb128 251
+ 694 0225 06       		.uleb128 0x6
+ 695 0226 04040000 		.4byte	.LASF72
+ 696 022a FF01     		.sleb128 255
+ 697 022c 00       		.byte	0
+ 698 022d 07       		.uleb128 0x7
+ 699 022e 04       		.byte	0x4
+ 700 022f 6B000000 		.4byte	0x6b
+ 701 0233 08       		.uleb128 0x8
+ 702 0234 00020000 		.4byte	.LASF104
+ 703 0238 01       		.byte	0x1
+ 704 0239 0E       		.byte	0xe
+ 705 023a 00000000 		.4byte	.LFB35
+ 706 023e 4A020000 		.4byte	.LFE35-.LFB35
+ 707 0242 01       		.uleb128 0x1
+ 708 0243 9C       		.byte	0x9c
+ 709 0244 4C060000 		.4byte	0x64c
+ 710 0248 09       		.uleb128 0x9
+ 711 0249 62080000 		.4byte	.LASF105
+ 712 024d 01       		.byte	0x1
+ 713 024e 0E       		.byte	0xe
+ 714 024f 2D020000 		.4byte	0x22d
+ 715 0253 00000000 		.4byte	.LLST0
+ 716 0257 0A       		.uleb128 0xa
+ 717 0258 75090000 		.4byte	.LASF73
+ 718 025c 01       		.byte	0x1
+ 719 025d 11       		.byte	0x11
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 15
+
+
+ 720 025e 76000000 		.4byte	0x76
+ 721 0262 2C000000 		.4byte	.LLST1
+ 722 0266 0A       		.uleb128 0xa
+ 723 0267 7B090000 		.4byte	.LASF74
+ 724 026b 01       		.byte	0x1
+ 725 026c 12       		.byte	0x12
+ 726 026d 76000000 		.4byte	0x76
+ 727 0271 3F000000 		.4byte	.LLST2
+ 728 0275 0A       		.uleb128 0xa
+ 729 0276 81090000 		.4byte	.LASF75
+ 730 027a 01       		.byte	0x1
+ 731 027b 13       		.byte	0x13
+ 732 027c 76000000 		.4byte	0x76
+ 733 0280 52000000 		.4byte	.LLST3
+ 734 0284 0A       		.uleb128 0xa
+ 735 0285 87090000 		.4byte	.LASF76
+ 736 0289 01       		.byte	0x1
+ 737 028a 14       		.byte	0x14
+ 738 028b 76000000 		.4byte	0x76
+ 739 028f 65000000 		.4byte	.LLST4
+ 740 0293 0A       		.uleb128 0xa
+ 741 0294 00000000 		.4byte	.LASF77
+ 742 0298 01       		.byte	0x1
+ 743 0299 15       		.byte	0x15
+ 744 029a 76000000 		.4byte	0x76
+ 745 029e 78000000 		.4byte	.LLST5
+ 746 02a2 0A       		.uleb128 0xa
+ 747 02a3 06000000 		.4byte	.LASF78
+ 748 02a7 01       		.byte	0x1
+ 749 02a8 16       		.byte	0x16
+ 750 02a9 76000000 		.4byte	0x76
+ 751 02ad 8B000000 		.4byte	.LLST6
+ 752 02b1 0B       		.uleb128 0xb
+ 753 02b2 0C000000 		.4byte	.LASF79
+ 754 02b6 01       		.byte	0x1
+ 755 02b7 17       		.byte	0x17
+ 756 02b8 76000000 		.4byte	0x76
+ 757 02bc 03       		.uleb128 0x3
+ 758 02bd 91       		.byte	0x91
+ 759 02be 9C7F     		.sleb128 -100
+ 760 02c0 0B       		.uleb128 0xb
+ 761 02c1 12000000 		.4byte	.LASF80
+ 762 02c5 01       		.byte	0x1
+ 763 02c6 18       		.byte	0x18
+ 764 02c7 76000000 		.4byte	0x76
+ 765 02cb 03       		.uleb128 0x3
+ 766 02cc 91       		.byte	0x91
+ 767 02cd A07F     		.sleb128 -96
+ 768 02cf 0A       		.uleb128 0xa
+ 769 02d0 18000000 		.4byte	.LASF81
+ 770 02d4 01       		.byte	0x1
+ 771 02d5 19       		.byte	0x19
+ 772 02d6 76000000 		.4byte	0x76
+ 773 02da AC000000 		.4byte	.LLST7
+ 774 02de 0A       		.uleb128 0xa
+ 775 02df 51060000 		.4byte	.LASF82
+ 776 02e3 01       		.byte	0x1
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 16
+
+
+ 777 02e4 1A       		.byte	0x1a
+ 778 02e5 76000000 		.4byte	0x76
+ 779 02e9 BF000000 		.4byte	.LLST8
+ 780 02ed 0B       		.uleb128 0xb
+ 781 02ee 6A080000 		.4byte	.LASF83
+ 782 02f2 01       		.byte	0x1
+ 783 02f3 1B       		.byte	0x1b
+ 784 02f4 76000000 		.4byte	0x76
+ 785 02f8 03       		.uleb128 0x3
+ 786 02f9 91       		.byte	0x91
+ 787 02fa A87F     		.sleb128 -88
+ 788 02fc 0B       		.uleb128 0xb
+ 789 02fd 41090000 		.4byte	.LASF84
+ 790 0301 01       		.byte	0x1
+ 791 0302 1D       		.byte	0x1d
+ 792 0303 76000000 		.4byte	0x76
+ 793 0307 03       		.uleb128 0x3
+ 794 0308 91       		.byte	0x91
+ 795 0309 A47F     		.sleb128 -92
+ 796 030b 0B       		.uleb128 0xb
+ 797 030c B4040000 		.4byte	.LASF85
+ 798 0310 01       		.byte	0x1
+ 799 0311 1E       		.byte	0x1e
+ 800 0312 76000000 		.4byte	0x76
+ 801 0316 03       		.uleb128 0x3
+ 802 0317 91       		.byte	0x91
+ 803 0318 AC7F     		.sleb128 -84
+ 804 031a 0B       		.uleb128 0xb
+ 805 031b 58060000 		.4byte	.LASF86
+ 806 031f 01       		.byte	0x1
+ 807 0320 1F       		.byte	0x1f
+ 808 0321 76000000 		.4byte	0x76
+ 809 0325 03       		.uleb128 0x3
+ 810 0326 91       		.byte	0x91
+ 811 0327 B07F     		.sleb128 -80
+ 812 0329 0B       		.uleb128 0xb
+ 813 032a DA040000 		.4byte	.LASF87
+ 814 032e 01       		.byte	0x1
+ 815 032f 20       		.byte	0x20
+ 816 0330 76000000 		.4byte	0x76
+ 817 0334 03       		.uleb128 0x3
+ 818 0335 91       		.byte	0x91
+ 819 0336 B47F     		.sleb128 -76
+ 820 0338 0B       		.uleb128 0xb
+ 821 0339 82060000 		.4byte	.LASF88
+ 822 033d 01       		.byte	0x1
+ 823 033e 21       		.byte	0x21
+ 824 033f 76000000 		.4byte	0x76
+ 825 0343 03       		.uleb128 0x3
+ 826 0344 91       		.byte	0x91
+ 827 0345 B87F     		.sleb128 -72
+ 828 0347 0B       		.uleb128 0xb
+ 829 0348 0D050000 		.4byte	.LASF89
+ 830 034c 01       		.byte	0x1
+ 831 034d 22       		.byte	0x22
+ 832 034e 76000000 		.4byte	0x76
+ 833 0352 03       		.uleb128 0x3
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 17
+
+
+ 834 0353 91       		.byte	0x91
+ 835 0354 BC7F     		.sleb128 -68
+ 836 0356 0B       		.uleb128 0xb
+ 837 0357 07090000 		.4byte	.LASF90
+ 838 035b 01       		.byte	0x1
+ 839 035c 23       		.byte	0x23
+ 840 035d 76000000 		.4byte	0x76
+ 841 0361 02       		.uleb128 0x2
+ 842 0362 91       		.byte	0x91
+ 843 0363 40       		.sleb128 -64
+ 844 0364 0B       		.uleb128 0xb
+ 845 0365 13090000 		.4byte	.LASF91
+ 846 0369 01       		.byte	0x1
+ 847 036a 24       		.byte	0x24
+ 848 036b 76000000 		.4byte	0x76
+ 849 036f 02       		.uleb128 0x2
+ 850 0370 91       		.byte	0x91
+ 851 0371 44       		.sleb128 -60
+ 852 0372 0B       		.uleb128 0xb
+ 853 0373 42050000 		.4byte	.LASF92
+ 854 0377 01       		.byte	0x1
+ 855 0378 25       		.byte	0x25
+ 856 0379 76000000 		.4byte	0x76
+ 857 037d 02       		.uleb128 0x2
+ 858 037e 91       		.byte	0x91
+ 859 037f 48       		.sleb128 -56
+ 860 0380 0B       		.uleb128 0xb
+ 861 0381 4E050000 		.4byte	.LASF93
+ 862 0385 01       		.byte	0x1
+ 863 0386 26       		.byte	0x26
+ 864 0387 76000000 		.4byte	0x76
+ 865 038b 02       		.uleb128 0x2
+ 866 038c 91       		.byte	0x91
+ 867 038d 4C       		.sleb128 -52
+ 868 038e 0B       		.uleb128 0xb
+ 869 038f 87050000 		.4byte	.LASF94
+ 870 0393 01       		.byte	0x1
+ 871 0394 27       		.byte	0x27
+ 872 0395 76000000 		.4byte	0x76
+ 873 0399 02       		.uleb128 0x2
+ 874 039a 91       		.byte	0x91
+ 875 039b 50       		.sleb128 -48
+ 876 039c 0B       		.uleb128 0xb
+ 877 039d 30000000 		.4byte	.LASF95
+ 878 03a1 01       		.byte	0x1
+ 879 03a2 28       		.byte	0x28
+ 880 03a3 76000000 		.4byte	0x76
+ 881 03a7 02       		.uleb128 0x2
+ 882 03a8 91       		.byte	0x91
+ 883 03a9 54       		.sleb128 -44
+ 884 03aa 0A       		.uleb128 0xa
+ 885 03ab 50020000 		.4byte	.LASF96
+ 886 03af 01       		.byte	0x1
+ 887 03b0 2A       		.byte	0x2a
+ 888 03b1 76000000 		.4byte	0x76
+ 889 03b5 D2000000 		.4byte	.LLST9
+ 890 03b9 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 18
+
+
+ 891 03ba 50010000 		.4byte	.LVL27
+ 892 03be 6D060000 		.4byte	0x66d
+ 893 03c2 0D       		.uleb128 0xd
+ 894 03c3 56010000 		.4byte	.LVL28
+ 895 03c7 74060000 		.4byte	0x674
+ 896 03cb D9030000 		.4byte	0x3d9
+ 897 03cf 0E       		.uleb128 0xe
+ 898 03d0 01       		.uleb128 0x1
+ 899 03d1 50       		.byte	0x50
+ 900 03d2 05       		.uleb128 0x5
+ 901 03d3 91       		.byte	0x91
+ 902 03d4 A47F     		.sleb128 -92
+ 903 03d6 94       		.byte	0x94
+ 904 03d7 02       		.byte	0x2
+ 905 03d8 00       		.byte	0
+ 906 03d9 0D       		.uleb128 0xd
+ 907 03da 62010000 		.4byte	.LVL29
+ 908 03de 85060000 		.4byte	0x685
+ 909 03e2 F4030000 		.4byte	0x3f4
+ 910 03e6 0E       		.uleb128 0xe
+ 911 03e7 01       		.uleb128 0x1
+ 912 03e8 50       		.byte	0x50
+ 913 03e9 09       		.uleb128 0x9
+ 914 03ea 79       		.byte	0x79
+ 915 03eb 00       		.sleb128 0
+ 916 03ec 32       		.byte	0x32
+ 917 03ed 24       		.byte	0x24
+ 918 03ee 79       		.byte	0x79
+ 919 03ef 00       		.sleb128 0
+ 920 03f0 22       		.byte	0x22
+ 921 03f1 31       		.byte	0x31
+ 922 03f2 24       		.byte	0x24
+ 923 03f3 00       		.byte	0
+ 924 03f4 0D       		.uleb128 0xd
+ 925 03f5 68010000 		.4byte	.LVL30
+ 926 03f9 74060000 		.4byte	0x674
+ 927 03fd 0B040000 		.4byte	0x40b
+ 928 0401 0E       		.uleb128 0xe
+ 929 0402 01       		.uleb128 0x1
+ 930 0403 50       		.byte	0x50
+ 931 0404 05       		.uleb128 0x5
+ 932 0405 91       		.byte	0x91
+ 933 0406 AC7F     		.sleb128 -84
+ 934 0408 94       		.byte	0x94
+ 935 0409 02       		.byte	0x2
+ 936 040a 00       		.byte	0
+ 937 040b 0D       		.uleb128 0xd
+ 938 040c 74010000 		.4byte	.LVL31
+ 939 0410 85060000 		.4byte	0x685
+ 940 0414 26040000 		.4byte	0x426
+ 941 0418 0E       		.uleb128 0xe
+ 942 0419 01       		.uleb128 0x1
+ 943 041a 50       		.byte	0x50
+ 944 041b 09       		.uleb128 0x9
+ 945 041c 78       		.byte	0x78
+ 946 041d 00       		.sleb128 0
+ 947 041e 32       		.byte	0x32
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 19
+
+
+ 948 041f 24       		.byte	0x24
+ 949 0420 78       		.byte	0x78
+ 950 0421 00       		.sleb128 0
+ 951 0422 22       		.byte	0x22
+ 952 0423 31       		.byte	0x31
+ 953 0424 24       		.byte	0x24
+ 954 0425 00       		.byte	0
+ 955 0426 0D       		.uleb128 0xd
+ 956 0427 7A010000 		.4byte	.LVL32
+ 957 042b 74060000 		.4byte	0x674
+ 958 042f 3D040000 		.4byte	0x43d
+ 959 0433 0E       		.uleb128 0xe
+ 960 0434 01       		.uleb128 0x1
+ 961 0435 50       		.byte	0x50
+ 962 0436 05       		.uleb128 0x5
+ 963 0437 91       		.byte	0x91
+ 964 0438 B07F     		.sleb128 -80
+ 965 043a 94       		.byte	0x94
+ 966 043b 02       		.byte	0x2
+ 967 043c 00       		.byte	0
+ 968 043d 0D       		.uleb128 0xd
+ 969 043e 84010000 		.4byte	.LVL33
+ 970 0442 85060000 		.4byte	0x685
+ 971 0446 58040000 		.4byte	0x458
+ 972 044a 0E       		.uleb128 0xe
+ 973 044b 01       		.uleb128 0x1
+ 974 044c 50       		.byte	0x50
+ 975 044d 09       		.uleb128 0x9
+ 976 044e 77       		.byte	0x77
+ 977 044f 00       		.sleb128 0
+ 978 0450 32       		.byte	0x32
+ 979 0451 24       		.byte	0x24
+ 980 0452 77       		.byte	0x77
+ 981 0453 00       		.sleb128 0
+ 982 0454 22       		.byte	0x22
+ 983 0455 31       		.byte	0x31
+ 984 0456 24       		.byte	0x24
+ 985 0457 00       		.byte	0
+ 986 0458 0D       		.uleb128 0xd
+ 987 0459 8A010000 		.4byte	.LVL34
+ 988 045d 74060000 		.4byte	0x674
+ 989 0461 6F040000 		.4byte	0x46f
+ 990 0465 0E       		.uleb128 0xe
+ 991 0466 01       		.uleb128 0x1
+ 992 0467 50       		.byte	0x50
+ 993 0468 05       		.uleb128 0x5
+ 994 0469 91       		.byte	0x91
+ 995 046a B47F     		.sleb128 -76
+ 996 046c 94       		.byte	0x94
+ 997 046d 02       		.byte	0x2
+ 998 046e 00       		.byte	0
+ 999 046f 0D       		.uleb128 0xd
+ 1000 0470 94010000 		.4byte	.LVL35
+ 1001 0474 85060000 		.4byte	0x685
+ 1002 0478 8A040000 		.4byte	0x48a
+ 1003 047c 0E       		.uleb128 0xe
+ 1004 047d 01       		.uleb128 0x1
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 20
+
+
+ 1005 047e 50       		.byte	0x50
+ 1006 047f 09       		.uleb128 0x9
+ 1007 0480 76       		.byte	0x76
+ 1008 0481 00       		.sleb128 0
+ 1009 0482 32       		.byte	0x32
+ 1010 0483 24       		.byte	0x24
+ 1011 0484 76       		.byte	0x76
+ 1012 0485 00       		.sleb128 0
+ 1013 0486 22       		.byte	0x22
+ 1014 0487 31       		.byte	0x31
+ 1015 0488 24       		.byte	0x24
+ 1016 0489 00       		.byte	0
+ 1017 048a 0D       		.uleb128 0xd
+ 1018 048b 9A010000 		.4byte	.LVL36
+ 1019 048f 74060000 		.4byte	0x674
+ 1020 0493 A1040000 		.4byte	0x4a1
+ 1021 0497 0E       		.uleb128 0xe
+ 1022 0498 01       		.uleb128 0x1
+ 1023 0499 50       		.byte	0x50
+ 1024 049a 05       		.uleb128 0x5
+ 1025 049b 91       		.byte	0x91
+ 1026 049c B87F     		.sleb128 -72
+ 1027 049e 94       		.byte	0x94
+ 1028 049f 02       		.byte	0x2
+ 1029 04a0 00       		.byte	0
+ 1030 04a1 0D       		.uleb128 0xd
+ 1031 04a2 A4010000 		.4byte	.LVL37
+ 1032 04a6 85060000 		.4byte	0x685
+ 1033 04aa BC040000 		.4byte	0x4bc
+ 1034 04ae 0E       		.uleb128 0xe
+ 1035 04af 01       		.uleb128 0x1
+ 1036 04b0 50       		.byte	0x50
+ 1037 04b1 09       		.uleb128 0x9
+ 1038 04b2 75       		.byte	0x75
+ 1039 04b3 00       		.sleb128 0
+ 1040 04b4 32       		.byte	0x32
+ 1041 04b5 24       		.byte	0x24
+ 1042 04b6 75       		.byte	0x75
+ 1043 04b7 00       		.sleb128 0
+ 1044 04b8 22       		.byte	0x22
+ 1045 04b9 31       		.byte	0x31
+ 1046 04ba 24       		.byte	0x24
+ 1047 04bb 00       		.byte	0
+ 1048 04bc 0D       		.uleb128 0xd
+ 1049 04bd AA010000 		.4byte	.LVL38
+ 1050 04c1 74060000 		.4byte	0x674
+ 1051 04c5 D3040000 		.4byte	0x4d3
+ 1052 04c9 0E       		.uleb128 0xe
+ 1053 04ca 01       		.uleb128 0x1
+ 1054 04cb 50       		.byte	0x50
+ 1055 04cc 05       		.uleb128 0x5
+ 1056 04cd 91       		.byte	0x91
+ 1057 04ce BC7F     		.sleb128 -68
+ 1058 04d0 94       		.byte	0x94
+ 1059 04d1 02       		.byte	0x2
+ 1060 04d2 00       		.byte	0
+ 1061 04d3 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 21
+
+
+ 1062 04d4 B8010000 		.4byte	.LVL39
+ 1063 04d8 85060000 		.4byte	0x685
+ 1064 04dc F0040000 		.4byte	0x4f0
+ 1065 04e0 0E       		.uleb128 0xe
+ 1066 04e1 01       		.uleb128 0x1
+ 1067 04e2 50       		.byte	0x50
+ 1068 04e3 0B       		.uleb128 0xb
+ 1069 04e4 7D       		.byte	0x7d
+ 1070 04e5 00       		.sleb128 0
+ 1071 04e6 06       		.byte	0x6
+ 1072 04e7 32       		.byte	0x32
+ 1073 04e8 24       		.byte	0x24
+ 1074 04e9 7D       		.byte	0x7d
+ 1075 04ea 00       		.sleb128 0
+ 1076 04eb 06       		.byte	0x6
+ 1077 04ec 22       		.byte	0x22
+ 1078 04ed 31       		.byte	0x31
+ 1079 04ee 24       		.byte	0x24
+ 1080 04ef 00       		.byte	0
+ 1081 04f0 0D       		.uleb128 0xd
+ 1082 04f1 BE010000 		.4byte	.LVL40
+ 1083 04f5 74060000 		.4byte	0x674
+ 1084 04f9 06050000 		.4byte	0x506
+ 1085 04fd 0E       		.uleb128 0xe
+ 1086 04fe 01       		.uleb128 0x1
+ 1087 04ff 50       		.byte	0x50
+ 1088 0500 04       		.uleb128 0x4
+ 1089 0501 91       		.byte	0x91
+ 1090 0502 40       		.sleb128 -64
+ 1091 0503 94       		.byte	0x94
+ 1092 0504 02       		.byte	0x2
+ 1093 0505 00       		.byte	0
+ 1094 0506 0D       		.uleb128 0xd
+ 1095 0507 CC010000 		.4byte	.LVL41
+ 1096 050b 85060000 		.4byte	0x685
+ 1097 050f 25050000 		.4byte	0x525
+ 1098 0513 0E       		.uleb128 0xe
+ 1099 0514 01       		.uleb128 0x1
+ 1100 0515 50       		.byte	0x50
+ 1101 0516 0D       		.uleb128 0xd
+ 1102 0517 91       		.byte	0x91
+ 1103 0518 9C7F     		.sleb128 -100
+ 1104 051a 06       		.byte	0x6
+ 1105 051b 32       		.byte	0x32
+ 1106 051c 24       		.byte	0x24
+ 1107 051d 91       		.byte	0x91
+ 1108 051e 9C7F     		.sleb128 -100
+ 1109 0520 06       		.byte	0x6
+ 1110 0521 22       		.byte	0x22
+ 1111 0522 31       		.byte	0x31
+ 1112 0523 24       		.byte	0x24
+ 1113 0524 00       		.byte	0
+ 1114 0525 0D       		.uleb128 0xd
+ 1115 0526 D2010000 		.4byte	.LVL42
+ 1116 052a 74060000 		.4byte	0x674
+ 1117 052e 3B050000 		.4byte	0x53b
+ 1118 0532 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 22
+
+
+ 1119 0533 01       		.uleb128 0x1
+ 1120 0534 50       		.byte	0x50
+ 1121 0535 04       		.uleb128 0x4
+ 1122 0536 91       		.byte	0x91
+ 1123 0537 44       		.sleb128 -60
+ 1124 0538 94       		.byte	0x94
+ 1125 0539 02       		.byte	0x2
+ 1126 053a 00       		.byte	0
+ 1127 053b 0D       		.uleb128 0xd
+ 1128 053c E0010000 		.4byte	.LVL43
+ 1129 0540 85060000 		.4byte	0x685
+ 1130 0544 5A050000 		.4byte	0x55a
+ 1131 0548 0E       		.uleb128 0xe
+ 1132 0549 01       		.uleb128 0x1
+ 1133 054a 50       		.byte	0x50
+ 1134 054b 0D       		.uleb128 0xd
+ 1135 054c 91       		.byte	0x91
+ 1136 054d A07F     		.sleb128 -96
+ 1137 054f 06       		.byte	0x6
+ 1138 0550 32       		.byte	0x32
+ 1139 0551 24       		.byte	0x24
+ 1140 0552 91       		.byte	0x91
+ 1141 0553 A07F     		.sleb128 -96
+ 1142 0555 06       		.byte	0x6
+ 1143 0556 22       		.byte	0x22
+ 1144 0557 31       		.byte	0x31
+ 1145 0558 24       		.byte	0x24
+ 1146 0559 00       		.byte	0
+ 1147 055a 0D       		.uleb128 0xd
+ 1148 055b E6010000 		.4byte	.LVL44
+ 1149 055f 74060000 		.4byte	0x674
+ 1150 0563 70050000 		.4byte	0x570
+ 1151 0567 0E       		.uleb128 0xe
+ 1152 0568 01       		.uleb128 0x1
+ 1153 0569 50       		.byte	0x50
+ 1154 056a 04       		.uleb128 0x4
+ 1155 056b 91       		.byte	0x91
+ 1156 056c 48       		.sleb128 -56
+ 1157 056d 94       		.byte	0x94
+ 1158 056e 02       		.byte	0x2
+ 1159 056f 00       		.byte	0
+ 1160 0570 0D       		.uleb128 0xd
+ 1161 0571 F2010000 		.4byte	.LVL45
+ 1162 0575 85060000 		.4byte	0x685
+ 1163 0579 8B050000 		.4byte	0x58b
+ 1164 057d 0E       		.uleb128 0xe
+ 1165 057e 01       		.uleb128 0x1
+ 1166 057f 50       		.byte	0x50
+ 1167 0580 09       		.uleb128 0x9
+ 1168 0581 7A       		.byte	0x7a
+ 1169 0582 00       		.sleb128 0
+ 1170 0583 32       		.byte	0x32
+ 1171 0584 24       		.byte	0x24
+ 1172 0585 7A       		.byte	0x7a
+ 1173 0586 00       		.sleb128 0
+ 1174 0587 22       		.byte	0x22
+ 1175 0588 31       		.byte	0x31
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 23
+
+
+ 1176 0589 24       		.byte	0x24
+ 1177 058a 00       		.byte	0
+ 1178 058b 0D       		.uleb128 0xd
+ 1179 058c F8010000 		.4byte	.LVL46
+ 1180 0590 74060000 		.4byte	0x674
+ 1181 0594 A1050000 		.4byte	0x5a1
+ 1182 0598 0E       		.uleb128 0xe
+ 1183 0599 01       		.uleb128 0x1
+ 1184 059a 50       		.byte	0x50
+ 1185 059b 04       		.uleb128 0x4
+ 1186 059c 91       		.byte	0x91
+ 1187 059d 4C       		.sleb128 -52
+ 1188 059e 94       		.byte	0x94
+ 1189 059f 02       		.byte	0x2
+ 1190 05a0 00       		.byte	0
+ 1191 05a1 0D       		.uleb128 0xd
+ 1192 05a2 04020000 		.4byte	.LVL47
+ 1193 05a6 85060000 		.4byte	0x685
+ 1194 05aa BC050000 		.4byte	0x5bc
+ 1195 05ae 0E       		.uleb128 0xe
+ 1196 05af 01       		.uleb128 0x1
+ 1197 05b0 50       		.byte	0x50
+ 1198 05b1 09       		.uleb128 0x9
+ 1199 05b2 7B       		.byte	0x7b
+ 1200 05b3 00       		.sleb128 0
+ 1201 05b4 32       		.byte	0x32
+ 1202 05b5 24       		.byte	0x24
+ 1203 05b6 7B       		.byte	0x7b
+ 1204 05b7 00       		.sleb128 0
+ 1205 05b8 22       		.byte	0x22
+ 1206 05b9 31       		.byte	0x31
+ 1207 05ba 24       		.byte	0x24
+ 1208 05bb 00       		.byte	0
+ 1209 05bc 0D       		.uleb128 0xd
+ 1210 05bd 0A020000 		.4byte	.LVL48
+ 1211 05c1 74060000 		.4byte	0x674
+ 1212 05c5 D2050000 		.4byte	0x5d2
+ 1213 05c9 0E       		.uleb128 0xe
+ 1214 05ca 01       		.uleb128 0x1
+ 1215 05cb 50       		.byte	0x50
+ 1216 05cc 04       		.uleb128 0x4
+ 1217 05cd 91       		.byte	0x91
+ 1218 05ce 50       		.sleb128 -48
+ 1219 05cf 94       		.byte	0x94
+ 1220 05d0 02       		.byte	0x2
+ 1221 05d1 00       		.byte	0
+ 1222 05d2 0D       		.uleb128 0xd
+ 1223 05d3 1C020000 		.4byte	.LVL50
+ 1224 05d7 85060000 		.4byte	0x685
+ 1225 05db ED050000 		.4byte	0x5ed
+ 1226 05df 0E       		.uleb128 0xe
+ 1227 05e0 01       		.uleb128 0x1
+ 1228 05e1 50       		.byte	0x50
+ 1229 05e2 09       		.uleb128 0x9
+ 1230 05e3 74       		.byte	0x74
+ 1231 05e4 00       		.sleb128 0
+ 1232 05e5 32       		.byte	0x32
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 24
+
+
+ 1233 05e6 24       		.byte	0x24
+ 1234 05e7 74       		.byte	0x74
+ 1235 05e8 00       		.sleb128 0
+ 1236 05e9 22       		.byte	0x22
+ 1237 05ea 31       		.byte	0x31
+ 1238 05eb 24       		.byte	0x24
+ 1239 05ec 00       		.byte	0
+ 1240 05ed 0D       		.uleb128 0xd
+ 1241 05ee 22020000 		.4byte	.LVL51
+ 1242 05f2 74060000 		.4byte	0x674
+ 1243 05f6 03060000 		.4byte	0x603
+ 1244 05fa 0E       		.uleb128 0xe
+ 1245 05fb 01       		.uleb128 0x1
+ 1246 05fc 50       		.byte	0x50
+ 1247 05fd 04       		.uleb128 0x4
+ 1248 05fe 91       		.byte	0x91
+ 1249 05ff 54       		.sleb128 -44
+ 1250 0600 94       		.byte	0x94
+ 1251 0601 02       		.byte	0x2
+ 1252 0602 00       		.byte	0
+ 1253 0603 0D       		.uleb128 0xd
+ 1254 0604 2C020000 		.4byte	.LVL52
+ 1255 0608 85060000 		.4byte	0x685
+ 1256 060c 17060000 		.4byte	0x617
+ 1257 0610 0E       		.uleb128 0xe
+ 1258 0611 01       		.uleb128 0x1
+ 1259 0612 50       		.byte	0x50
+ 1260 0613 02       		.uleb128 0x2
+ 1261 0614 74       		.byte	0x74
+ 1262 0615 00       		.sleb128 0
+ 1263 0616 00       		.byte	0
+ 1264 0617 0D       		.uleb128 0xd
+ 1265 0618 32020000 		.4byte	.LVL53
+ 1266 061c 74060000 		.4byte	0x674
+ 1267 0620 2E060000 		.4byte	0x62e
+ 1268 0624 0E       		.uleb128 0xe
+ 1269 0625 01       		.uleb128 0x1
+ 1270 0626 50       		.byte	0x50
+ 1271 0627 05       		.uleb128 0x5
+ 1272 0628 91       		.byte	0x91
+ 1273 0629 A47F     		.sleb128 -92
+ 1274 062b 94       		.byte	0x94
+ 1275 062c 02       		.byte	0x2
+ 1276 062d 00       		.byte	0
+ 1277 062e 0D       		.uleb128 0xd
+ 1278 062f 38020000 		.4byte	.LVL54
+ 1279 0633 85060000 		.4byte	0x685
+ 1280 0637 42060000 		.4byte	0x642
+ 1281 063b 0E       		.uleb128 0xe
+ 1282 063c 01       		.uleb128 0x1
+ 1283 063d 50       		.byte	0x50
+ 1284 063e 02       		.uleb128 0x2
+ 1285 063f 74       		.byte	0x74
+ 1286 0640 00       		.sleb128 0
+ 1287 0641 00       		.byte	0
+ 1288 0642 0C       		.uleb128 0xc
+ 1289 0643 3C020000 		.4byte	.LVL55
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 25
+
+
+ 1290 0647 96060000 		.4byte	0x696
+ 1291 064b 00       		.byte	0
+ 1292 064c 0F       		.uleb128 0xf
+ 1293 064d 6B000000 		.4byte	0x6b
+ 1294 0651 5C060000 		.4byte	0x65c
+ 1295 0655 10       		.uleb128 0x10
+ 1296 0656 A1000000 		.4byte	0xa1
+ 1297 065a 33       		.byte	0x33
+ 1298 065b 00       		.byte	0
+ 1299 065c 11       		.uleb128 0x11
+ 1300 065d 62080000 		.4byte	.LASF105
+ 1301 0661 06       		.byte	0x6
+ 1302 0662 1F       		.byte	0x1f
+ 1303 0663 4C060000 		.4byte	0x64c
+ 1304 0667 05       		.uleb128 0x5
+ 1305 0668 03       		.byte	0x3
+ 1306 0669 00000000 		.4byte	DataSet
+ 1307 066d 12       		.uleb128 0x12
+ 1308 066e 24000000 		.4byte	.LASF99
+ 1309 0672 03       		.byte	0x3
+ 1310 0673 92       		.byte	0x92
+ 1311 0674 13       		.uleb128 0x13
+ 1312 0675 D3030000 		.4byte	.LASF97
+ 1313 0679 03       		.byte	0x3
+ 1314 067a C3       		.byte	0xc3
+ 1315 067b 85060000 		.4byte	0x685
+ 1316 067f 14       		.uleb128 0x14
+ 1317 0680 76000000 		.4byte	0x76
+ 1318 0684 00       		.byte	0
+ 1319 0685 13       		.uleb128 0x13
+ 1320 0686 FF080000 		.4byte	.LASF98
+ 1321 068a 04       		.byte	0x4
+ 1322 068b 57       		.byte	0x57
+ 1323 068c 96060000 		.4byte	0x696
+ 1324 0690 14       		.uleb128 0x14
+ 1325 0691 81000000 		.4byte	0x81
+ 1326 0695 00       		.byte	0
+ 1327 0696 12       		.uleb128 0x12
+ 1328 0697 2A060000 		.4byte	.LASF100
+ 1329 069b 03       		.byte	0x3
+ 1330 069c 93       		.byte	0x93
+ 1331 069d 00       		.byte	0
+ 1332              		.section	.debug_abbrev,"",%progbits
+ 1333              	.Ldebug_abbrev0:
+ 1334 0000 01       		.uleb128 0x1
+ 1335 0001 11       		.uleb128 0x11
+ 1336 0002 01       		.byte	0x1
+ 1337 0003 25       		.uleb128 0x25
+ 1338 0004 0E       		.uleb128 0xe
+ 1339 0005 13       		.uleb128 0x13
+ 1340 0006 0B       		.uleb128 0xb
+ 1341 0007 03       		.uleb128 0x3
+ 1342 0008 0E       		.uleb128 0xe
+ 1343 0009 1B       		.uleb128 0x1b
+ 1344 000a 0E       		.uleb128 0xe
+ 1345 000b 55       		.uleb128 0x55
+ 1346 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 26
+
+
+ 1347 000d 11       		.uleb128 0x11
+ 1348 000e 01       		.uleb128 0x1
+ 1349 000f 10       		.uleb128 0x10
+ 1350 0010 17       		.uleb128 0x17
+ 1351 0011 00       		.byte	0
+ 1352 0012 00       		.byte	0
+ 1353 0013 02       		.uleb128 0x2
+ 1354 0014 24       		.uleb128 0x24
+ 1355 0015 00       		.byte	0
+ 1356 0016 0B       		.uleb128 0xb
+ 1357 0017 0B       		.uleb128 0xb
+ 1358 0018 3E       		.uleb128 0x3e
+ 1359 0019 0B       		.uleb128 0xb
+ 1360 001a 03       		.uleb128 0x3
+ 1361 001b 0E       		.uleb128 0xe
+ 1362 001c 00       		.byte	0
+ 1363 001d 00       		.byte	0
+ 1364 001e 03       		.uleb128 0x3
+ 1365 001f 24       		.uleb128 0x24
+ 1366 0020 00       		.byte	0
+ 1367 0021 0B       		.uleb128 0xb
+ 1368 0022 0B       		.uleb128 0xb
+ 1369 0023 3E       		.uleb128 0x3e
+ 1370 0024 0B       		.uleb128 0xb
+ 1371 0025 03       		.uleb128 0x3
+ 1372 0026 08       		.uleb128 0x8
+ 1373 0027 00       		.byte	0
+ 1374 0028 00       		.byte	0
+ 1375 0029 04       		.uleb128 0x4
+ 1376 002a 16       		.uleb128 0x16
+ 1377 002b 00       		.byte	0
+ 1378 002c 03       		.uleb128 0x3
+ 1379 002d 0E       		.uleb128 0xe
+ 1380 002e 3A       		.uleb128 0x3a
+ 1381 002f 0B       		.uleb128 0xb
+ 1382 0030 3B       		.uleb128 0x3b
+ 1383 0031 0B       		.uleb128 0xb
+ 1384 0032 49       		.uleb128 0x49
+ 1385 0033 13       		.uleb128 0x13
+ 1386 0034 00       		.byte	0
+ 1387 0035 00       		.byte	0
+ 1388 0036 05       		.uleb128 0x5
+ 1389 0037 04       		.uleb128 0x4
+ 1390 0038 01       		.byte	0x1
+ 1391 0039 0B       		.uleb128 0xb
+ 1392 003a 0B       		.uleb128 0xb
+ 1393 003b 3A       		.uleb128 0x3a
+ 1394 003c 0B       		.uleb128 0xb
+ 1395 003d 3B       		.uleb128 0x3b
+ 1396 003e 0B       		.uleb128 0xb
+ 1397 003f 01       		.uleb128 0x1
+ 1398 0040 13       		.uleb128 0x13
+ 1399 0041 00       		.byte	0
+ 1400 0042 00       		.byte	0
+ 1401 0043 06       		.uleb128 0x6
+ 1402 0044 28       		.uleb128 0x28
+ 1403 0045 00       		.byte	0
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 27
+
+
+ 1404 0046 03       		.uleb128 0x3
+ 1405 0047 0E       		.uleb128 0xe
+ 1406 0048 1C       		.uleb128 0x1c
+ 1407 0049 0D       		.uleb128 0xd
+ 1408 004a 00       		.byte	0
+ 1409 004b 00       		.byte	0
+ 1410 004c 07       		.uleb128 0x7
+ 1411 004d 0F       		.uleb128 0xf
+ 1412 004e 00       		.byte	0
+ 1413 004f 0B       		.uleb128 0xb
+ 1414 0050 0B       		.uleb128 0xb
+ 1415 0051 49       		.uleb128 0x49
+ 1416 0052 13       		.uleb128 0x13
+ 1417 0053 00       		.byte	0
+ 1418 0054 00       		.byte	0
+ 1419 0055 08       		.uleb128 0x8
+ 1420 0056 2E       		.uleb128 0x2e
+ 1421 0057 01       		.byte	0x1
+ 1422 0058 3F       		.uleb128 0x3f
+ 1423 0059 19       		.uleb128 0x19
+ 1424 005a 03       		.uleb128 0x3
+ 1425 005b 0E       		.uleb128 0xe
+ 1426 005c 3A       		.uleb128 0x3a
+ 1427 005d 0B       		.uleb128 0xb
+ 1428 005e 3B       		.uleb128 0x3b
+ 1429 005f 0B       		.uleb128 0xb
+ 1430 0060 27       		.uleb128 0x27
+ 1431 0061 19       		.uleb128 0x19
+ 1432 0062 11       		.uleb128 0x11
+ 1433 0063 01       		.uleb128 0x1
+ 1434 0064 12       		.uleb128 0x12
+ 1435 0065 06       		.uleb128 0x6
+ 1436 0066 40       		.uleb128 0x40
+ 1437 0067 18       		.uleb128 0x18
+ 1438 0068 9742     		.uleb128 0x2117
+ 1439 006a 19       		.uleb128 0x19
+ 1440 006b 01       		.uleb128 0x1
+ 1441 006c 13       		.uleb128 0x13
+ 1442 006d 00       		.byte	0
+ 1443 006e 00       		.byte	0
+ 1444 006f 09       		.uleb128 0x9
+ 1445 0070 05       		.uleb128 0x5
+ 1446 0071 00       		.byte	0
+ 1447 0072 03       		.uleb128 0x3
+ 1448 0073 0E       		.uleb128 0xe
+ 1449 0074 3A       		.uleb128 0x3a
+ 1450 0075 0B       		.uleb128 0xb
+ 1451 0076 3B       		.uleb128 0x3b
+ 1452 0077 0B       		.uleb128 0xb
+ 1453 0078 49       		.uleb128 0x49
+ 1454 0079 13       		.uleb128 0x13
+ 1455 007a 02       		.uleb128 0x2
+ 1456 007b 17       		.uleb128 0x17
+ 1457 007c 00       		.byte	0
+ 1458 007d 00       		.byte	0
+ 1459 007e 0A       		.uleb128 0xa
+ 1460 007f 34       		.uleb128 0x34
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 28
+
+
+ 1461 0080 00       		.byte	0
+ 1462 0081 03       		.uleb128 0x3
+ 1463 0082 0E       		.uleb128 0xe
+ 1464 0083 3A       		.uleb128 0x3a
+ 1465 0084 0B       		.uleb128 0xb
+ 1466 0085 3B       		.uleb128 0x3b
+ 1467 0086 0B       		.uleb128 0xb
+ 1468 0087 49       		.uleb128 0x49
+ 1469 0088 13       		.uleb128 0x13
+ 1470 0089 02       		.uleb128 0x2
+ 1471 008a 17       		.uleb128 0x17
+ 1472 008b 00       		.byte	0
+ 1473 008c 00       		.byte	0
+ 1474 008d 0B       		.uleb128 0xb
+ 1475 008e 34       		.uleb128 0x34
+ 1476 008f 00       		.byte	0
+ 1477 0090 03       		.uleb128 0x3
+ 1478 0091 0E       		.uleb128 0xe
+ 1479 0092 3A       		.uleb128 0x3a
+ 1480 0093 0B       		.uleb128 0xb
+ 1481 0094 3B       		.uleb128 0x3b
+ 1482 0095 0B       		.uleb128 0xb
+ 1483 0096 49       		.uleb128 0x49
+ 1484 0097 13       		.uleb128 0x13
+ 1485 0098 02       		.uleb128 0x2
+ 1486 0099 18       		.uleb128 0x18
+ 1487 009a 00       		.byte	0
+ 1488 009b 00       		.byte	0
+ 1489 009c 0C       		.uleb128 0xc
+ 1490 009d 898201   		.uleb128 0x4109
+ 1491 00a0 00       		.byte	0
+ 1492 00a1 11       		.uleb128 0x11
+ 1493 00a2 01       		.uleb128 0x1
+ 1494 00a3 31       		.uleb128 0x31
+ 1495 00a4 13       		.uleb128 0x13
+ 1496 00a5 00       		.byte	0
+ 1497 00a6 00       		.byte	0
+ 1498 00a7 0D       		.uleb128 0xd
+ 1499 00a8 898201   		.uleb128 0x4109
+ 1500 00ab 01       		.byte	0x1
+ 1501 00ac 11       		.uleb128 0x11
+ 1502 00ad 01       		.uleb128 0x1
+ 1503 00ae 31       		.uleb128 0x31
+ 1504 00af 13       		.uleb128 0x13
+ 1505 00b0 01       		.uleb128 0x1
+ 1506 00b1 13       		.uleb128 0x13
+ 1507 00b2 00       		.byte	0
+ 1508 00b3 00       		.byte	0
+ 1509 00b4 0E       		.uleb128 0xe
+ 1510 00b5 8A8201   		.uleb128 0x410a
+ 1511 00b8 00       		.byte	0
+ 1512 00b9 02       		.uleb128 0x2
+ 1513 00ba 18       		.uleb128 0x18
+ 1514 00bb 9142     		.uleb128 0x2111
+ 1515 00bd 18       		.uleb128 0x18
+ 1516 00be 00       		.byte	0
+ 1517 00bf 00       		.byte	0
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 29
+
+
+ 1518 00c0 0F       		.uleb128 0xf
+ 1519 00c1 01       		.uleb128 0x1
+ 1520 00c2 01       		.byte	0x1
+ 1521 00c3 49       		.uleb128 0x49
+ 1522 00c4 13       		.uleb128 0x13
+ 1523 00c5 01       		.uleb128 0x1
+ 1524 00c6 13       		.uleb128 0x13
+ 1525 00c7 00       		.byte	0
+ 1526 00c8 00       		.byte	0
+ 1527 00c9 10       		.uleb128 0x10
+ 1528 00ca 21       		.uleb128 0x21
+ 1529 00cb 00       		.byte	0
+ 1530 00cc 49       		.uleb128 0x49
+ 1531 00cd 13       		.uleb128 0x13
+ 1532 00ce 2F       		.uleb128 0x2f
+ 1533 00cf 0B       		.uleb128 0xb
+ 1534 00d0 00       		.byte	0
+ 1535 00d1 00       		.byte	0
+ 1536 00d2 11       		.uleb128 0x11
+ 1537 00d3 34       		.uleb128 0x34
+ 1538 00d4 00       		.byte	0
+ 1539 00d5 03       		.uleb128 0x3
+ 1540 00d6 0E       		.uleb128 0xe
+ 1541 00d7 3A       		.uleb128 0x3a
+ 1542 00d8 0B       		.uleb128 0xb
+ 1543 00d9 3B       		.uleb128 0x3b
+ 1544 00da 0B       		.uleb128 0xb
+ 1545 00db 49       		.uleb128 0x49
+ 1546 00dc 13       		.uleb128 0x13
+ 1547 00dd 3F       		.uleb128 0x3f
+ 1548 00de 19       		.uleb128 0x19
+ 1549 00df 02       		.uleb128 0x2
+ 1550 00e0 18       		.uleb128 0x18
+ 1551 00e1 00       		.byte	0
+ 1552 00e2 00       		.byte	0
+ 1553 00e3 12       		.uleb128 0x12
+ 1554 00e4 2E       		.uleb128 0x2e
+ 1555 00e5 00       		.byte	0
+ 1556 00e6 3F       		.uleb128 0x3f
+ 1557 00e7 19       		.uleb128 0x19
+ 1558 00e8 03       		.uleb128 0x3
+ 1559 00e9 0E       		.uleb128 0xe
+ 1560 00ea 3A       		.uleb128 0x3a
+ 1561 00eb 0B       		.uleb128 0xb
+ 1562 00ec 3B       		.uleb128 0x3b
+ 1563 00ed 0B       		.uleb128 0xb
+ 1564 00ee 27       		.uleb128 0x27
+ 1565 00ef 19       		.uleb128 0x19
+ 1566 00f0 3C       		.uleb128 0x3c
+ 1567 00f1 19       		.uleb128 0x19
+ 1568 00f2 00       		.byte	0
+ 1569 00f3 00       		.byte	0
+ 1570 00f4 13       		.uleb128 0x13
+ 1571 00f5 2E       		.uleb128 0x2e
+ 1572 00f6 01       		.byte	0x1
+ 1573 00f7 3F       		.uleb128 0x3f
+ 1574 00f8 19       		.uleb128 0x19
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 30
+
+
+ 1575 00f9 03       		.uleb128 0x3
+ 1576 00fa 0E       		.uleb128 0xe
+ 1577 00fb 3A       		.uleb128 0x3a
+ 1578 00fc 0B       		.uleb128 0xb
+ 1579 00fd 3B       		.uleb128 0x3b
+ 1580 00fe 0B       		.uleb128 0xb
+ 1581 00ff 27       		.uleb128 0x27
+ 1582 0100 19       		.uleb128 0x19
+ 1583 0101 3C       		.uleb128 0x3c
+ 1584 0102 19       		.uleb128 0x19
+ 1585 0103 01       		.uleb128 0x1
+ 1586 0104 13       		.uleb128 0x13
+ 1587 0105 00       		.byte	0
+ 1588 0106 00       		.byte	0
+ 1589 0107 14       		.uleb128 0x14
+ 1590 0108 05       		.uleb128 0x5
+ 1591 0109 00       		.byte	0
+ 1592 010a 49       		.uleb128 0x49
+ 1593 010b 13       		.uleb128 0x13
+ 1594 010c 00       		.byte	0
+ 1595 010d 00       		.byte	0
+ 1596 010e 00       		.byte	0
+ 1597              		.section	.debug_loc,"",%progbits
+ 1598              	.Ldebug_loc0:
+ 1599              	.LLST0:
+ 1600 0000 00000000 		.4byte	.LVL0
+ 1601 0004 14000000 		.4byte	.LVL1
+ 1602 0008 0100     		.2byte	0x1
+ 1603 000a 50       		.byte	0x50
+ 1604 000b 14000000 		.4byte	.LVL1
+ 1605 000f 22010000 		.4byte	.LVL24
+ 1606 0013 0100     		.2byte	0x1
+ 1607 0015 53       		.byte	0x53
+ 1608 0016 22010000 		.4byte	.LVL24
+ 1609 001a 4A020000 		.4byte	.LFE35
+ 1610 001e 0400     		.2byte	0x4
+ 1611 0020 F3       		.byte	0xf3
+ 1612 0021 01       		.uleb128 0x1
+ 1613 0022 50       		.byte	0x50
+ 1614 0023 9F       		.byte	0x9f
+ 1615 0024 00000000 		.4byte	0
+ 1616 0028 00000000 		.4byte	0
+ 1617              	.LLST1:
+ 1618 002c 1A000000 		.4byte	.LVL2
+ 1619 0030 3E020000 		.4byte	.LVL61
+ 1620 0034 0100     		.2byte	0x1
+ 1621 0036 59       		.byte	0x59
+ 1622 0037 00000000 		.4byte	0
+ 1623 003b 00000000 		.4byte	0
+ 1624              	.LLST2:
+ 1625 003f 24000000 		.4byte	.LVL3
+ 1626 0043 3E020000 		.4byte	.LVL60
+ 1627 0047 0100     		.2byte	0x1
+ 1628 0049 58       		.byte	0x58
+ 1629 004a 00000000 		.4byte	0
+ 1630 004e 00000000 		.4byte	0
+ 1631              	.LLST3:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 31
+
+
+ 1632 0052 2C000000 		.4byte	.LVL4
+ 1633 0056 3E020000 		.4byte	.LVL59
+ 1634 005a 0100     		.2byte	0x1
+ 1635 005c 57       		.byte	0x57
+ 1636 005d 00000000 		.4byte	0
+ 1637 0061 00000000 		.4byte	0
+ 1638              	.LLST4:
+ 1639 0065 34000000 		.4byte	.LVL5
+ 1640 0069 3E020000 		.4byte	.LVL58
+ 1641 006d 0100     		.2byte	0x1
+ 1642 006f 56       		.byte	0x56
+ 1643 0070 00000000 		.4byte	0
+ 1644 0074 00000000 		.4byte	0
+ 1645              	.LLST5:
+ 1646 0078 3C000000 		.4byte	.LVL6
+ 1647 007c 3E020000 		.4byte	.LVL57
+ 1648 0080 0100     		.2byte	0x1
+ 1649 0082 55       		.byte	0x55
+ 1650 0083 00000000 		.4byte	0
+ 1651 0087 00000000 		.4byte	0
+ 1652              	.LLST6:
+ 1653 008b 46000000 		.4byte	.LVL7
+ 1654 008f 3E020000 		.4byte	.LVL56
+ 1655 0093 0200     		.2byte	0x2
+ 1656 0095 7D       		.byte	0x7d
+ 1657 0096 00       		.sleb128 0
+ 1658 0097 3E020000 		.4byte	.LVL56
+ 1659 009b 4A020000 		.4byte	.LFE35
+ 1660 009f 0300     		.2byte	0x3
+ 1661 00a1 91       		.byte	0x91
+ 1662 00a2 987F     		.sleb128 -104
+ 1663 00a4 00000000 		.4byte	0
+ 1664 00a8 00000000 		.4byte	0
+ 1665              	.LLST7:
+ 1666 00ac 68000000 		.4byte	.LVL10
+ 1667 00b0 3E020000 		.4byte	.LVL62
+ 1668 00b4 0100     		.2byte	0x1
+ 1669 00b6 5A       		.byte	0x5a
+ 1670 00b7 00000000 		.4byte	0
+ 1671 00bb 00000000 		.4byte	0
+ 1672              	.LLST8:
+ 1673 00bf 74000000 		.4byte	.LVL11
+ 1674 00c3 3E020000 		.4byte	.LVL63
+ 1675 00c7 0100     		.2byte	0x1
+ 1676 00c9 5B       		.byte	0x5b
+ 1677 00ca 00000000 		.4byte	0
+ 1678 00ce 00000000 		.4byte	0
+ 1679              	.LLST9:
+ 1680 00d2 4C010000 		.4byte	.LVL26
+ 1681 00d6 12020000 		.4byte	.LVL49
+ 1682 00da 0100     		.2byte	0x1
+ 1683 00dc 54       		.byte	0x54
+ 1684 00dd 12020000 		.4byte	.LVL49
+ 1685 00e1 3E020000 		.4byte	.LVL56
+ 1686 00e5 2300     		.2byte	0x23
+ 1687 00e7 75       		.byte	0x75
+ 1688 00e8 00       		.sleb128 0
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 32
+
+
+ 1689 00e9 91       		.byte	0x91
+ 1690 00ea 9C7F     		.sleb128 -100
+ 1691 00ec 06       		.byte	0x6
+ 1692 00ed 22       		.byte	0x22
+ 1693 00ee 76       		.byte	0x76
+ 1694 00ef 00       		.sleb128 0
+ 1695 00f0 22       		.byte	0x22
+ 1696 00f1 77       		.byte	0x77
+ 1697 00f2 00       		.sleb128 0
+ 1698 00f3 22       		.byte	0x22
+ 1699 00f4 78       		.byte	0x78
+ 1700 00f5 00       		.sleb128 0
+ 1701 00f6 22       		.byte	0x22
+ 1702 00f7 79       		.byte	0x79
+ 1703 00f8 00       		.sleb128 0
+ 1704 00f9 22       		.byte	0x22
+ 1705 00fa 7D       		.byte	0x7d
+ 1706 00fb 00       		.sleb128 0
+ 1707 00fc 06       		.byte	0x6
+ 1708 00fd 22       		.byte	0x22
+ 1709 00fe 91       		.byte	0x91
+ 1710 00ff A07F     		.sleb128 -96
+ 1711 0101 06       		.byte	0x6
+ 1712 0102 22       		.byte	0x22
+ 1713 0103 7A       		.byte	0x7a
+ 1714 0104 00       		.sleb128 0
+ 1715 0105 22       		.byte	0x22
+ 1716 0106 7B       		.byte	0x7b
+ 1717 0107 00       		.sleb128 0
+ 1718 0108 22       		.byte	0x22
+ 1719 0109 9F       		.byte	0x9f
+ 1720 010a 3E020000 		.4byte	.LVL56
+ 1721 010e 3E020000 		.4byte	.LVL57
+ 1722 0112 2400     		.2byte	0x24
+ 1723 0114 75       		.byte	0x75
+ 1724 0115 00       		.sleb128 0
+ 1725 0116 91       		.byte	0x91
+ 1726 0117 9C7F     		.sleb128 -100
+ 1727 0119 06       		.byte	0x6
+ 1728 011a 22       		.byte	0x22
+ 1729 011b 76       		.byte	0x76
+ 1730 011c 00       		.sleb128 0
+ 1731 011d 22       		.byte	0x22
+ 1732 011e 77       		.byte	0x77
+ 1733 011f 00       		.sleb128 0
+ 1734 0120 22       		.byte	0x22
+ 1735 0121 78       		.byte	0x78
+ 1736 0122 00       		.sleb128 0
+ 1737 0123 22       		.byte	0x22
+ 1738 0124 79       		.byte	0x79
+ 1739 0125 00       		.sleb128 0
+ 1740 0126 22       		.byte	0x22
+ 1741 0127 91       		.byte	0x91
+ 1742 0128 987F     		.sleb128 -104
+ 1743 012a 06       		.byte	0x6
+ 1744 012b 22       		.byte	0x22
+ 1745 012c 91       		.byte	0x91
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 33
+
+
+ 1746 012d A07F     		.sleb128 -96
+ 1747 012f 06       		.byte	0x6
+ 1748 0130 22       		.byte	0x22
+ 1749 0131 7A       		.byte	0x7a
+ 1750 0132 00       		.sleb128 0
+ 1751 0133 22       		.byte	0x22
+ 1752 0134 7B       		.byte	0x7b
+ 1753 0135 00       		.sleb128 0
+ 1754 0136 22       		.byte	0x22
+ 1755 0137 9F       		.byte	0x9f
+ 1756 0138 00000000 		.4byte	0
+ 1757 013c 00000000 		.4byte	0
+ 1758              		.section	.debug_aranges,"",%progbits
+ 1759 0000 1C000000 		.4byte	0x1c
+ 1760 0004 0200     		.2byte	0x2
+ 1761 0006 00000000 		.4byte	.Ldebug_info0
+ 1762 000a 04       		.byte	0x4
+ 1763 000b 00       		.byte	0
+ 1764 000c 0000     		.2byte	0
+ 1765 000e 0000     		.2byte	0
+ 1766 0010 00000000 		.4byte	.LFB35
+ 1767 0014 4A020000 		.4byte	.LFE35-.LFB35
+ 1768 0018 00000000 		.4byte	0
+ 1769 001c 00000000 		.4byte	0
+ 1770              		.section	.debug_ranges,"",%progbits
+ 1771              	.Ldebug_ranges0:
+ 1772 0000 00000000 		.4byte	.LFB35
+ 1773 0004 4A020000 		.4byte	.LFE35
+ 1774 0008 00000000 		.4byte	0
+ 1775 000c 00000000 		.4byte	0
+ 1776              		.section	.debug_line,"",%progbits
+ 1777              	.Ldebug_line0:
+ 1778 0000 C2000000 		.section	.debug_str,"MS",%progbits,1
+ 1778      02007600 
+ 1778      00000201 
+ 1778      FB0E0D00 
+ 1778      01010101 
+ 1779              	.LASF77:
+ 1780 0000 74696D65 		.ascii	"time5\000"
+ 1780      3500
+ 1781              	.LASF78:
+ 1782 0006 74696D65 		.ascii	"time6\000"
+ 1782      3600
+ 1783              	.LASF79:
+ 1784 000c 74696D65 		.ascii	"time7\000"
+ 1784      3700
+ 1785              	.LASF80:
+ 1786 0012 74696D65 		.ascii	"time8\000"
+ 1786      3800
+ 1787              	.LASF81:
+ 1788 0018 74696D65 		.ascii	"time9\000"
+ 1788      3900
+ 1789              	.LASF12:
+ 1790 001e 666C6F61 		.ascii	"float\000"
+ 1790      7400
+ 1791              	.LASF99:
+ 1792 0024 50574D5F 		.ascii	"PWM_1_Start\000"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 34
+
+
+ 1792      315F5374 
+ 1792      61727400 
+ 1793              	.LASF95:
+ 1794 0030 73657276 		.ascii	"servo1_posDT\000"
+ 1794      6F315F70 
+ 1794      6F734454 
+ 1794      00
+ 1795              	.LASF51:
+ 1796 003d 4359424C 		.ascii	"CYBLE_EVT_GATTS_EXEC_WRITE_REQ\000"
+ 1796      455F4556 
+ 1796      545F4741 
+ 1796      5454535F 
+ 1796      45584543 
+ 1797              	.LASF2:
+ 1798 005c 73686F72 		.ascii	"short int\000"
+ 1798      7420696E 
+ 1798      7400
+ 1799              	.LASF27:
+ 1800 0066 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_FAILED\000"
+ 1800      455F4556 
+ 1800      545F4741 
+ 1800      505F4155 
+ 1800      54485F46 
+ 1801              	.LASF37:
+ 1802 0080 4359424C 		.ascii	"CYBLE_EVT_GATT_DISCONNECT_IND\000"
+ 1802      455F4556 
+ 1802      545F4741 
+ 1802      54545F44 
+ 1802      4953434F 
+ 1803              	.LASF15:
+ 1804 009e 73697A65 		.ascii	"sizetype\000"
+ 1804      74797065 
+ 1804      00
+ 1805              	.LASF7:
+ 1806 00a7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1806      206C6F6E 
+ 1806      6720756E 
+ 1806      7369676E 
+ 1806      65642069 
+ 1807              	.LASF35:
+ 1808 00be 4359424C 		.ascii	"CYBLE_EVT_GATTC_ERROR_RSP\000"
+ 1808      455F4556 
+ 1808      545F4741 
+ 1808      5454435F 
+ 1808      4552524F 
+ 1809              	.LASF20:
+ 1810 00d8 4359424C 		.ascii	"CYBLE_EVT_HCI_STATUS\000"
+ 1810      455F4556 
+ 1810      545F4843 
+ 1810      495F5354 
+ 1810      41545553 
+ 1811              	.LASF41:
+ 1812 00ed 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 1812      455F4556 
+ 1812      545F4741 
+ 1812      5454435F 
+ 1812      52454144 
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 35
+
+
+ 1813              	.LASF17:
+ 1814 010e 4359424C 		.ascii	"CYBLE_EVT_STACK_ON\000"
+ 1814      455F4556 
+ 1814      545F5354 
+ 1814      41434B5F 
+ 1814      4F4E00
+ 1815              	.LASF38:
+ 1816 0121 4359424C 		.ascii	"CYBLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 1816      455F4556 
+ 1816      545F4741 
+ 1816      5454535F 
+ 1816      58434E48 
+ 1817              	.LASF10:
+ 1818 013f 75696E74 		.ascii	"uint16\000"
+ 1818      313600
+ 1819              	.LASF34:
+ 1820 0146 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 1820      455F4556 
+ 1820      545F4741 
+ 1820      505F4B45 
+ 1820      59494E46 
+ 1821              	.LASF46:
+ 1822 016a 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 1822      455F4556 
+ 1822      545F4741 
+ 1822      5454435F 
+ 1822      52454144 
+ 1823              	.LASF55:
+ 1824 0189 4359424C 		.ascii	"CYBLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ 1824      455F4556 
+ 1824      545F4741 
+ 1824      5454535F 
+ 1824      48414E44 
+ 1825              	.LASF16:
+ 1826 01aa 4359424C 		.ascii	"CYBLE_EVT_HOST_INVALID\000"
+ 1826      455F4556 
+ 1826      545F484F 
+ 1826      53545F49 
+ 1826      4E56414C 
+ 1827              	.LASF62:
+ 1828 01c1 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 1828      455F4556 
+ 1828      545F4C32 
+ 1828      4341505F 
+ 1828      43424643 
+ 1829              	.LASF65:
+ 1830 01df 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 1830      455F4556 
+ 1830      545F4C32 
+ 1830      4341505F 
+ 1830      43424643 
+ 1831              	.LASF104:
+ 1832 0200 55706461 		.ascii	"UpdateServoPWM\000"
+ 1832      74655365 
+ 1832      72766F50 
+ 1832      574D00
+ 1833              	.LASF44:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 36
+
+
+ 1834 020f 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_RSP\000"
+ 1834      455F4556 
+ 1834      545F4741 
+ 1834      5454435F 
+ 1834      52454144 
+ 1835              	.LASF48:
+ 1836 0228 4359424C 		.ascii	"CYBLE_EVT_GATTC_WRITE_RSP\000"
+ 1836      455F4556 
+ 1836      545F4741 
+ 1836      5454435F 
+ 1836      57524954 
+ 1837              	.LASF6:
+ 1838 0242 6C6F6E67 		.ascii	"long long int\000"
+ 1838      206C6F6E 
+ 1838      6720696E 
+ 1838      7400
+ 1839              	.LASF96:
+ 1840 0250 74696D65 		.ascii	"timecum\000"
+ 1840      63756D00 
+ 1841              	.LASF4:
+ 1842 0258 6C6F6E67 		.ascii	"long int\000"
+ 1842      20696E74 
+ 1842      00
+ 1843              	.LASF54:
+ 1844 0261 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 1844      455F4556 
+ 1844      545F4741 
+ 1844      5454435F 
+ 1844      48414E44 
+ 1845              	.LASF29:
+ 1846 0282 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 1846      455F4556 
+ 1846      545F4741 
+ 1846      505F4445 
+ 1846      56494345 
+ 1847              	.LASF103:
+ 1848 02a1 463A5C45 		.ascii	"F:\\Electronics\\PSoC Creator\\SimpleTimer\\EZtimer"
+ 1848      6C656374 
+ 1848      726F6E69 
+ 1848      63735C50 
+ 1848      536F4320 
+ 1849 02d0 2E637964 		.ascii	".cydsn\000"
+ 1849      736E00
+ 1850              	.LASF53:
+ 1851 02d7 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 1851      455F4556 
+ 1851      545F4741 
+ 1851      5454435F 
+ 1851      48414E44 
+ 1852              	.LASF21:
+ 1853 02f8 4359424C 		.ascii	"CYBLE_EVT_STACK_BUSY_STATUS\000"
+ 1853      455F4556 
+ 1853      545F5354 
+ 1853      41434B5F 
+ 1853      42555359 
+ 1854              	.LASF102:
+ 1855 0314 2E5C7365 		.ascii	".\\servos.c\000"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 37
+
+
+ 1855      72766F73 
+ 1855      2E6300
+ 1856              	.LASF25:
+ 1857 031f 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 1857      455F4556 
+ 1857      545F4741 
+ 1857      505F5041 
+ 1857      53534B45 
+ 1858              	.LASF101:
+ 1859 0345 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1859      4320342E 
+ 1859      392E3320 
+ 1859      32303135 
+ 1859      30333033 
+ 1860 0378 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1860      20726576 
+ 1860      6973696F 
+ 1860      6E203232 
+ 1860      31323230 
+ 1861 03ab 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1861      66756E63 
+ 1861      74696F6E 
+ 1861      2D736563 
+ 1861      74696F6E 
+ 1862              	.LASF97:
+ 1863 03d3 50574D5F 		.ascii	"PWM_1_WriteCompare\000"
+ 1863      315F5772 
+ 1863      69746543 
+ 1863      6F6D7061 
+ 1863      726500
+ 1864              	.LASF63:
+ 1865 03e6 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_CNF\000"
+ 1865      455F4556 
+ 1865      545F4C32 
+ 1865      4341505F 
+ 1865      43424643 
+ 1866              	.LASF72:
+ 1867 0404 4359424C 		.ascii	"CYBLE_EVT_MAX\000"
+ 1867      455F4556 
+ 1867      545F4D41 
+ 1867      5800
+ 1868              	.LASF9:
+ 1869 0412 75696E74 		.ascii	"uint8\000"
+ 1869      3800
+ 1870              	.LASF59:
+ 1871 0418 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 1871      455F4556 
+ 1871      545F4C32 
+ 1871      4341505F 
+ 1871      434F4E4E 
+ 1872              	.LASF1:
+ 1873 043e 756E7369 		.ascii	"unsigned char\000"
+ 1873      676E6564 
+ 1873      20636861 
+ 1873      7200
+ 1874              	.LASF50:
+ 1875 044c 4359424C 		.ascii	"CYBLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 38
+
+
+ 1875      455F4556 
+ 1875      545F4741 
+ 1875      5454535F 
+ 1875      50524550 
+ 1876              	.LASF71:
+ 1877 046b 4359424C 		.ascii	"CYBLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 1877      455F4556 
+ 1877      545F4C45 
+ 1877      5F50494E 
+ 1877      475F4155 
+ 1878              	.LASF42:
+ 1879 048a 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 1879      455F4556 
+ 1879      545F4741 
+ 1879      5454435F 
+ 1879      46494E44 
+ 1880              	.LASF0:
+ 1881 04a8 7369676E 		.ascii	"signed char\000"
+ 1881      65642063 
+ 1881      68617200 
+ 1882              	.LASF85:
+ 1883 04b4 73657276 		.ascii	"servo1_pos1\000"
+ 1883      6F315F70 
+ 1883      6F733100 
+ 1884              	.LASF47:
+ 1885 04c0 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_REQ\000"
+ 1885      455F4556 
+ 1885      545F4741 
+ 1885      5454535F 
+ 1885      57524954 
+ 1886              	.LASF87:
+ 1887 04da 73657276 		.ascii	"servo1_pos3\000"
+ 1887      6F315F70 
+ 1887      6F733300 
+ 1888              	.LASF43:
+ 1889 04e6 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 1889      455F4556 
+ 1889      545F4741 
+ 1889      5454435F 
+ 1889      46494E44 
+ 1890              	.LASF89:
+ 1891 050d 73657276 		.ascii	"servo1_pos5\000"
+ 1891      6F315F70 
+ 1891      6F733500 
+ 1892              	.LASF26:
+ 1893 0519 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_COMPLETE\000"
+ 1893      455F4556 
+ 1893      545F4741 
+ 1893      505F4155 
+ 1893      54485F43 
+ 1894              	.LASF8:
+ 1895 0535 756E7369 		.ascii	"unsigned int\000"
+ 1895      676E6564 
+ 1895      20696E74 
+ 1895      00
+ 1896              	.LASF92:
+ 1897 0542 73657276 		.ascii	"servo1_pos8\000"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 39
+
+
+ 1897      6F315F70 
+ 1897      6F733800 
+ 1898              	.LASF93:
+ 1899 054e 73657276 		.ascii	"servo1_pos9\000"
+ 1899      6F315F70 
+ 1899      6F733900 
+ 1900              	.LASF36:
+ 1901 055a 4359424C 		.ascii	"CYBLE_EVT_GATT_CONNECT_IND\000"
+ 1901      455F4556 
+ 1901      545F4741 
+ 1901      54545F43 
+ 1901      4F4E4E45 
+ 1902              	.LASF5:
+ 1903 0575 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1903      20756E73 
+ 1903      69676E65 
+ 1903      6420696E 
+ 1903      7400
+ 1904              	.LASF94:
+ 1905 0587 73657276 		.ascii	"servo1_pos10\000"
+ 1905      6F315F70 
+ 1905      6F733130 
+ 1905      00
+ 1906              	.LASF23:
+ 1907 0594 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ\000"
+ 1907      455F4556 
+ 1907      545F4741 
+ 1907      505F4155 
+ 1907      54485F52 
+ 1908              	.LASF64:
+ 1909 05ab 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 1909      455F4556 
+ 1909      545F4C32 
+ 1909      4341505F 
+ 1909      43424643 
+ 1910              	.LASF31:
+ 1911 05cc 4359424C 		.ascii	"CYBLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 1911      455F4556 
+ 1911      545F4741 
+ 1911      505F454E 
+ 1911      43525950 
+ 1912              	.LASF3:
+ 1913 05e9 73686F72 		.ascii	"short unsigned int\000"
+ 1913      7420756E 
+ 1913      7369676E 
+ 1913      65642069 
+ 1913      6E7400
+ 1914              	.LASF32:
+ 1915 05fc 4359424C 		.ascii	"CYBLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 1915      455F4556 
+ 1915      545F4741 
+ 1915      505F434F 
+ 1915      4E4E4543 
+ 1916              	.LASF14:
+ 1917 0625 63686172 		.ascii	"char\000"
+ 1917      00
+ 1918              	.LASF100:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 40
+
+
+ 1919 062a 50574D5F 		.ascii	"PWM_1_Stop\000"
+ 1919      315F5374 
+ 1919      6F7000
+ 1920              	.LASF61:
+ 1921 0635 4359424C 		.ascii	"CYBLE_EVT_L2CAP_COMMAND_REJ\000"
+ 1921      455F4556 
+ 1921      545F4C32 
+ 1921      4341505F 
+ 1921      434F4D4D 
+ 1922              	.LASF82:
+ 1923 0651 74696D65 		.ascii	"time10\000"
+ 1923      313000
+ 1924              	.LASF86:
+ 1925 0658 73657276 		.ascii	"servo1_pos2\000"
+ 1925      6F315F70 
+ 1925      6F733200 
+ 1926              	.LASF45:
+ 1927 0664 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 1927      455F4556 
+ 1927      545F4741 
+ 1927      5454435F 
+ 1927      52454144 
+ 1928              	.LASF88:
+ 1929 0682 73657276 		.ascii	"servo1_pos4\000"
+ 1929      6F315F70 
+ 1929      6F733400 
+ 1930              	.LASF52:
+ 1931 068e 4359424C 		.ascii	"CYBLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 1931      455F4556 
+ 1931      545F4741 
+ 1931      5454435F 
+ 1931      45584543 
+ 1932              	.LASF11:
+ 1933 06ad 75696E74 		.ascii	"uint32\000"
+ 1933      333200
+ 1934              	.LASF70:
+ 1935 06b4 4359424C 		.ascii	"CYBLE_EVT_PENDING_FLASH_WRITE\000"
+ 1935      455F4556 
+ 1935      545F5045 
+ 1935      4E44494E 
+ 1935      475F464C 
+ 1936              	.LASF67:
+ 1937 06d2 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 1937      455F4556 
+ 1937      545F4C32 
+ 1937      4341505F 
+ 1937      43424643 
+ 1938              	.LASF13:
+ 1939 06f5 646F7562 		.ascii	"double\000"
+ 1939      6C6500
+ 1940              	.LASF68:
+ 1941 06fc 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 1941      455F4556 
+ 1941      545F4C32 
+ 1941      4341505F 
+ 1941      43424643 
+ 1942              	.LASF24:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 41
+
+
+ 1943 071f 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 1943      455F4556 
+ 1943      545F4741 
+ 1943      505F5041 
+ 1943      53534B45 
+ 1944              	.LASF28:
+ 1945 0743 4359424C 		.ascii	"CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 1945      455F4556 
+ 1945      545F4741 
+ 1945      50505F41 
+ 1945      44564552 
+ 1946              	.LASF19:
+ 1947 076b 4359424C 		.ascii	"CYBLE_EVT_HARDWARE_ERROR\000"
+ 1947      455F4556 
+ 1947      545F4841 
+ 1947      52445741 
+ 1947      52455F45 
+ 1948              	.LASF66:
+ 1949 0784 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 1949      455F4556 
+ 1949      545F4C32 
+ 1949      4341505F 
+ 1949      43424643 
+ 1950              	.LASF60:
+ 1951 07a3 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 1951      455F4556 
+ 1951      545F4C32 
+ 1951      4341505F 
+ 1951      434F4E4E 
+ 1952              	.LASF22:
+ 1953 07c9 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 1953      455F4556 
+ 1953      545F4741 
+ 1953      50435F53 
+ 1953      43414E5F 
+ 1954              	.LASF18:
+ 1955 07ed 4359424C 		.ascii	"CYBLE_EVT_TIMEOUT\000"
+ 1955      455F4556 
+ 1955      545F5449 
+ 1955      4D454F55 
+ 1955      5400
+ 1956              	.LASF40:
+ 1957 07ff 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 1957      455F4556 
+ 1957      545F4741 
+ 1957      5454435F 
+ 1957      52454144 
+ 1958              	.LASF49:
+ 1959 0826 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 1959      455F4556 
+ 1959      545F4741 
+ 1959      5454535F 
+ 1959      57524954 
+ 1960              	.LASF39:
+ 1961 0844 4359424C 		.ascii	"CYBLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 1961      455F4556 
+ 1961      545F4741 
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 42
+
+
+ 1961      5454435F 
+ 1961      5843484E 
+ 1962              	.LASF105:
+ 1963 0862 44617461 		.ascii	"DataSet\000"
+ 1963      53657400 
+ 1964              	.LASF83:
+ 1965 086a 74696D65 		.ascii	"timeDT\000"
+ 1965      445400
+ 1966              	.LASF69:
+ 1967 0871 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 1967      455F4556 
+ 1967      545F4C32 
+ 1967      4341505F 
+ 1967      43424643 
+ 1968              	.LASF33:
+ 1969 0895 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_START_STOP\000"
+ 1969      455F4556 
+ 1969      545F4741 
+ 1969      50435F53 
+ 1969      43414E5F 
+ 1970              	.LASF58:
+ 1971 08b4 4359424C 		.ascii	"CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 1971      455F4556 
+ 1971      545F4741 
+ 1971      5454535F 
+ 1971      52454144 
+ 1972              	.LASF57:
+ 1973 08dd 4359424C 		.ascii	"CYBLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 1973      455F4556 
+ 1973      545F4741 
+ 1973      5454435F 
+ 1973      53544F50 
+ 1974              	.LASF98:
+ 1975 08ff 43794465 		.ascii	"CyDelay\000"
+ 1975      6C617900 
+ 1976              	.LASF90:
+ 1977 0907 73657276 		.ascii	"servo1_pos6\000"
+ 1977      6F315F70 
+ 1977      6F733600 
+ 1978              	.LASF91:
+ 1979 0913 73657276 		.ascii	"servo1_pos7\000"
+ 1979      6F315F70 
+ 1979      6F733700 
+ 1980              	.LASF30:
+ 1981 091f 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 1981      455F4556 
+ 1981      545F4741 
+ 1981      505F4445 
+ 1981      56494345 
+ 1982              	.LASF84:
+ 1983 0941 73657276 		.ascii	"servo1_posStart\000"
+ 1983      6F315F70 
+ 1983      6F735374 
+ 1983      61727400 
+ 1984              	.LASF56:
+ 1985 0951 4359424C 		.ascii	"CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 1985      455F4556 
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cclTTqim.s 			page 43
+
+
+ 1985      545F4741 
+ 1985      5454535F 
+ 1985      44415441 
+ 1986              	.LASF73:
+ 1987 0975 74696D65 		.ascii	"time1\000"
+ 1987      3100
+ 1988              	.LASF74:
+ 1989 097b 74696D65 		.ascii	"time2\000"
+ 1989      3200
+ 1990              	.LASF75:
+ 1991 0981 74696D65 		.ascii	"time3\000"
+ 1991      3300
+ 1992              	.LASF76:
+ 1993 0987 74696D65 		.ascii	"time4\000"
+ 1993      3400
+ 1994              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

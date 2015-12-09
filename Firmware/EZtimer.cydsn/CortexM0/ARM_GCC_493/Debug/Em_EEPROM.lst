@@ -1,0 +1,1327 @@
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Em_EEPROM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Em_EEPROM_Start,"ax",%progbits
+  18              		.align	2
+  19              		.global	Em_EEPROM_Start
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Em_EEPROM_Start, %function
+  23              	Em_EEPROM_Start:
+  24              	.LFB2:
+  25              		.file 1 ".\\Em_EEPROM.c"
+   1:.\Em_EEPROM.c **** /*******************************************************************************
+   2:.\Em_EEPROM.c **** * File Name: Em_EEPROM.c
+   3:.\Em_EEPROM.c **** * Version 1.10
+   4:.\Em_EEPROM.c **** *
+   5:.\Em_EEPROM.c **** * Description:
+   6:.\Em_EEPROM.c **** *  This file provides the source code to API for the Emulated EEPROM Component.
+   7:.\Em_EEPROM.c **** *
+   8:.\Em_EEPROM.c **** ********************************************************************************
+   9:.\Em_EEPROM.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  10:.\Em_EEPROM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  11:.\Em_EEPROM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  12:.\Em_EEPROM.c **** * the software package with which this file was provided.
+  13:.\Em_EEPROM.c **** *******************************************************************************/
+  14:.\Em_EEPROM.c **** 
+  15:.\Em_EEPROM.c **** #include "Em_EEPROM.h"
+  16:.\Em_EEPROM.c **** 
+  17:.\Em_EEPROM.c **** 
+  18:.\Em_EEPROM.c **** /*******************************************************************************
+  19:.\Em_EEPROM.c **** * Function Name: Em_EEPROM_Start
+  20:.\Em_EEPROM.c **** ********************************************************************************
+  21:.\Em_EEPROM.c **** *
+  22:.\Em_EEPROM.c **** * Summary:
+  23:.\Em_EEPROM.c **** *  Empty function. Included for consistency with other
+  24:.\Em_EEPROM.c **** *  components.
+  25:.\Em_EEPROM.c **** *
+  26:.\Em_EEPROM.c **** * Parameters:
+  27:.\Em_EEPROM.c **** *  None
+  28:.\Em_EEPROM.c **** *
+  29:.\Em_EEPROM.c **** * Return:
+  30:.\Em_EEPROM.c **** *  None
+  31:.\Em_EEPROM.c **** *
+  32:.\Em_EEPROM.c **** *******************************************************************************/
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 2
+
+
+  33:.\Em_EEPROM.c **** void Em_EEPROM_Start(void) 
+  34:.\Em_EEPROM.c **** {
+  26              		.loc 1 34 0
+  27              		.cfi_startproc
+  35:.\Em_EEPROM.c **** 
+  36:.\Em_EEPROM.c **** }
+  28              		.loc 1 36 0
+  29              		@ sp needed
+  30 0000 7047     		bx	lr
+  31              		.cfi_endproc
+  32              	.LFE2:
+  33              		.size	Em_EEPROM_Start, .-Em_EEPROM_Start
+  34 0002 C046     		.section	.text.Em_EEPROM_Stop,"ax",%progbits
+  35              		.align	2
+  36              		.global	Em_EEPROM_Stop
+  37              		.code	16
+  38              		.thumb_func
+  39              		.type	Em_EEPROM_Stop, %function
+  40              	Em_EEPROM_Stop:
+  41              	.LFB3:
+  37:.\Em_EEPROM.c **** 
+  38:.\Em_EEPROM.c **** 
+  39:.\Em_EEPROM.c **** /*******************************************************************************
+  40:.\Em_EEPROM.c **** * Function Name: Em_EEPROM_Stop
+  41:.\Em_EEPROM.c **** ********************************************************************************
+  42:.\Em_EEPROM.c **** *
+  43:.\Em_EEPROM.c **** * Summary:
+  44:.\Em_EEPROM.c **** *  Empty function. Included for consistency with other
+  45:.\Em_EEPROM.c **** *  components.
+  46:.\Em_EEPROM.c **** *
+  47:.\Em_EEPROM.c **** * Parameters:
+  48:.\Em_EEPROM.c **** *  None
+  49:.\Em_EEPROM.c **** *
+  50:.\Em_EEPROM.c **** * Return:
+  51:.\Em_EEPROM.c **** *  None
+  52:.\Em_EEPROM.c **** *
+  53:.\Em_EEPROM.c **** *******************************************************************************/
+  54:.\Em_EEPROM.c **** void Em_EEPROM_Stop(void) 
+  55:.\Em_EEPROM.c **** {
+  42              		.loc 1 55 0
+  43              		.cfi_startproc
+  56:.\Em_EEPROM.c **** 
+  57:.\Em_EEPROM.c **** }
+  44              		.loc 1 57 0
+  45              		@ sp needed
+  46 0000 7047     		bx	lr
+  47              		.cfi_endproc
+  48              	.LFE3:
+  49              		.size	Em_EEPROM_Stop, .-Em_EEPROM_Stop
+  50 0002 C046     		.section	.text.Em_EEPROM_Write,"ax",%progbits
+  51              		.align	2
+  52              		.global	Em_EEPROM_Write
+  53              		.code	16
+  54              		.thumb_func
+  55              		.type	Em_EEPROM_Write, %function
+  56              	Em_EEPROM_Write:
+  57              	.LFB4:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 3
+
+
+  58:.\Em_EEPROM.c **** 
+  59:.\Em_EEPROM.c **** 
+  60:.\Em_EEPROM.c **** /*******************************************************************************
+  61:.\Em_EEPROM.c **** * Function Name: Em_EEPROM_Write
+  62:.\Em_EEPROM.c **** ********************************************************************************
+  63:.\Em_EEPROM.c **** *
+  64:.\Em_EEPROM.c **** * Summary:
+  65:.\Em_EEPROM.c **** *  Writes the specified number of bytes from the source buffer in SRAM to the
+  66:.\Em_EEPROM.c **** *  emulated EEPROM array in flash, without modifying other data in flash.
+  67:.\Em_EEPROM.c **** *
+  68:.\Em_EEPROM.c **** * Parameters:
+  69:.\Em_EEPROM.c **** *  srcBuf:    Pointer to the SRAM buffer holding the data to write.
+  70:.\Em_EEPROM.c **** *  eepromPtr: Pointer to the array or variable in flash representing
+  71:.\Em_EEPROM.c **** *             the emulated EEPROM.
+  72:.\Em_EEPROM.c **** *  byteCount: Number of bytes to write from srcBuf to eepromPtr.
+  73:.\Em_EEPROM.c **** *
+  74:.\Em_EEPROM.c **** * Return:
+  75:.\Em_EEPROM.c **** *    CYRET_SUCCESS     Successful write.
+  76:.\Em_EEPROM.c **** *    CYRET_BAD_PARAM   eepromPtr is out of range of flash memory.
+  77:.\Em_EEPROM.c **** *    CYRET_UNKNOWN     Other error in writing flash.
+  78:.\Em_EEPROM.c **** *
+  79:.\Em_EEPROM.c **** *******************************************************************************/
+  80:.\Em_EEPROM.c **** #if (CY_PSOC3)
+  81:.\Em_EEPROM.c ****     cystatus Em_EEPROM_Write(const uint8 srcBuf[], const uint8 eepromPtr[], uint16 byteCount)
+  82:.\Em_EEPROM.c ****                                                                             
+  83:.\Em_EEPROM.c **** #else
+  84:.\Em_EEPROM.c ****     cystatus Em_EEPROM_Write(const uint8 srcBuf[], const uint8 eepromPtr[], uint32 byteCount)
+  85:.\Em_EEPROM.c **** #endif /* (!CY_PSOC3) */
+  86:.\Em_EEPROM.c **** {
+  58              		.loc 1 86 0
+  59              		.cfi_startproc
+  60              	.LVL0:
+  61 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  62              		.cfi_def_cfa_offset 20
+  63              		.cfi_offset 4, -20
+  64              		.cfi_offset 5, -16
+  65              		.cfi_offset 6, -12
+  66              		.cfi_offset 7, -8
+  67              		.cfi_offset 14, -4
+  68 0002 4F46     		mov	r7, r9
+  69 0004 4646     		mov	r6, r8
+  70 0006 C0B4     		push	{r6, r7}
+  71              		.cfi_def_cfa_offset 28
+  72              		.cfi_offset 8, -28
+  73              		.cfi_offset 9, -24
+  74 0008 A1B0     		sub	sp, sp, #132
+  75              		.cfi_def_cfa_offset 160
+  87:.\Em_EEPROM.c ****     uint8 writeBuffer[CY_FLASH_SIZEOF_ROW];
+  88:.\Em_EEPROM.c ****     uint32 arrayId;
+  89:.\Em_EEPROM.c ****     uint32 rowId;
+  90:.\Em_EEPROM.c ****     uint32 dstIndex;
+  91:.\Em_EEPROM.c ****     uint32 srcIndex;
+  92:.\Em_EEPROM.c ****     cystatus rc;
+  93:.\Em_EEPROM.c ****     uint32 eeOffset;
+  94:.\Em_EEPROM.c ****     uint32 byteOffset;
+  95:.\Em_EEPROM.c ****     
+  96:.\Em_EEPROM.c ****     #if (!CY_PSOC4)
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 4
+
+
+  97:.\Em_EEPROM.c ****         #if (CYDEV_ECC_ENABLE == 0)
+  98:.\Em_EEPROM.c ****             uint8 rowBuffer[CY_FLASH_SIZEOF_ROW + CY_FLASH_SIZEOF_ECC_ROW];
+  99:.\Em_EEPROM.c ****         #endif /* CYDEV_ECC_ENABLE == 0) */
+ 100:.\Em_EEPROM.c ****     #endif /* (!CY_PSOC4) */
+ 101:.\Em_EEPROM.c **** 
+ 102:.\Em_EEPROM.c ****     eeOffset = (uint32)eepromPtr;
+  76              		.loc 1 102 0
+  77 000a 0E1C     		mov	r6, r1
+  78              	.LVL1:
+ 103:.\Em_EEPROM.c ****     #if (CY_PSOC3)
+ 104:.\Em_EEPROM.c ****         eeOffset &= Em_EEPROM_CODE_ADDR_MASK;
+ 105:.\Em_EEPROM.c ****     #endif /* (CY_PSOC3) */
+ 106:.\Em_EEPROM.c **** 
+ 107:.\Em_EEPROM.c ****     /* Make sure, that eepromPtr[] points to ROM */
+ 108:.\Em_EEPROM.c ****     #if (CY_PSOC3)
+ 109:.\Em_EEPROM.c ****         if (((uint32)eepromPtr >= Em_EEPROM_CODE_ADDR_OFFSET) &&
+ 110:.\Em_EEPROM.c ****             (((uint32)eepromPtr + byteCount) <= Em_EEPROM_CODE_ADDR_END))
+ 111:.\Em_EEPROM.c ****     #else
+ 112:.\Em_EEPROM.c ****         if (((uint32)eepromPtr + byteCount) < Em_EEPROM_FLASH_END_ADDR)
+  79              		.loc 1 112 0
+  80 000c 8C18     		add	r4, r1, r2
+  81 000e 1E4B     		ldr	r3, .L16
+  82 0010 9C42     		cmp	r4, r3
+  83 0012 2FD8     		bhi	.L12
+  84 0014 171C     		mov	r7, r2
+  85 0016 8046     		mov	r8, r0
+ 113:.\Em_EEPROM.c ****     #endif /* (CY_PSOC3) */
+ 114:.\Em_EEPROM.c ****     {
+ 115:.\Em_EEPROM.c ****         #if (!CY_PSOC4)
+ 116:.\Em_EEPROM.c ****             (void)CySetTemp();
+ 117:.\Em_EEPROM.c **** 
+ 118:.\Em_EEPROM.c ****             #if(CYDEV_ECC_ENABLE == 0)
+ 119:.\Em_EEPROM.c ****                 (void)CySetFlashEEBuffer(rowBuffer);
+ 120:.\Em_EEPROM.c ****             #endif
+ 121:.\Em_EEPROM.c ****         #endif /* (!CY_PSOC4) */
+ 122:.\Em_EEPROM.c **** 
+ 123:.\Em_EEPROM.c ****         arrayId = eeOffset / CY_FLASH_SIZEOF_ARRAY;
+  86              		.loc 1 123 0
+  87 0018 0C0C     		lsr	r4, r1, #16
+  88              	.LVL2:
+ 124:.\Em_EEPROM.c ****         rowId = (eeOffset / CY_FLASH_SIZEOF_ROW) % Em_EEPROM_ROWS_IN_ARRAY;
+  89              		.loc 1 124 0
+  90 001a 0904     		lsl	r1, r1, #16
+  91              	.LVL3:
+  92 001c CB0D     		lsr	r3, r1, #23
+  93 001e 9946     		mov	r9, r3
+  94              	.LVL4:
+ 125:.\Em_EEPROM.c ****         byteOffset = (CY_FLASH_SIZEOF_ARRAY * arrayId) + (CY_FLASH_SIZEOF_ROW * rowId);
+  95              		.loc 1 125 0
+  96 0020 6402     		lsl	r4, r4, #9
+  97              	.LVL5:
+  98 0022 4C44     		add	r4, r4, r9
+  99 0024 E401     		lsl	r4, r4, #7
+ 100              	.LVL6:
+ 126:.\Em_EEPROM.c ****         srcIndex = 0u;
+ 127:.\Em_EEPROM.c **** 
+ 128:.\Em_EEPROM.c ****         rc = CYRET_SUCCESS;
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 5
+
+
+ 101              		.loc 1 128 0
+ 102 0026 0020     		mov	r0, #0
+ 103              	.LVL7:
+ 126:.\Em_EEPROM.c ****         srcIndex = 0u;
+ 104              		.loc 1 126 0
+ 105 0028 0025     		mov	r5, #0
+ 129:.\Em_EEPROM.c **** 
+ 130:.\Em_EEPROM.c ****         while ((srcIndex < byteCount) && (CYRET_SUCCESS == rc))
+ 106              		.loc 1 130 0
+ 107 002a 1EE0     		b	.L5
+ 108              	.LVL8:
+ 109              	.L8:
+ 131:.\Em_EEPROM.c ****         {
+ 132:.\Em_EEPROM.c ****             /* Copy data to the write buffer either from the source buffer or from the flash */
+ 133:.\Em_EEPROM.c ****             for (dstIndex = 0u; dstIndex < CY_FLASH_SIZEOF_ROW; dstIndex++)
+ 134:.\Em_EEPROM.c ****             {
+ 135:.\Em_EEPROM.c ****                 if ((byteOffset >= eeOffset) && (srcIndex < byteCount))
+ 110              		.loc 1 135 0
+ 111 002c B442     		cmp	r4, r6
+ 112 002e 07D3     		bcc	.L6
+ 113              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 114 0030 BD42     		cmp	r5, r7
+ 115 0032 05D2     		bcs	.L6
+ 136:.\Em_EEPROM.c ****                 {
+ 137:.\Em_EEPROM.c ****                     writeBuffer[dstIndex] = srcBuf[srcIndex];
+ 116              		.loc 1 137 0 is_stmt 1
+ 117 0034 4246     		mov	r2, r8
+ 118 0036 525D     		ldrb	r2, [r2, r5]
+ 119 0038 6946     		mov	r1, sp
+ 120 003a CA54     		strb	r2, [r1, r3]
+ 138:.\Em_EEPROM.c ****                     srcIndex++;
+ 121              		.loc 1 138 0
+ 122 003c 0135     		add	r5, r5, #1
+ 123              	.LVL9:
+ 124 003e 02E0     		b	.L7
+ 125              	.L6:
+ 139:.\Em_EEPROM.c ****                 }
+ 140:.\Em_EEPROM.c ****                 else
+ 141:.\Em_EEPROM.c ****                 {
+ 142:.\Em_EEPROM.c ****                     writeBuffer[dstIndex] = CY_GET_XTND_REG8(CYDEV_FLASH_BASE + byteOffset);
+ 126              		.loc 1 142 0
+ 127 0040 2278     		ldrb	r2, [r4]
+ 128 0042 6946     		mov	r1, sp
+ 129 0044 CA54     		strb	r2, [r1, r3]
+ 130              	.L7:
+ 143:.\Em_EEPROM.c ****                 }
+ 144:.\Em_EEPROM.c ****                 byteOffset++;
+ 131              		.loc 1 144 0 discriminator 2
+ 132 0046 0134     		add	r4, r4, #1
+ 133              	.LVL10:
+ 133:.\Em_EEPROM.c ****             {
+ 134              		.loc 1 133 0 discriminator 2
+ 135 0048 0133     		add	r3, r3, #1
+ 136              	.LVL11:
+ 137 004a 00E0     		b	.L10
+ 138              	.LVL12:
+ 139              	.L14:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 6
+
+
+ 140 004c 0023     		mov	r3, #0
+ 141              	.L10:
+ 142              	.LVL13:
+ 133:.\Em_EEPROM.c ****             {
+ 143              		.loc 1 133 0 is_stmt 0 discriminator 1
+ 144 004e 7F2B     		cmp	r3, #127
+ 145 0050 ECD9     		bls	.L8
+ 145:.\Em_EEPROM.c ****             }
+ 146:.\Em_EEPROM.c **** 
+ 147:.\Em_EEPROM.c ****             /* Write flash row */
+ 148:.\Em_EEPROM.c ****             #if (CY_PSOC4)
+ 149:.\Em_EEPROM.c ****                 rc = CySysFlashWriteRow(rowId, writeBuffer);
+ 146              		.loc 1 149 0 is_stmt 1
+ 147 0052 4846     		mov	r0, r9
+ 148              	.LVL14:
+ 149 0054 6946     		mov	r1, sp
+ 150 0056 FFF7FEFF 		bl	CySysFlashWriteRow
+ 151              	.LVL15:
+ 150:.\Em_EEPROM.c ****             #else
+ 151:.\Em_EEPROM.c ****                 rc = CyWriteRowData((uint8)arrayId, (uint16)rowId, writeBuffer);
+ 152:.\Em_EEPROM.c ****             #endif /* (CY_PSOC4) */
+ 153:.\Em_EEPROM.c **** 
+ 154:.\Em_EEPROM.c ****             /* Go to the next row */
+ 155:.\Em_EEPROM.c ****             rowId++;
+ 152              		.loc 1 155 0
+ 153 005a 0123     		mov	r3, #1
+ 154 005c 9C46     		mov	ip, r3
+ 155 005e E144     		add	r9, r9, ip
+ 156              	.LVL16:
+ 156:.\Em_EEPROM.c ****             #if (CY_FLASH_NUMBER_ARRAYS > 1)
+ 157:.\Em_EEPROM.c ****                 if (rowId >= Em_EEPROM_ROWS_IN_ARRAY)
+ 157              		.loc 1 157 0
+ 158 0060 0A4B     		ldr	r3, .L16+4
+ 159 0062 9945     		cmp	r9, r3
+ 160 0064 01D9     		bls	.L5
+ 158:.\Em_EEPROM.c ****                 {
+ 159:.\Em_EEPROM.c ****                     arrayId++;
+ 160:.\Em_EEPROM.c ****                     rowId = 0u;
+ 161              		.loc 1 160 0
+ 162 0066 0023     		mov	r3, #0
+ 163 0068 9946     		mov	r9, r3
+ 164              	.LVL17:
+ 165              	.L5:
+ 130:.\Em_EEPROM.c ****         {
+ 166              		.loc 1 130 0
+ 167 006a BD42     		cmp	r5, r7
+ 168 006c 03D2     		bcs	.L4
+ 130:.\Em_EEPROM.c ****         {
+ 169              		.loc 1 130 0 is_stmt 0 discriminator 1
+ 170 006e 0028     		cmp	r0, #0
+ 171 0070 ECD0     		beq	.L14
+ 172 0072 00E0     		b	.L4
+ 173              	.LVL18:
+ 174              	.L12:
+ 161:.\Em_EEPROM.c ****                 }
+ 162:.\Em_EEPROM.c ****             #endif /* (CY_FLASH_NUMBER_ARRAYS > 1) */
+ 163:.\Em_EEPROM.c ****         }
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 7
+
+
+ 164:.\Em_EEPROM.c **** 
+ 165:.\Em_EEPROM.c ****         /* Flush both Cache and PHUB prefetch buffer */
+ 166:.\Em_EEPROM.c ****         #if (CY_PSOC5)
+ 167:.\Em_EEPROM.c ****             CyFlushCache();
+ 168:.\Em_EEPROM.c ****         #elif (CY_PSOC3)
+ 169:.\Em_EEPROM.c ****             CY_FLASH_CONTROL_REG |= 6u;
+ 170:.\Em_EEPROM.c ****         #endif /* (CY_PSOC5) */
+ 171:.\Em_EEPROM.c ****     }
+ 172:.\Em_EEPROM.c ****     else
+ 173:.\Em_EEPROM.c ****     {
+ 174:.\Em_EEPROM.c ****         rc = CYRET_BAD_PARAM;
+ 175              		.loc 1 174 0 is_stmt 1
+ 176 0074 0120     		mov	r0, #1
+ 177              	.LVL19:
+ 178              	.L4:
+ 175:.\Em_EEPROM.c ****     }
+ 176:.\Em_EEPROM.c **** 
+ 177:.\Em_EEPROM.c ****     /* Mask return codes from flash, if they are not supported */
+ 178:.\Em_EEPROM.c ****     if ((CYRET_SUCCESS != rc) && (CYRET_BAD_PARAM != rc))
+ 179              		.loc 1 178 0
+ 180 0076 0128     		cmp	r0, #1
+ 181 0078 01D9     		bls	.L11
+ 179:.\Em_EEPROM.c ****     {
+ 180:.\Em_EEPROM.c ****         rc = CYRET_UNKNOWN;
+ 182              		.loc 1 180 0
+ 183 007a 0120     		mov	r0, #1
+ 184              	.LVL20:
+ 185 007c 4042     		neg	r0, r0
+ 186              	.L11:
+ 187              	.LVL21:
+ 181:.\Em_EEPROM.c ****     }
+ 182:.\Em_EEPROM.c ****     
+ 183:.\Em_EEPROM.c ****     return (rc);
+ 184:.\Em_EEPROM.c **** }
+ 188              		.loc 1 184 0
+ 189 007e 21B0     		add	sp, sp, #132
+ 190              		@ sp needed
+ 191              	.LVL22:
+ 192 0080 0CBC     		pop	{r2, r3}
+ 193 0082 9046     		mov	r8, r2
+ 194 0084 9946     		mov	r9, r3
+ 195 0086 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 196              	.L17:
+ 197              		.align	2
+ 198              	.L16:
+ 199 0088 FFFF0100 		.word	131071
+ 200 008c FF010000 		.word	511
+ 201              		.cfi_endproc
+ 202              	.LFE4:
+ 203              		.size	Em_EEPROM_Write, .-Em_EEPROM_Write
+ 204              		.text
+ 205              	.Letext0:
+ 206              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 207              		.file 3 "Generated_Source\\PSoC4/CyFlash.h"
+ 208              		.section	.debug_info,"",%progbits
+ 209              	.Ldebug_info0:
+ 210 0000 DE010000 		.4byte	0x1de
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 8
+
+
+ 211 0004 0400     		.2byte	0x4
+ 212 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 213 000a 04       		.byte	0x4
+ 214 000b 01       		.uleb128 0x1
+ 215 000c 6D010000 		.4byte	.LASF29
+ 216 0010 01       		.byte	0x1
+ 217 0011 5A010000 		.4byte	.LASF30
+ 218 0015 A2000000 		.4byte	.LASF31
+ 219 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 220 001d 00000000 		.4byte	0
+ 221 0021 00000000 		.4byte	.Ldebug_line0
+ 222 0025 02       		.uleb128 0x2
+ 223 0026 01       		.byte	0x1
+ 224 0027 06       		.byte	0x6
+ 225 0028 21020000 		.4byte	.LASF0
+ 226 002c 02       		.uleb128 0x2
+ 227 002d 01       		.byte	0x1
+ 228 002e 08       		.byte	0x8
+ 229 002f 50000000 		.4byte	.LASF1
+ 230 0033 02       		.uleb128 0x2
+ 231 0034 02       		.byte	0x2
+ 232 0035 05       		.byte	0x5
+ 233 0036 05020000 		.4byte	.LASF2
+ 234 003a 02       		.uleb128 0x2
+ 235 003b 02       		.byte	0x2
+ 236 003c 07       		.byte	0x7
+ 237 003d 23000000 		.4byte	.LASF3
+ 238 0041 02       		.uleb128 0x2
+ 239 0042 04       		.byte	0x4
+ 240 0043 05       		.byte	0x5
+ 241 0044 0F020000 		.4byte	.LASF4
+ 242 0048 02       		.uleb128 0x2
+ 243 0049 04       		.byte	0x4
+ 244 004a 07       		.byte	0x7
+ 245 004b 72000000 		.4byte	.LASF5
+ 246 004f 02       		.uleb128 0x2
+ 247 0050 08       		.byte	0x8
+ 248 0051 05       		.byte	0x5
+ 249 0052 4C010000 		.4byte	.LASF6
+ 250 0056 02       		.uleb128 0x2
+ 251 0057 08       		.byte	0x8
+ 252 0058 07       		.byte	0x7
+ 253 0059 26010000 		.4byte	.LASF7
+ 254 005d 03       		.uleb128 0x3
+ 255 005e 04       		.byte	0x4
+ 256 005f 05       		.byte	0x5
+ 257 0060 696E7400 		.ascii	"int\000"
+ 258 0064 02       		.uleb128 0x2
+ 259 0065 04       		.byte	0x4
+ 260 0066 07       		.byte	0x7
+ 261 0067 19010000 		.4byte	.LASF8
+ 262 006b 04       		.uleb128 0x4
+ 263 006c 94000000 		.4byte	.LASF9
+ 264 0070 02       		.byte	0x2
+ 265 0071 C2       		.byte	0xc2
+ 266 0072 2C000000 		.4byte	0x2c
+ 267 0076 04       		.uleb128 0x4
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 9
+
+
+ 268 0077 12010000 		.4byte	.LASF10
+ 269 007b 02       		.byte	0x2
+ 270 007c C4       		.byte	0xc4
+ 271 007d 48000000 		.4byte	0x48
+ 272 0081 02       		.uleb128 0x2
+ 273 0082 04       		.byte	0x4
+ 274 0083 04       		.byte	0x4
+ 275 0084 4A000000 		.4byte	.LASF11
+ 276 0088 02       		.uleb128 0x2
+ 277 0089 08       		.byte	0x8
+ 278 008a 04       		.byte	0x4
+ 279 008b EF000000 		.4byte	.LASF12
+ 280 008f 02       		.uleb128 0x2
+ 281 0090 01       		.byte	0x1
+ 282 0091 08       		.byte	0x8
+ 283 0092 68010000 		.4byte	.LASF13
+ 284 0096 05       		.uleb128 0x5
+ 285 0097 09010000 		.4byte	.LASF14
+ 286 009b 02       		.byte	0x2
+ 287 009c 6401     		.2byte	0x164
+ 288 009e 48000000 		.4byte	0x48
+ 289 00a2 05       		.uleb128 0x5
+ 290 00a3 6D000000 		.4byte	.LASF15
+ 291 00a7 02       		.byte	0x2
+ 292 00a8 6C01     		.2byte	0x16c
+ 293 00aa AE000000 		.4byte	0xae
+ 294 00ae 06       		.uleb128 0x6
+ 295 00af 6B000000 		.4byte	0x6b
+ 296 00b3 02       		.uleb128 0x2
+ 297 00b4 04       		.byte	0x4
+ 298 00b5 07       		.byte	0x7
+ 299 00b6 43010000 		.4byte	.LASF16
+ 300 00ba 07       		.uleb128 0x7
+ 301 00bb 00000000 		.4byte	.LASF17
+ 302 00bf 01       		.byte	0x1
+ 303 00c0 21       		.byte	0x21
+ 304 00c1 00000000 		.4byte	.LFB2
+ 305 00c5 02000000 		.4byte	.LFE2-.LFB2
+ 306 00c9 01       		.uleb128 0x1
+ 307 00ca 9C       		.byte	0x9c
+ 308 00cb 07       		.uleb128 0x7
+ 309 00cc 5E000000 		.4byte	.LASF18
+ 310 00d0 01       		.byte	0x1
+ 311 00d1 36       		.byte	0x36
+ 312 00d2 00000000 		.4byte	.LFB3
+ 313 00d6 02000000 		.4byte	.LFE3-.LFB3
+ 314 00da 01       		.uleb128 0x1
+ 315 00db 9C       		.byte	0x9c
+ 316 00dc 08       		.uleb128 0x8
+ 317 00dd 84000000 		.4byte	.LASF32
+ 318 00e1 01       		.byte	0x1
+ 319 00e2 54       		.byte	0x54
+ 320 00e3 96000000 		.4byte	0x96
+ 321 00e7 00000000 		.4byte	.LFB4
+ 322 00eb 90000000 		.4byte	.LFE4-.LFB4
+ 323 00ef 01       		.uleb128 0x1
+ 324 00f0 9C       		.byte	0x9c
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 10
+
+
+ 325 00f1 B0010000 		.4byte	0x1b0
+ 326 00f5 09       		.uleb128 0x9
+ 327 00f6 1C000000 		.4byte	.LASF19
+ 328 00fa 01       		.byte	0x1
+ 329 00fb 54       		.byte	0x54
+ 330 00fc B0010000 		.4byte	0x1b0
+ 331 0100 00000000 		.4byte	.LLST0
+ 332 0104 09       		.uleb128 0x9
+ 333 0105 FB010000 		.4byte	.LASF20
+ 334 0109 01       		.byte	0x1
+ 335 010a 54       		.byte	0x54
+ 336 010b B0010000 		.4byte	0x1b0
+ 337 010f 37000000 		.4byte	.LLST1
+ 338 0113 09       		.uleb128 0x9
+ 339 0114 DC000000 		.4byte	.LASF21
+ 340 0118 01       		.byte	0x1
+ 341 0119 54       		.byte	0x54
+ 342 011a 76000000 		.4byte	0x76
+ 343 011e 79000000 		.4byte	.LLST2
+ 344 0122 0A       		.uleb128 0xa
+ 345 0123 10000000 		.4byte	.LASF22
+ 346 0127 01       		.byte	0x1
+ 347 0128 57       		.byte	0x57
+ 348 0129 BB010000 		.4byte	0x1bb
+ 349 012d 03       		.uleb128 0x3
+ 350 012e 91       		.byte	0x91
+ 351 012f E07E     		.sleb128 -160
+ 352 0131 0B       		.uleb128 0xb
+ 353 0132 9A000000 		.4byte	.LASF23
+ 354 0136 01       		.byte	0x1
+ 355 0137 58       		.byte	0x58
+ 356 0138 76000000 		.4byte	0x76
+ 357 013c B0000000 		.4byte	.LLST3
+ 358 0140 0B       		.uleb128 0xb
+ 359 0141 3D010000 		.4byte	.LASF24
+ 360 0145 01       		.byte	0x1
+ 361 0146 59       		.byte	0x59
+ 362 0147 76000000 		.4byte	0x76
+ 363 014b D2000000 		.4byte	.LLST4
+ 364 014f 0B       		.uleb128 0xb
+ 365 0150 E6000000 		.4byte	.LASF25
+ 366 0154 01       		.byte	0x1
+ 367 0155 5A       		.byte	0x5a
+ 368 0156 76000000 		.4byte	0x76
+ 369 015a F0000000 		.4byte	.LLST5
+ 370 015e 0B       		.uleb128 0xb
+ 371 015f 36000000 		.4byte	.LASF26
+ 372 0163 01       		.byte	0x1
+ 373 0164 5B       		.byte	0x5b
+ 374 0165 76000000 		.4byte	0x76
+ 375 0169 0E010000 		.4byte	.LLST6
+ 376 016d 0C       		.uleb128 0xc
+ 377 016e 726300   		.ascii	"rc\000"
+ 378 0171 01       		.byte	0x1
+ 379 0172 5C       		.byte	0x5c
+ 380 0173 96000000 		.4byte	0x96
+ 381 0177 2D010000 		.4byte	.LLST7
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 11
+
+
+ 382 017b 0B       		.uleb128 0xb
+ 383 017c 18020000 		.4byte	.LASF27
+ 384 0180 01       		.byte	0x1
+ 385 0181 5D       		.byte	0x5d
+ 386 0182 76000000 		.4byte	0x76
+ 387 0186 6D010000 		.4byte	.LLST8
+ 388 018a 0B       		.uleb128 0xb
+ 389 018b 3F000000 		.4byte	.LASF28
+ 390 018f 01       		.byte	0x1
+ 391 0190 5E       		.byte	0x5e
+ 392 0191 76000000 		.4byte	0x76
+ 393 0195 AF010000 		.4byte	.LLST9
+ 394 0199 0D       		.uleb128 0xd
+ 395 019a 5A000000 		.4byte	.LVL15
+ 396 019e CB010000 		.4byte	0x1cb
+ 397 01a2 0E       		.uleb128 0xe
+ 398 01a3 01       		.uleb128 0x1
+ 399 01a4 51       		.byte	0x51
+ 400 01a5 02       		.uleb128 0x2
+ 401 01a6 7D       		.byte	0x7d
+ 402 01a7 00       		.sleb128 0
+ 403 01a8 0E       		.uleb128 0xe
+ 404 01a9 01       		.uleb128 0x1
+ 405 01aa 50       		.byte	0x50
+ 406 01ab 02       		.uleb128 0x2
+ 407 01ac 79       		.byte	0x79
+ 408 01ad 00       		.sleb128 0
+ 409 01ae 00       		.byte	0
+ 410 01af 00       		.byte	0
+ 411 01b0 0F       		.uleb128 0xf
+ 412 01b1 04       		.byte	0x4
+ 413 01b2 B6010000 		.4byte	0x1b6
+ 414 01b6 10       		.uleb128 0x10
+ 415 01b7 6B000000 		.4byte	0x6b
+ 416 01bb 11       		.uleb128 0x11
+ 417 01bc 6B000000 		.4byte	0x6b
+ 418 01c0 CB010000 		.4byte	0x1cb
+ 419 01c4 12       		.uleb128 0x12
+ 420 01c5 B3000000 		.4byte	0xb3
+ 421 01c9 7F       		.byte	0x7f
+ 422 01ca 00       		.byte	0
+ 423 01cb 13       		.uleb128 0x13
+ 424 01cc F6000000 		.4byte	.LASF33
+ 425 01d0 03       		.byte	0x3
+ 426 01d1 1C       		.byte	0x1c
+ 427 01d2 76000000 		.4byte	0x76
+ 428 01d6 14       		.uleb128 0x14
+ 429 01d7 76000000 		.4byte	0x76
+ 430 01db 14       		.uleb128 0x14
+ 431 01dc B0010000 		.4byte	0x1b0
+ 432 01e0 00       		.byte	0
+ 433 01e1 00       		.byte	0
+ 434              		.section	.debug_abbrev,"",%progbits
+ 435              	.Ldebug_abbrev0:
+ 436 0000 01       		.uleb128 0x1
+ 437 0001 11       		.uleb128 0x11
+ 438 0002 01       		.byte	0x1
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 12
+
+
+ 439 0003 25       		.uleb128 0x25
+ 440 0004 0E       		.uleb128 0xe
+ 441 0005 13       		.uleb128 0x13
+ 442 0006 0B       		.uleb128 0xb
+ 443 0007 03       		.uleb128 0x3
+ 444 0008 0E       		.uleb128 0xe
+ 445 0009 1B       		.uleb128 0x1b
+ 446 000a 0E       		.uleb128 0xe
+ 447 000b 55       		.uleb128 0x55
+ 448 000c 17       		.uleb128 0x17
+ 449 000d 11       		.uleb128 0x11
+ 450 000e 01       		.uleb128 0x1
+ 451 000f 10       		.uleb128 0x10
+ 452 0010 17       		.uleb128 0x17
+ 453 0011 00       		.byte	0
+ 454 0012 00       		.byte	0
+ 455 0013 02       		.uleb128 0x2
+ 456 0014 24       		.uleb128 0x24
+ 457 0015 00       		.byte	0
+ 458 0016 0B       		.uleb128 0xb
+ 459 0017 0B       		.uleb128 0xb
+ 460 0018 3E       		.uleb128 0x3e
+ 461 0019 0B       		.uleb128 0xb
+ 462 001a 03       		.uleb128 0x3
+ 463 001b 0E       		.uleb128 0xe
+ 464 001c 00       		.byte	0
+ 465 001d 00       		.byte	0
+ 466 001e 03       		.uleb128 0x3
+ 467 001f 24       		.uleb128 0x24
+ 468 0020 00       		.byte	0
+ 469 0021 0B       		.uleb128 0xb
+ 470 0022 0B       		.uleb128 0xb
+ 471 0023 3E       		.uleb128 0x3e
+ 472 0024 0B       		.uleb128 0xb
+ 473 0025 03       		.uleb128 0x3
+ 474 0026 08       		.uleb128 0x8
+ 475 0027 00       		.byte	0
+ 476 0028 00       		.byte	0
+ 477 0029 04       		.uleb128 0x4
+ 478 002a 16       		.uleb128 0x16
+ 479 002b 00       		.byte	0
+ 480 002c 03       		.uleb128 0x3
+ 481 002d 0E       		.uleb128 0xe
+ 482 002e 3A       		.uleb128 0x3a
+ 483 002f 0B       		.uleb128 0xb
+ 484 0030 3B       		.uleb128 0x3b
+ 485 0031 0B       		.uleb128 0xb
+ 486 0032 49       		.uleb128 0x49
+ 487 0033 13       		.uleb128 0x13
+ 488 0034 00       		.byte	0
+ 489 0035 00       		.byte	0
+ 490 0036 05       		.uleb128 0x5
+ 491 0037 16       		.uleb128 0x16
+ 492 0038 00       		.byte	0
+ 493 0039 03       		.uleb128 0x3
+ 494 003a 0E       		.uleb128 0xe
+ 495 003b 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 13
+
+
+ 496 003c 0B       		.uleb128 0xb
+ 497 003d 3B       		.uleb128 0x3b
+ 498 003e 05       		.uleb128 0x5
+ 499 003f 49       		.uleb128 0x49
+ 500 0040 13       		.uleb128 0x13
+ 501 0041 00       		.byte	0
+ 502 0042 00       		.byte	0
+ 503 0043 06       		.uleb128 0x6
+ 504 0044 35       		.uleb128 0x35
+ 505 0045 00       		.byte	0
+ 506 0046 49       		.uleb128 0x49
+ 507 0047 13       		.uleb128 0x13
+ 508 0048 00       		.byte	0
+ 509 0049 00       		.byte	0
+ 510 004a 07       		.uleb128 0x7
+ 511 004b 2E       		.uleb128 0x2e
+ 512 004c 00       		.byte	0
+ 513 004d 3F       		.uleb128 0x3f
+ 514 004e 19       		.uleb128 0x19
+ 515 004f 03       		.uleb128 0x3
+ 516 0050 0E       		.uleb128 0xe
+ 517 0051 3A       		.uleb128 0x3a
+ 518 0052 0B       		.uleb128 0xb
+ 519 0053 3B       		.uleb128 0x3b
+ 520 0054 0B       		.uleb128 0xb
+ 521 0055 27       		.uleb128 0x27
+ 522 0056 19       		.uleb128 0x19
+ 523 0057 11       		.uleb128 0x11
+ 524 0058 01       		.uleb128 0x1
+ 525 0059 12       		.uleb128 0x12
+ 526 005a 06       		.uleb128 0x6
+ 527 005b 40       		.uleb128 0x40
+ 528 005c 18       		.uleb128 0x18
+ 529 005d 9742     		.uleb128 0x2117
+ 530 005f 19       		.uleb128 0x19
+ 531 0060 00       		.byte	0
+ 532 0061 00       		.byte	0
+ 533 0062 08       		.uleb128 0x8
+ 534 0063 2E       		.uleb128 0x2e
+ 535 0064 01       		.byte	0x1
+ 536 0065 3F       		.uleb128 0x3f
+ 537 0066 19       		.uleb128 0x19
+ 538 0067 03       		.uleb128 0x3
+ 539 0068 0E       		.uleb128 0xe
+ 540 0069 3A       		.uleb128 0x3a
+ 541 006a 0B       		.uleb128 0xb
+ 542 006b 3B       		.uleb128 0x3b
+ 543 006c 0B       		.uleb128 0xb
+ 544 006d 27       		.uleb128 0x27
+ 545 006e 19       		.uleb128 0x19
+ 546 006f 49       		.uleb128 0x49
+ 547 0070 13       		.uleb128 0x13
+ 548 0071 11       		.uleb128 0x11
+ 549 0072 01       		.uleb128 0x1
+ 550 0073 12       		.uleb128 0x12
+ 551 0074 06       		.uleb128 0x6
+ 552 0075 40       		.uleb128 0x40
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 14
+
+
+ 553 0076 18       		.uleb128 0x18
+ 554 0077 9742     		.uleb128 0x2117
+ 555 0079 19       		.uleb128 0x19
+ 556 007a 01       		.uleb128 0x1
+ 557 007b 13       		.uleb128 0x13
+ 558 007c 00       		.byte	0
+ 559 007d 00       		.byte	0
+ 560 007e 09       		.uleb128 0x9
+ 561 007f 05       		.uleb128 0x5
+ 562 0080 00       		.byte	0
+ 563 0081 03       		.uleb128 0x3
+ 564 0082 0E       		.uleb128 0xe
+ 565 0083 3A       		.uleb128 0x3a
+ 566 0084 0B       		.uleb128 0xb
+ 567 0085 3B       		.uleb128 0x3b
+ 568 0086 0B       		.uleb128 0xb
+ 569 0087 49       		.uleb128 0x49
+ 570 0088 13       		.uleb128 0x13
+ 571 0089 02       		.uleb128 0x2
+ 572 008a 17       		.uleb128 0x17
+ 573 008b 00       		.byte	0
+ 574 008c 00       		.byte	0
+ 575 008d 0A       		.uleb128 0xa
+ 576 008e 34       		.uleb128 0x34
+ 577 008f 00       		.byte	0
+ 578 0090 03       		.uleb128 0x3
+ 579 0091 0E       		.uleb128 0xe
+ 580 0092 3A       		.uleb128 0x3a
+ 581 0093 0B       		.uleb128 0xb
+ 582 0094 3B       		.uleb128 0x3b
+ 583 0095 0B       		.uleb128 0xb
+ 584 0096 49       		.uleb128 0x49
+ 585 0097 13       		.uleb128 0x13
+ 586 0098 02       		.uleb128 0x2
+ 587 0099 18       		.uleb128 0x18
+ 588 009a 00       		.byte	0
+ 589 009b 00       		.byte	0
+ 590 009c 0B       		.uleb128 0xb
+ 591 009d 34       		.uleb128 0x34
+ 592 009e 00       		.byte	0
+ 593 009f 03       		.uleb128 0x3
+ 594 00a0 0E       		.uleb128 0xe
+ 595 00a1 3A       		.uleb128 0x3a
+ 596 00a2 0B       		.uleb128 0xb
+ 597 00a3 3B       		.uleb128 0x3b
+ 598 00a4 0B       		.uleb128 0xb
+ 599 00a5 49       		.uleb128 0x49
+ 600 00a6 13       		.uleb128 0x13
+ 601 00a7 02       		.uleb128 0x2
+ 602 00a8 17       		.uleb128 0x17
+ 603 00a9 00       		.byte	0
+ 604 00aa 00       		.byte	0
+ 605 00ab 0C       		.uleb128 0xc
+ 606 00ac 34       		.uleb128 0x34
+ 607 00ad 00       		.byte	0
+ 608 00ae 03       		.uleb128 0x3
+ 609 00af 08       		.uleb128 0x8
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 15
+
+
+ 610 00b0 3A       		.uleb128 0x3a
+ 611 00b1 0B       		.uleb128 0xb
+ 612 00b2 3B       		.uleb128 0x3b
+ 613 00b3 0B       		.uleb128 0xb
+ 614 00b4 49       		.uleb128 0x49
+ 615 00b5 13       		.uleb128 0x13
+ 616 00b6 02       		.uleb128 0x2
+ 617 00b7 17       		.uleb128 0x17
+ 618 00b8 00       		.byte	0
+ 619 00b9 00       		.byte	0
+ 620 00ba 0D       		.uleb128 0xd
+ 621 00bb 898201   		.uleb128 0x4109
+ 622 00be 01       		.byte	0x1
+ 623 00bf 11       		.uleb128 0x11
+ 624 00c0 01       		.uleb128 0x1
+ 625 00c1 31       		.uleb128 0x31
+ 626 00c2 13       		.uleb128 0x13
+ 627 00c3 00       		.byte	0
+ 628 00c4 00       		.byte	0
+ 629 00c5 0E       		.uleb128 0xe
+ 630 00c6 8A8201   		.uleb128 0x410a
+ 631 00c9 00       		.byte	0
+ 632 00ca 02       		.uleb128 0x2
+ 633 00cb 18       		.uleb128 0x18
+ 634 00cc 9142     		.uleb128 0x2111
+ 635 00ce 18       		.uleb128 0x18
+ 636 00cf 00       		.byte	0
+ 637 00d0 00       		.byte	0
+ 638 00d1 0F       		.uleb128 0xf
+ 639 00d2 0F       		.uleb128 0xf
+ 640 00d3 00       		.byte	0
+ 641 00d4 0B       		.uleb128 0xb
+ 642 00d5 0B       		.uleb128 0xb
+ 643 00d6 49       		.uleb128 0x49
+ 644 00d7 13       		.uleb128 0x13
+ 645 00d8 00       		.byte	0
+ 646 00d9 00       		.byte	0
+ 647 00da 10       		.uleb128 0x10
+ 648 00db 26       		.uleb128 0x26
+ 649 00dc 00       		.byte	0
+ 650 00dd 49       		.uleb128 0x49
+ 651 00de 13       		.uleb128 0x13
+ 652 00df 00       		.byte	0
+ 653 00e0 00       		.byte	0
+ 654 00e1 11       		.uleb128 0x11
+ 655 00e2 01       		.uleb128 0x1
+ 656 00e3 01       		.byte	0x1
+ 657 00e4 49       		.uleb128 0x49
+ 658 00e5 13       		.uleb128 0x13
+ 659 00e6 01       		.uleb128 0x1
+ 660 00e7 13       		.uleb128 0x13
+ 661 00e8 00       		.byte	0
+ 662 00e9 00       		.byte	0
+ 663 00ea 12       		.uleb128 0x12
+ 664 00eb 21       		.uleb128 0x21
+ 665 00ec 00       		.byte	0
+ 666 00ed 49       		.uleb128 0x49
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 16
+
+
+ 667 00ee 13       		.uleb128 0x13
+ 668 00ef 2F       		.uleb128 0x2f
+ 669 00f0 0B       		.uleb128 0xb
+ 670 00f1 00       		.byte	0
+ 671 00f2 00       		.byte	0
+ 672 00f3 13       		.uleb128 0x13
+ 673 00f4 2E       		.uleb128 0x2e
+ 674 00f5 01       		.byte	0x1
+ 675 00f6 3F       		.uleb128 0x3f
+ 676 00f7 19       		.uleb128 0x19
+ 677 00f8 03       		.uleb128 0x3
+ 678 00f9 0E       		.uleb128 0xe
+ 679 00fa 3A       		.uleb128 0x3a
+ 680 00fb 0B       		.uleb128 0xb
+ 681 00fc 3B       		.uleb128 0x3b
+ 682 00fd 0B       		.uleb128 0xb
+ 683 00fe 27       		.uleb128 0x27
+ 684 00ff 19       		.uleb128 0x19
+ 685 0100 49       		.uleb128 0x49
+ 686 0101 13       		.uleb128 0x13
+ 687 0102 3C       		.uleb128 0x3c
+ 688 0103 19       		.uleb128 0x19
+ 689 0104 00       		.byte	0
+ 690 0105 00       		.byte	0
+ 691 0106 14       		.uleb128 0x14
+ 692 0107 05       		.uleb128 0x5
+ 693 0108 00       		.byte	0
+ 694 0109 49       		.uleb128 0x49
+ 695 010a 13       		.uleb128 0x13
+ 696 010b 00       		.byte	0
+ 697 010c 00       		.byte	0
+ 698 010d 00       		.byte	0
+ 699              		.section	.debug_loc,"",%progbits
+ 700              	.Ldebug_loc0:
+ 701              	.LLST0:
+ 702 0000 00000000 		.4byte	.LVL0
+ 703 0004 28000000 		.4byte	.LVL7
+ 704 0008 0100     		.2byte	0x1
+ 705 000a 50       		.byte	0x50
+ 706 000b 28000000 		.4byte	.LVL7
+ 707 000f 74000000 		.4byte	.LVL18
+ 708 0013 0100     		.2byte	0x1
+ 709 0015 58       		.byte	0x58
+ 710 0016 74000000 		.4byte	.LVL18
+ 711 001a 76000000 		.4byte	.LVL19
+ 712 001e 0100     		.2byte	0x1
+ 713 0020 50       		.byte	0x50
+ 714 0021 76000000 		.4byte	.LVL19
+ 715 0025 90000000 		.4byte	.LFE4
+ 716 0029 0400     		.2byte	0x4
+ 717 002b F3       		.byte	0xf3
+ 718 002c 01       		.uleb128 0x1
+ 719 002d 50       		.byte	0x50
+ 720 002e 9F       		.byte	0x9f
+ 721 002f 00000000 		.4byte	0
+ 722 0033 00000000 		.4byte	0
+ 723              	.LLST1:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 17
+
+
+ 724 0037 00000000 		.4byte	.LVL0
+ 725 003b 1C000000 		.4byte	.LVL3
+ 726 003f 0100     		.2byte	0x1
+ 727 0041 51       		.byte	0x51
+ 728 0042 1C000000 		.4byte	.LVL3
+ 729 0046 74000000 		.4byte	.LVL18
+ 730 004a 0100     		.2byte	0x1
+ 731 004c 56       		.byte	0x56
+ 732 004d 74000000 		.4byte	.LVL18
+ 733 0051 76000000 		.4byte	.LVL19
+ 734 0055 0100     		.2byte	0x1
+ 735 0057 51       		.byte	0x51
+ 736 0058 76000000 		.4byte	.LVL19
+ 737 005c 80000000 		.4byte	.LVL22
+ 738 0060 0100     		.2byte	0x1
+ 739 0062 56       		.byte	0x56
+ 740 0063 80000000 		.4byte	.LVL22
+ 741 0067 90000000 		.4byte	.LFE4
+ 742 006b 0400     		.2byte	0x4
+ 743 006d F3       		.byte	0xf3
+ 744 006e 01       		.uleb128 0x1
+ 745 006f 51       		.byte	0x51
+ 746 0070 9F       		.byte	0x9f
+ 747 0071 00000000 		.4byte	0
+ 748 0075 00000000 		.4byte	0
+ 749              	.LLST2:
+ 750 0079 00000000 		.4byte	.LVL0
+ 751 007d 2C000000 		.4byte	.LVL8
+ 752 0081 0100     		.2byte	0x1
+ 753 0083 52       		.byte	0x52
+ 754 0084 2C000000 		.4byte	.LVL8
+ 755 0088 74000000 		.4byte	.LVL18
+ 756 008c 0100     		.2byte	0x1
+ 757 008e 57       		.byte	0x57
+ 758 008f 74000000 		.4byte	.LVL18
+ 759 0093 76000000 		.4byte	.LVL19
+ 760 0097 0100     		.2byte	0x1
+ 761 0099 52       		.byte	0x52
+ 762 009a 76000000 		.4byte	.LVL19
+ 763 009e 90000000 		.4byte	.LFE4
+ 764 00a2 0400     		.2byte	0x4
+ 765 00a4 F3       		.byte	0xf3
+ 766 00a5 01       		.uleb128 0x1
+ 767 00a6 52       		.byte	0x52
+ 768 00a7 9F       		.byte	0x9f
+ 769 00a8 00000000 		.4byte	0
+ 770 00ac 00000000 		.4byte	0
+ 771              	.LLST3:
+ 772 00b0 1A000000 		.4byte	.LVL2
+ 773 00b4 22000000 		.4byte	.LVL5
+ 774 00b8 0100     		.2byte	0x1
+ 775 00ba 54       		.byte	0x54
+ 776 00bb 22000000 		.4byte	.LVL5
+ 777 00bf 2C000000 		.4byte	.LVL8
+ 778 00c3 0500     		.2byte	0x5
+ 779 00c5 76       		.byte	0x76
+ 780 00c6 00       		.sleb128 0
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 18
+
+
+ 781 00c7 40       		.byte	0x40
+ 782 00c8 25       		.byte	0x25
+ 783 00c9 9F       		.byte	0x9f
+ 784 00ca 00000000 		.4byte	0
+ 785 00ce 00000000 		.4byte	0
+ 786              	.LLST4:
+ 787 00d2 20000000 		.4byte	.LVL4
+ 788 00d6 2C000000 		.4byte	.LVL8
+ 789 00da 0100     		.2byte	0x1
+ 790 00dc 53       		.byte	0x53
+ 791 00dd 2C000000 		.4byte	.LVL8
+ 792 00e1 74000000 		.4byte	.LVL18
+ 793 00e5 0100     		.2byte	0x1
+ 794 00e7 59       		.byte	0x59
+ 795 00e8 00000000 		.4byte	0
+ 796 00ec 00000000 		.4byte	0
+ 797              	.LLST5:
+ 798 00f0 2C000000 		.4byte	.LVL8
+ 799 00f4 4C000000 		.4byte	.LVL12
+ 800 00f8 0100     		.2byte	0x1
+ 801 00fa 53       		.byte	0x53
+ 802 00fb 4E000000 		.4byte	.LVL13
+ 803 00ff 59000000 		.4byte	.LVL15-1
+ 804 0103 0100     		.2byte	0x1
+ 805 0105 53       		.byte	0x53
+ 806 0106 00000000 		.4byte	0
+ 807 010a 00000000 		.4byte	0
+ 808              	.LLST6:
+ 809 010e 26000000 		.4byte	.LVL6
+ 810 0112 2C000000 		.4byte	.LVL8
+ 811 0116 0200     		.2byte	0x2
+ 812 0118 30       		.byte	0x30
+ 813 0119 9F       		.byte	0x9f
+ 814 011a 2C000000 		.4byte	.LVL8
+ 815 011e 74000000 		.4byte	.LVL18
+ 816 0122 0100     		.2byte	0x1
+ 817 0124 55       		.byte	0x55
+ 818 0125 00000000 		.4byte	0
+ 819 0129 00000000 		.4byte	0
+ 820              	.LLST7:
+ 821 012d 26000000 		.4byte	.LVL6
+ 822 0131 2C000000 		.4byte	.LVL8
+ 823 0135 0200     		.2byte	0x2
+ 824 0137 30       		.byte	0x30
+ 825 0138 9F       		.byte	0x9f
+ 826 0139 2C000000 		.4byte	.LVL8
+ 827 013d 54000000 		.4byte	.LVL14
+ 828 0141 0100     		.2byte	0x1
+ 829 0143 50       		.byte	0x50
+ 830 0144 5A000000 		.4byte	.LVL15
+ 831 0148 74000000 		.4byte	.LVL18
+ 832 014c 0100     		.2byte	0x1
+ 833 014e 50       		.byte	0x50
+ 834 014f 76000000 		.4byte	.LVL19
+ 835 0153 7C000000 		.4byte	.LVL20
+ 836 0157 0100     		.2byte	0x1
+ 837 0159 50       		.byte	0x50
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 19
+
+
+ 838 015a 7E000000 		.4byte	.LVL21
+ 839 015e 90000000 		.4byte	.LFE4
+ 840 0162 0100     		.2byte	0x1
+ 841 0164 50       		.byte	0x50
+ 842 0165 00000000 		.4byte	0
+ 843 0169 00000000 		.4byte	0
+ 844              	.LLST8:
+ 845 016d 0C000000 		.4byte	.LVL1
+ 846 0171 1C000000 		.4byte	.LVL3
+ 847 0175 0100     		.2byte	0x1
+ 848 0177 51       		.byte	0x51
+ 849 0178 1C000000 		.4byte	.LVL3
+ 850 017c 74000000 		.4byte	.LVL18
+ 851 0180 0100     		.2byte	0x1
+ 852 0182 56       		.byte	0x56
+ 853 0183 74000000 		.4byte	.LVL18
+ 854 0187 76000000 		.4byte	.LVL19
+ 855 018b 0100     		.2byte	0x1
+ 856 018d 51       		.byte	0x51
+ 857 018e 76000000 		.4byte	.LVL19
+ 858 0192 80000000 		.4byte	.LVL22
+ 859 0196 0100     		.2byte	0x1
+ 860 0198 56       		.byte	0x56
+ 861 0199 80000000 		.4byte	.LVL22
+ 862 019d 90000000 		.4byte	.LFE4
+ 863 01a1 0400     		.2byte	0x4
+ 864 01a3 F3       		.byte	0xf3
+ 865 01a4 01       		.uleb128 0x1
+ 866 01a5 51       		.byte	0x51
+ 867 01a6 9F       		.byte	0x9f
+ 868 01a7 00000000 		.4byte	0
+ 869 01ab 00000000 		.4byte	0
+ 870              	.LLST9:
+ 871 01af 26000000 		.4byte	.LVL6
+ 872 01b3 74000000 		.4byte	.LVL18
+ 873 01b7 0100     		.2byte	0x1
+ 874 01b9 54       		.byte	0x54
+ 875 01ba 00000000 		.4byte	0
+ 876 01be 00000000 		.4byte	0
+ 877              		.section	.debug_aranges,"",%progbits
+ 878 0000 2C000000 		.4byte	0x2c
+ 879 0004 0200     		.2byte	0x2
+ 880 0006 00000000 		.4byte	.Ldebug_info0
+ 881 000a 04       		.byte	0x4
+ 882 000b 00       		.byte	0
+ 883 000c 0000     		.2byte	0
+ 884 000e 0000     		.2byte	0
+ 885 0010 00000000 		.4byte	.LFB2
+ 886 0014 02000000 		.4byte	.LFE2-.LFB2
+ 887 0018 00000000 		.4byte	.LFB3
+ 888 001c 02000000 		.4byte	.LFE3-.LFB3
+ 889 0020 00000000 		.4byte	.LFB4
+ 890 0024 90000000 		.4byte	.LFE4-.LFB4
+ 891 0028 00000000 		.4byte	0
+ 892 002c 00000000 		.4byte	0
+ 893              		.section	.debug_ranges,"",%progbits
+ 894              	.Ldebug_ranges0:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 20
+
+
+ 895 0000 00000000 		.4byte	.LFB2
+ 896 0004 02000000 		.4byte	.LFE2
+ 897 0008 00000000 		.4byte	.LFB3
+ 898 000c 02000000 		.4byte	.LFE3
+ 899 0010 00000000 		.4byte	.LFB4
+ 900 0014 90000000 		.4byte	.LFE4
+ 901 0018 00000000 		.4byte	0
+ 902 001c 00000000 		.4byte	0
+ 903              		.section	.debug_line,"",%progbits
+ 904              	.Ldebug_line0:
+ 905 0000 CD000000 		.section	.debug_str,"MS",%progbits,1
+ 905      02005500 
+ 905      00000201 
+ 905      FB0E0D00 
+ 905      01010101 
+ 906              	.LASF17:
+ 907 0000 456D5F45 		.ascii	"Em_EEPROM_Start\000"
+ 907      4550524F 
+ 907      4D5F5374 
+ 907      61727400 
+ 908              	.LASF22:
+ 909 0010 77726974 		.ascii	"writeBuffer\000"
+ 909      65427566 
+ 909      66657200 
+ 910              	.LASF19:
+ 911 001c 73726342 		.ascii	"srcBuf\000"
+ 911      756600
+ 912              	.LASF3:
+ 913 0023 73686F72 		.ascii	"short unsigned int\000"
+ 913      7420756E 
+ 913      7369676E 
+ 913      65642069 
+ 913      6E7400
+ 914              	.LASF26:
+ 915 0036 73726349 		.ascii	"srcIndex\000"
+ 915      6E646578 
+ 915      00
+ 916              	.LASF28:
+ 917 003f 62797465 		.ascii	"byteOffset\000"
+ 917      4F666673 
+ 917      657400
+ 918              	.LASF11:
+ 919 004a 666C6F61 		.ascii	"float\000"
+ 919      7400
+ 920              	.LASF1:
+ 921 0050 756E7369 		.ascii	"unsigned char\000"
+ 921      676E6564 
+ 921      20636861 
+ 921      7200
+ 922              	.LASF18:
+ 923 005e 456D5F45 		.ascii	"Em_EEPROM_Stop\000"
+ 923      4550524F 
+ 923      4D5F5374 
+ 923      6F7000
+ 924              	.LASF15:
+ 925 006d 72656738 		.ascii	"reg8\000"
+ 925      00
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 21
+
+
+ 926              	.LASF5:
+ 927 0072 6C6F6E67 		.ascii	"long unsigned int\000"
+ 927      20756E73 
+ 927      69676E65 
+ 927      6420696E 
+ 927      7400
+ 928              	.LASF32:
+ 929 0084 456D5F45 		.ascii	"Em_EEPROM_Write\000"
+ 929      4550524F 
+ 929      4D5F5772 
+ 929      69746500 
+ 930              	.LASF9:
+ 931 0094 75696E74 		.ascii	"uint8\000"
+ 931      3800
+ 932              	.LASF23:
+ 933 009a 61727261 		.ascii	"arrayId\000"
+ 933      79496400 
+ 934              	.LASF31:
+ 935 00a2 463A5C45 		.ascii	"F:\\Electronics\\PSoC Creator\\SimpleTimer\\SimpleT"
+ 935      6C656374 
+ 935      726F6E69 
+ 935      63735C50 
+ 935      536F4320 
+ 936 00d1 696D6572 		.ascii	"imer.cydsn\000"
+ 936      2E637964 
+ 936      736E00
+ 937              	.LASF21:
+ 938 00dc 62797465 		.ascii	"byteCount\000"
+ 938      436F756E 
+ 938      7400
+ 939              	.LASF25:
+ 940 00e6 64737449 		.ascii	"dstIndex\000"
+ 940      6E646578 
+ 940      00
+ 941              	.LASF12:
+ 942 00ef 646F7562 		.ascii	"double\000"
+ 942      6C6500
+ 943              	.LASF33:
+ 944 00f6 43795379 		.ascii	"CySysFlashWriteRow\000"
+ 944      73466C61 
+ 944      73685772 
+ 944      69746552 
+ 944      6F7700
+ 945              	.LASF14:
+ 946 0109 63797374 		.ascii	"cystatus\000"
+ 946      61747573 
+ 946      00
+ 947              	.LASF10:
+ 948 0112 75696E74 		.ascii	"uint32\000"
+ 948      333200
+ 949              	.LASF8:
+ 950 0119 756E7369 		.ascii	"unsigned int\000"
+ 950      676E6564 
+ 950      20696E74 
+ 950      00
+ 951              	.LASF7:
+ 952 0126 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 22
+
+
+ 952      206C6F6E 
+ 952      6720756E 
+ 952      7369676E 
+ 952      65642069 
+ 953              	.LASF24:
+ 954 013d 726F7749 		.ascii	"rowId\000"
+ 954      6400
+ 955              	.LASF16:
+ 956 0143 73697A65 		.ascii	"sizetype\000"
+ 956      74797065 
+ 956      00
+ 957              	.LASF6:
+ 958 014c 6C6F6E67 		.ascii	"long long int\000"
+ 958      206C6F6E 
+ 958      6720696E 
+ 958      7400
+ 959              	.LASF30:
+ 960 015a 2E5C456D 		.ascii	".\\Em_EEPROM.c\000"
+ 960      5F454550 
+ 960      524F4D2E 
+ 960      6300
+ 961              	.LASF13:
+ 962 0168 63686172 		.ascii	"char\000"
+ 962      00
+ 963              	.LASF29:
+ 964 016d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 964      4320342E 
+ 964      392E3320 
+ 964      32303135 
+ 964      30333033 
+ 965 01a0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 965      20726576 
+ 965      6973696F 
+ 965      6E203232 
+ 965      31323230 
+ 966 01d3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 966      66756E63 
+ 966      74696F6E 
+ 966      2D736563 
+ 966      74696F6E 
+ 967              	.LASF20:
+ 968 01fb 65657072 		.ascii	"eepromPtr\000"
+ 968      6F6D5074 
+ 968      7200
+ 969              	.LASF2:
+ 970 0205 73686F72 		.ascii	"short int\000"
+ 970      7420696E 
+ 970      7400
+ 971              	.LASF4:
+ 972 020f 6C6F6E67 		.ascii	"long int\000"
+ 972      20696E74 
+ 972      00
+ 973              	.LASF27:
+ 974 0218 65654F66 		.ascii	"eeOffset\000"
+ 974      66736574 
+ 974      00
+ 975              	.LASF0:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccL26kon.s 			page 23
+
+
+ 976 0221 7369676E 		.ascii	"signed char\000"
+ 976      65642063 
+ 976      68617200 
+ 977              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

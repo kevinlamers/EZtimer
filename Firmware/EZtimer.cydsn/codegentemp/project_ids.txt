@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\dev\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|ba20683c-ce2a-47f8-9127-a90a3ba7c564
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|1c4d98ca-5285-44cd-86d3-be024c130e87
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|3d541bd0-c23a-439b-9744-dd6d9a0f58a7
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|7fdf60d6-8e4b-424c-85a6-936c22adb11b
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|468a3e9e-a306-4bfa-8e39-ea34d855bc9b
+F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\EZtimer.cyprj|3f012a47-7297-47dd-917c-af410d023c5d
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|9a4f7121-6cd9-41cd-934a-d9907bba9ff4
