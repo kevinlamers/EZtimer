@@ -62,7 +62,7 @@ void GeneralEventHandler(uint32 event, void * eventParam)
                     DataSet[i] = wrReqParam->handleValPair.value.val[i];
                 }
 
-                Pin_1_Write(0u); //Blue on
+                Pin_BLUE_Write(0u); //Blue on
                 //CyDelay(300u);
                 
                 //CyDelay(300u);
@@ -73,7 +73,7 @@ void GeneralEventHandler(uint32 event, void * eventParam)
 
                 /* Update the GATT DB for DataSet characteristics*/
                 UpdateServocharacteristic(DataSet, sizeof(DataSet),CYBLE_SERVOS_SERVO_CONTROL_CHAR_HANDLE);
-                Pin_1_Write(1u); //Blue off
+                Pin_BLUE_Write(1u); //Blue off
             }
 
             /* Send the response to the write request rreceived. */
@@ -97,7 +97,7 @@ void GeneralEventHandler(uint32 event, void * eventParam)
 
 void UpdateServocharacteristic(uint8* DataSet, uint8 len, uint16 attrHandle)
 {
-    Pin_3_Write(0u); //Red on
+    Pin_RED_Write(0u); //Red on
     //CyDelay(300u);
     
     //CyDelay(300u);
@@ -117,7 +117,7 @@ void UpdateServocharacteristic(uint8* DataSet, uint8 len, uint16 attrHandle)
 									FALSE, 
 									&cyBle_connHandle, 
 									CYBLE_GATT_DB_LOCALLY_INITIATED);
-    Pin_3_Write(1u); //Red off
+    Pin_RED_Write(1u); //Red off
 }
 
 /* [] END OF FILE */

@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="EZtimer" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" Version="5.20" Type="Normal">
+  <Project Name="EZtimer" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" Version="5.20" Type="Normal">
     <CMSIS_SVD_File>EZtimer.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,8 +34,8 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC4\Cm0Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="BUILD" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
           <File BuildType="BUILD" Toolchain="">.\BLEProcess.c</File>
           <File BuildType="BUILD" Toolchain="">.\servos.c</File>
@@ -46,8 +46,8 @@
           <File BuildType="BUILD" Toolchain="">.\WriteUserSFlash.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Generated_Source\PSoC4">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Generated_Source\PSoC4">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cymetadata.c</File>
@@ -105,116 +105,150 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo1.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo1.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_2.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_2.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_3.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_3.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_3_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\InputInterrupt.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\InputInterrupt.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\InputPin.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\InputPin.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\InputPin_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_2.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_2.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_pwm.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_pwm.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_pwm_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWMbeep.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWMbeep_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWMbeep.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Timer_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Timer_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Timer_1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\timer_clock.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\timer_clock.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_3.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_3.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_3.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_3.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_4.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_4.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_4_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_4.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_4.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_6.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_6.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_6_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_6.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_6.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_2.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_2.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_2_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_7.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_7.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SPI_UART.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SPI_UART.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SPI.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SPI_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_PINS.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SPI_UART_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_BOOT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_SPI_UART.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_SPI_UART.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_SPI_UART_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_UART.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_UART_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_PINS.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_SPI_UART_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_BOOT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SCBCLK.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_SCBCLK.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_sclk_m.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_sclk_m.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_sclk_m_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_miso_m.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_miso_m.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_miso_m_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_mosi_m.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_mosi_m.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_mosi_m_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_ss0_m.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_ss0_m.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI_ss0_m_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_SCBCLK.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_SCBCLK.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_tx.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_tx.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_tx_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_rx.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_rx.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_rx_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo4.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo4.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo4_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_beep.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_beep.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_beep_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_GREEN.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_GREEN.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_GREEN_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_BLUE.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_BLUE.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_BLUE_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_RED.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_RED.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_RED_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo3.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo3.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo2.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo2.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Pin_servo2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_34.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_34.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_34_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_PWM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_PWM.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_Beep.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_Beep.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_Beep_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_Beep.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Clock_Beep.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_12.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_12.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_12_PM.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Export\ARM_GCC_Generic\BLE_v2_20">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_GCC_Generic\BLE_v2_20">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\BLE_v2_20\gccCyBLEStack_BLE_SOC_PERIPHERAL.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Export\ARM_GCC_Generic">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_GCC_Generic">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Export\ARM_MDK_Generic\BLE_v2_20">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_MDK_Generic\BLE_v2_20">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\BLE_v2_20\mdkCyBLEStack_BLE_SOC_PERIPHERAL.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Export\ARM_MDK_Generic">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_MDK_Generic">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Export\ARM_IAR_Generic\BLE_v2_20">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_IAR_Generic\BLE_v2_20">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\BLE_v2_20\mdkCyBLEStack_BLE_SOC_PERIPHERAL.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\Export\ARM_IAR_Generic">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_IAR_Generic">
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC3">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC5">
-        <Files Root="F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn" />
+        <Files Root="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn" />
       </Folder>
     </Folders>
   </Project>

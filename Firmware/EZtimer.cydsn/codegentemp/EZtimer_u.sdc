@@ -1,3 +1,3 @@
-# Component constraints for F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\TopDesign\TopDesign.cysch
-# Project: F:\Electronics\PSoC Creator\SimpleTimer\EZtimer.cydsn\EZtimer.cyprj
-# Date: Wed, 09 Dec 2015 08:39:20 GMT
+# Component constraints for C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\EZtimer.cyprj
+# Date: Wed, 09 Dec 2015 22:23:06 GMT

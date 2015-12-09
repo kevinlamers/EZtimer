@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
   30:.\Generated_Source\PSoC4/InputPin.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/InputPin.c **** *
   32:.\Generated_Source\PSoC4/InputPin.c **** * Summary:
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 2
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/InputPin.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
   51:.\Generated_Source\PSoC4/InputPin.c **** * Function Name: InputPin_SetDriveMode
   52:.\Generated_Source\PSoC4/InputPin.c **** ********************************************************************************
   53:.\Generated_Source\PSoC4/InputPin.c **** *
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 3
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 3
 
 
   54:.\Generated_Source\PSoC4/InputPin.c **** * Summary:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
   77:.\Generated_Source\PSoC4/InputPin.c **** 
   78:.\Generated_Source\PSoC4/InputPin.c **** 
   79:.\Generated_Source\PSoC4/InputPin.c **** /*******************************************************************************
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 4
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 4
 
 
   80:.\Generated_Source\PSoC4/InputPin.c **** * Function Name: InputPin_Read
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  109:.\Generated_Source\PSoC4/InputPin.c **** *
  110:.\Generated_Source\PSoC4/InputPin.c **** * Parameters:  
  111:.\Generated_Source\PSoC4/InputPin.c **** *  None 
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 5
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 5
 
 
  112:.\Generated_Source\PSoC4/InputPin.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  141:.\Generated_Source\PSoC4/InputPin.c ****     uint8 InputPin_ClearInterrupt(void) 
  142:.\Generated_Source\PSoC4/InputPin.c ****     {
  143              		.loc 1 142 0
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 6
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 6
 
 
  144              		.cfi_startproc
@@ -338,17 +338,17 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  174 0006 00000000 		.4byte	.Ldebug_abbrev0
  175 000a 04       		.byte	0x4
  176 000b 01       		.uleb128 0x1
- 177 000c 1F010000 		.4byte	.LASF24
+ 177 000c 28010000 		.4byte	.LASF24
  178 0010 01       		.byte	0x1
  179 0011 6E000000 		.4byte	.LASF25
- 180 0015 E9000000 		.4byte	.LASF26
+ 180 0015 C4000000 		.4byte	.LASF26
  181 0019 00000000 		.4byte	.Ldebug_ranges0+0
  182 001d 00000000 		.4byte	0
  183 0021 00000000 		.4byte	.Ldebug_line0
  184 0025 02       		.uleb128 0x2
  185 0026 01       		.byte	0x1
  186 0027 06       		.byte	0x6
- 187 0028 EB010000 		.4byte	.LASF0
+ 187 0028 F4010000 		.4byte	.LASF0
  188 002c 02       		.uleb128 0x2
  189 002d 01       		.byte	0x1
  190 002e 08       		.byte	0x8
@@ -356,9 +356,9 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  192 0033 02       		.uleb128 0x2
  193 0034 02       		.byte	0x2
  194 0035 05       		.byte	0x5
- 195 0036 AD010000 		.4byte	.LASF2
+ 195 0036 B6010000 		.4byte	.LASF2
  196 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 7
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 7
 
 
  197 003b 02       		.byte	0x2
@@ -367,7 +367,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  200 0041 02       		.uleb128 0x2
  201 0042 04       		.byte	0x4
  202 0043 05       		.byte	0x5
- 203 0044 E2010000 		.4byte	.LASF4
+ 203 0044 EB010000 		.4byte	.LASF4
  204 0048 02       		.uleb128 0x2
  205 0049 04       		.byte	0x4
  206 004a 07       		.byte	0x7
@@ -375,7 +375,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  208 004f 02       		.uleb128 0x2
  209 0050 08       		.byte	0x8
  210 0051 05       		.byte	0x5
- 211 0052 C9000000 		.4byte	.LASF6
+ 211 0052 08010000 		.4byte	.LASF6
  212 0056 02       		.uleb128 0x2
  213 0057 08       		.byte	0x8
  214 0058 07       		.byte	0x7
@@ -389,7 +389,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  222 0066 07       		.byte	0x7
  223 0067 A0000000 		.4byte	.LASF8
  224 006b 04       		.uleb128 0x4
- 225 006c B7010000 		.4byte	.LASF9
+ 225 006c C0010000 		.4byte	.LASF9
  226 0070 02       		.byte	0x2
  227 0071 C2       		.byte	0xc2
  228 0072 2C000000 		.4byte	0x2c
@@ -409,7 +409,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  242 008f 02       		.uleb128 0x2
  243 0090 01       		.byte	0x1
  244 0091 08       		.byte	0x8
- 245 0092 E4000000 		.4byte	.LASF13
+ 245 0092 23010000 		.4byte	.LASF13
  246 0096 05       		.uleb128 0x5
  247 0097 00000000 		.4byte	.LASF14
  248 009b 02       		.byte	0x2
@@ -418,10 +418,10 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  251 00a2 06       		.uleb128 0x6
  252 00a3 76000000 		.4byte	0x76
  253 00a7 07       		.uleb128 0x7
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 8
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 8
 
 
- 254 00a8 D3010000 		.4byte	.LASF15
+ 254 00a8 DC010000 		.4byte	.LASF15
  255 00ac 01       		.byte	0x1
  256 00ad 2A       		.byte	0x2a
  257 00ae 00000000 		.4byte	.LFB0
@@ -443,7 +443,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  273 00d6 21000000 		.4byte	.LLST1
  274 00da 00       		.byte	0
  275 00db 07       		.uleb128 0x7
- 276 00dc BD010000 		.4byte	.LASF16
+ 276 00dc C6010000 		.4byte	.LASF16
  277 00e0 01       		.byte	0x1
  278 00e1 49       		.byte	0x49
  279 00e2 00000000 		.4byte	.LFB1
@@ -452,7 +452,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  282 00eb 9C       		.byte	0x9c
  283 00ec 00010000 		.4byte	0x100
  284 00f0 08       		.uleb128 0x8
- 285 00f1 C4000000 		.4byte	.LASF18
+ 285 00f1 03010000 		.4byte	.LASF18
  286 00f5 01       		.byte	0x1
  287 00f6 49       		.byte	0x49
  288 00f7 6B000000 		.4byte	0x6b
@@ -477,8 +477,8 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  307 0128 01       		.uleb128 0x1
  308 0129 9C       		.byte	0x9c
  309 012a 0B       		.uleb128 0xb
- 310 012b F7010000 		.4byte	.LASF21
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 9
+ 310 012b 00020000 		.4byte	.LASF21
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 9
 
 
  311 012f 01       		.byte	0x1
@@ -489,7 +489,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  316 013d 01       		.uleb128 0x1
  317 013e 9C       		.byte	0x9c
  318 013f 09       		.uleb128 0x9
- 319 0140 D7000000 		.4byte	.LASF23
+ 319 0140 16010000 		.4byte	.LASF23
  320 0144 01       		.byte	0x1
  321 0145 8F       		.byte	0x8f
  322 0146 6B000000 		.4byte	0x6b
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  365 0025 03       		.uleb128 0x3
  366 0026 08       		.uleb128 0x8
  367 0027 00       		.byte	0
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 10
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 10
 
 
  368 0028 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  422 005f 19       		.uleb128 0x19
  423 0060 01       		.uleb128 0x1
  424 0061 13       		.uleb128 0x13
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 11
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 11
 
 
  425 0062 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  479 0099 19       		.uleb128 0x19
  480 009a 00       		.byte	0
  481 009b 00       		.byte	0
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 12
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 12
 
 
  482 009c 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  536 003f 00000000 		.4byte	.LVL4
  537 0043 0A000000 		.4byte	.LVL5
  538 0047 0100     		.2byte	0x1
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 13
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 13
 
 
  539 0049 50       		.byte	0x50
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  593 0020 00000000 		.4byte	.LFB4
  594 0024 14000000 		.4byte	.LFE4
  595 0028 00000000 		.4byte	0
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 14
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 14
 
 
  596 002c 00000000 		.4byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  620              	.LASF12:
  621 0092 646F7562 		.ascii	"double\000"
  621      6C6500
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 15
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 15
 
 
  622              	.LASF10:
@@ -855,77 +855,80 @@ ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 1
  627      6720756E 
  627      7369676E 
  627      65642069 
- 628              	.LASF18:
- 629 00c4 6D6F6465 		.ascii	"mode\000"
- 629      00
- 630              	.LASF6:
- 631 00c9 6C6F6E67 		.ascii	"long long int\000"
- 631      206C6F6E 
- 631      6720696E 
- 631      7400
- 632              	.LASF23:
- 633 00d7 6D61736B 		.ascii	"maskedStatus\000"
- 633      65645374 
- 633      61747573 
- 633      00
- 634              	.LASF13:
- 635 00e4 63686172 		.ascii	"char\000"
- 635      00
- 636              	.LASF26:
- 637 00e9 463A5C45 		.ascii	"F:\\Electronics\\PSoC Creator\\SimpleTimer\\EZtimer"
- 637      6C656374 
- 637      726F6E69 
- 637      63735C50 
- 637      536F4320 
- 638 0118 2E637964 		.ascii	".cydsn\000"
- 638      736E00
+ 628              	.LASF26:
+ 629 00c4 433A5C55 		.ascii	"C:\\Users\\Kevin\\Documents\\GitHub\\EZtimer\\Firmw"
+ 629      73657273 
+ 629      5C4B6576 
+ 629      696E5C44 
+ 629      6F63756D 
+ 630 00f1 6172655C 		.ascii	"are\\EZtimer.cydsn\000"
+ 630      455A7469 
+ 630      6D65722E 
+ 630      63796473 
+ 630      6E00
+ 631              	.LASF18:
+ 632 0103 6D6F6465 		.ascii	"mode\000"
+ 632      00
+ 633              	.LASF6:
+ 634 0108 6C6F6E67 		.ascii	"long long int\000"
+ 634      206C6F6E 
+ 634      6720696E 
+ 634      7400
+ 635              	.LASF23:
+ 636 0116 6D61736B 		.ascii	"maskedStatus\000"
+ 636      65645374 
+ 636      61747573 
+ 636      00
+ 637              	.LASF13:
+ 638 0123 63686172 		.ascii	"char\000"
+ 638      00
  639              	.LASF24:
- 640 011f 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 640 0128 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  640      4320342E 
  640      392E3320 
  640      32303135 
  640      30333033 
- 641 0152 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 641 015b 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
  641      20726576 
  641      6973696F 
  641      6E203232 
  641      31323230 
- 642 0185 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 642 018e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  642      66756E63 
  642      74696F6E 
  642      2D736563 
  642      74696F6E 
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cc4q1HUm.s 			page 16
+
+
  643              	.LASF2:
- 644 01ad 73686F72 		.ascii	"short int\000"
+ 644 01b6 73686F72 		.ascii	"short int\000"
  644      7420696E 
-ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccqEANRP.s 			page 16
-
-
  644      7400
  645              	.LASF9:
- 646 01b7 75696E74 		.ascii	"uint8\000"
+ 646 01c0 75696E74 		.ascii	"uint8\000"
  646      3800
  647              	.LASF16:
- 648 01bd 496E7075 		.ascii	"InputPin_SetDriveMode\000"
+ 648 01c6 496E7075 		.ascii	"InputPin_SetDriveMode\000"
  648      7450696E 
  648      5F536574 
  648      44726976 
  648      654D6F64 
  649              	.LASF15:
- 650 01d3 496E7075 		.ascii	"InputPin_Write\000"
+ 650 01dc 496E7075 		.ascii	"InputPin_Write\000"
  650      7450696E 
  650      5F577269 
  650      746500
  651              	.LASF4:
- 652 01e2 6C6F6E67 		.ascii	"long int\000"
+ 652 01eb 6C6F6E67 		.ascii	"long int\000"
  652      20696E74 
  652      00
  653              	.LASF0:
- 654 01eb 7369676E 		.ascii	"signed char\000"
+ 654 01f4 7369676E 		.ascii	"signed char\000"
  654      65642063 
  654      68617200 
  655              	.LASF21:
- 656 01f7 496E7075 		.ascii	"InputPin_ClearInterrupt\000"
+ 656 0200 496E7075 		.ascii	"InputPin_ClearInterrupt\000"
  656      7450696E 
  656      5F436C65 
  656      6172496E 

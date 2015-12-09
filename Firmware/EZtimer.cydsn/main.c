@@ -15,13 +15,14 @@ CY_ISR(SWPin_Control)
 {
     if(InputPin_Read() == 0u)
     {
-        PWMbeep_Start();
-        PWMbeep_WriteCompare(4u);
+        PWM_Beep_Start();
+        PWM_Beep_WriteCompare(4u);
     }
     else
     {
-        PWMbeep_WriteCompare(0u);
+        PWM_Beep_WriteCompare(0u);
         UpdateServoPWM(DataSet);
+        PWM_Beep_Stop();
     }
     InputPin_ClearInterrupt();
 }
