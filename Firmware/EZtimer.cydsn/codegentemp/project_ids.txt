@@ -1,7 +1,5 @@
-C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\EZtimer.cyprj|93b14f60-1533-4d84-b906-87b324537f30
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|427a079d-35d6-42bd-9ad3-ee375a218daa
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|dde32244-bd28-43cb-a45e-a59075b28741
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|bbba2754-1df3-479e-bab4-2798dabd62b7
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|29c3a9e7-9fb0-40cf-a85a-e69edc2de2b5
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\dev\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|8d357de8-edb8-4119-8ac1-4620d0b80fed
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|5bf8825c-1426-4540-aa1c-e49b628a8dc0
+C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\EZtimer.cyprj|455e29e7-4309-455a-b0e2-9c8e361fd6a4
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|e7ab654f-3036-4f37-89b9-268fe3ae5061
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e43cbfbb-163e-428f-a6c6-1de6a0927994
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|697b0fa7-94e1-46c6-8800-027c89678cf7
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|dab1c90f-51d7-4340-8daf-e48997de1f11

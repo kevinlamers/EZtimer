@@ -1,6 +1,6 @@
 -- ======================================================================
 -- EZtimer.ctl generated from EZtimer
--- 12/09/2015 at 23:23
+-- 12/11/2015 at 10:10
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

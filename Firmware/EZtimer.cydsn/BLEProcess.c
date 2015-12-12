@@ -73,6 +73,9 @@ void GeneralEventHandler(uint32 event, void * eventParam)
 
                 /* Update the GATT DB for DataSet characteristics*/
                 UpdateServocharacteristic(DataSet, sizeof(DataSet),CYBLE_SERVOS_SERVO_CONTROL_CHAR_HANDLE);
+                
+                ProcessDataSet();
+                
                 Pin_BLUE_Write(1u); //Blue off
             }
 

@@ -6,7 +6,7 @@
 
 #Build Date:         Aug 18 2015 10:30:14
 
-#File Generated:     Dec 9 2015 23:23:08
+#File Generated:     Dec 11 2015 10:10:32
 
 #Purpose:            
 
@@ -76,10 +76,11 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 15
+Number of clocks: 16
 Clock: Clock_Beep           | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_Beep(FFB)      | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_PWM            | Frequency:  41.7 MHz | Target:   1.0 MHz
+Clock: Clock_PWM(FFB)       | Frequency: N/A       | Target:   1.0 MHz
 Clock: CyECO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyHFCLK              | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
@@ -103,10 +104,11 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 15
+Number of clocks: 16
 Clock: Clock_Beep           | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_Beep(FFB)      | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_PWM            | Frequency:  41.7 MHz | Target:   1.0 MHz
+Clock: Clock_PWM(FFB)       | Frequency: N/A       | Target:   1.0 MHz
 Clock: CyECO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyHFCLK              | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
@@ -153,10 +155,11 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 15
+Number of clocks: 16
 Clock: Clock_Beep           | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_Beep(FFB)      | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_PWM            | Frequency:  41.7 MHz | Target:   1.1 MHz
+Clock: Clock_PWM(FFB)       | Frequency: N/A       | Target:   1.0 MHz
 Clock: CyECO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyHFCLK              | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz

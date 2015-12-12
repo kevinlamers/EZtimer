@@ -6,8 +6,8 @@
     <Toolchain Name="ARM GCC Generic" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=${OutputDir}/${CompileFile}.lst -g -W" />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
-      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m0 -mthumb -g -ffunction-sections -Og -L Generated_Source\PSoC4 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections" />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects" />
+      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m0 -mthumb -g -ffunction-sections -O0 -L Generated_Source\PSoC4 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM MDK Generic" Selected="False">
@@ -40,10 +40,12 @@
           <File BuildType="BUILD" Toolchain="">.\BLEProcess.c</File>
           <File BuildType="BUILD" Toolchain="">.\servos.c</File>
           <File BuildType="BUILD" Toolchain="">.\WriteUserSFlash.c</File>
+          <File BuildType="BUILD" Toolchain="">.\DataSet.c</File>
           <File BuildType="BUILD" Toolchain="">.\main.h</File>
           <File BuildType="BUILD" Toolchain="">.\BLEProcess.h</File>
           <File BuildType="BUILD" Toolchain="">.\servos.h</File>
           <File BuildType="BUILD" Toolchain="">.\WriteUserSFlash.h</File>
+          <File BuildType="BUILD" Toolchain="">.\DataSet.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Generated_Source\PSoC4">
@@ -191,6 +193,11 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_12.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_12.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PWM_12_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Timer_10ms.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Timer_10ms.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Timer_10ms_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TimerInterrupt.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TimerInterrupt.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\Export\ARM_GCC_Generic\BLE_v2_20">

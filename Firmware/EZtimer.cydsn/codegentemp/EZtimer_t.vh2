@@ -1,5 +1,5 @@
 -- Project:   C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\EZtimer.cyprj
--- Generated: 12/09/2015 23:23:10
+-- Generated: 12/11/2015 10:10:33
 -- PSoC Creator  3.3
 
 ENTITY EZtimer IS
@@ -55,8 +55,8 @@ ARCHITECTURE __DEFAULT__ OF EZtimer IS
     SIGNAL Net_2389 : bit;
     SIGNAL Net_2390 : bit;
     SIGNAL Net_2392 : bit;
-    SIGNAL Net_2393_ff7 : bit;
-    ATTRIBUTE global_signal OF Net_2393_ff7 : SIGNAL IS true;
+    SIGNAL Net_2393_ff8 : bit;
+    ATTRIBUTE global_signal OF Net_2393_ff8 : SIGNAL IS true;
     SIGNAL Net_2577 : bit;
     SIGNAL Net_2579 : bit;
     SIGNAL Net_2580 : bit;
@@ -66,10 +66,18 @@ ARCHITECTURE __DEFAULT__ OF EZtimer IS
     SIGNAL Net_2726_digital : bit;
     ATTRIBUTE udbclken_assigned OF Net_2726_digital : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_2726_digital : SIGNAL IS true;
+    SIGNAL Net_2726_ff7 : bit;
+    ATTRIBUTE global_signal OF Net_2726_ff7 : SIGNAL IS true;
     SIGNAL Net_3491 : bit;
     ATTRIBUTE placement_force OF Net_3491 : SIGNAL IS "U(0,0,A)2";
     SIGNAL Net_3525 : bit;
     ATTRIBUTE placement_force OF Net_3525 : SIGNAL IS "U(0,0,A)3";
+    SIGNAL Net_3688 : bit;
+    SIGNAL Net_3689 : bit;
+    SIGNAL Net_3690 : bit;
+    SIGNAL Net_3691 : bit;
+    SIGNAL Net_3692 : bit;
+    SIGNAL Net_3693 : bit;
     SIGNAL Net_386 : bit;
     SIGNAL Pin_BLUE(0)__PA : bit;
     SIGNAL Pin_GREEN(0)__PA : bit;
@@ -252,6 +260,8 @@ ARCHITECTURE __DEFAULT__ OF EZtimer IS
     ATTRIBUTE Location OF \PWM_12:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(0,0)";
     ATTRIBUTE Location OF \SPI:SCB\ : LABEL IS "F(SCB,0)";
     ATTRIBUTE Location OF \UART:SCB\ : LABEL IS "F(SCB,1)";
+    ATTRIBUTE Location OF \Timer_10ms:cy_m0s8_tcpwm_1\ : LABEL IS "F(TCPWM,1)";
+    ATTRIBUTE Location OF TimerInterrupt : LABEL IS "[IntrContainer=(0)][IntrId=(18)]";
     ATTRIBUTE lib_model OF \PWM_34:PWMUDB:runmode_enable\ : LABEL IS "macrocell3";
     ATTRIBUTE Location OF \PWM_34:PWMUDB:runmode_enable\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \PWM_34:PWMUDB:prevCompare1\ : LABEL IS "macrocell4";
@@ -689,8 +699,9 @@ BEGIN
             dsi_in_0 => ClockBlock_Routed1,
             ff_div_1 => \SPI:Net_847_ff1\,
             ff_div_2 => \UART:Net_847_ff2\,
+            ff_div_7 => Net_2393_ff8,
             udb_div_0 => dclk_to_genclk,
-            ff_div_7 => Net_2393_ff7);
+            ff_div_8 => Net_2726_ff7);
 
     Pin_servo4:logicalport
         GENERIC MAP(
@@ -2238,7 +2249,7 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => Net_2393_ff7,
+            clock => Net_2393_ff8,
             capture => '0',
             count => '1',
             reload => '0',
@@ -2434,6 +2445,30 @@ BEGIN
             sclk_s => open,
             tx_req => Net_2589,
             rx_req => Net_2588);
+
+    \Timer_10ms:cy_m0s8_tcpwm_1\:m0s8tcpwmcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => Net_2726_ff7,
+            capture => '0',
+            count => '1',
+            reload => '0',
+            stop => '0',
+            start => '0',
+            tr_underflow => Net_3690,
+            tr_overflow => Net_3689,
+            tr_compare_match => Net_3691,
+            line_out => Net_3692,
+            line_out_compl => Net_3693,
+            interrupt => Net_3688);
+
+    TimerInterrupt:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => Net_3688,
+            clock => ClockBlock_HFCLK);
 
     \PWM_34:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(

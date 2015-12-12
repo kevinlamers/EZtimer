@@ -1581,6 +1581,38 @@
 #define Pin_servo4__PS CYREG_GPIO_PRT1_PS
 #define Pin_servo4__SHIFT 4
 
+/* Timer_10ms_cy_m0s8_tcpwm_1 */
+#define Timer_10ms_cy_m0s8_tcpwm_1__CC CYREG_TCPWM_CNT1_CC
+#define Timer_10ms_cy_m0s8_tcpwm_1__CC_BUFF CYREG_TCPWM_CNT1_CC_BUFF
+#define Timer_10ms_cy_m0s8_tcpwm_1__COUNTER CYREG_TCPWM_CNT1_COUNTER
+#define Timer_10ms_cy_m0s8_tcpwm_1__CTRL CYREG_TCPWM_CNT1_CTRL
+#define Timer_10ms_cy_m0s8_tcpwm_1__INTR CYREG_TCPWM_CNT1_INTR
+#define Timer_10ms_cy_m0s8_tcpwm_1__INTR_MASK CYREG_TCPWM_CNT1_INTR_MASK
+#define Timer_10ms_cy_m0s8_tcpwm_1__INTR_MASKED CYREG_TCPWM_CNT1_INTR_MASKED
+#define Timer_10ms_cy_m0s8_tcpwm_1__INTR_SET CYREG_TCPWM_CNT1_INTR_SET
+#define Timer_10ms_cy_m0s8_tcpwm_1__PERIOD CYREG_TCPWM_CNT1_PERIOD
+#define Timer_10ms_cy_m0s8_tcpwm_1__PERIOD_BUFF CYREG_TCPWM_CNT1_PERIOD_BUFF
+#define Timer_10ms_cy_m0s8_tcpwm_1__STATUS CYREG_TCPWM_CNT1_STATUS
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMD CYREG_TCPWM_CMD
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK 0x02u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT 1
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK 0x200u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT 9
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK 0x2000000u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT 25
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK 0x20000u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT 17
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CTRL CYREG_TCPWM_CTRL
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK 0x02u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT 1
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE CYREG_TCPWM_INTR_CAUSE
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK 0x02u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT 1
+#define Timer_10ms_cy_m0s8_tcpwm_1__TCPWM_NUMBER 1u
+#define Timer_10ms_cy_m0s8_tcpwm_1__TR_CTRL0 CYREG_TCPWM_CNT1_TR_CTRL0
+#define Timer_10ms_cy_m0s8_tcpwm_1__TR_CTRL1 CYREG_TCPWM_CNT1_TR_CTRL1
+#define Timer_10ms_cy_m0s8_tcpwm_1__TR_CTRL2 CYREG_TCPWM_CNT1_TR_CTRL2
+
 /* InputInterrupt */
 #define InputInterrupt__INTC_CLR_EN_REG CYREG_CM0_ICER
 #define InputInterrupt__INTC_CLR_PD_REG CYREG_CM0_ICPR
@@ -1591,6 +1623,17 @@
 #define InputInterrupt__INTC_PRIOR_REG CYREG_CM0_IPR0
 #define InputInterrupt__INTC_SET_EN_REG CYREG_CM0_ISER
 #define InputInterrupt__INTC_SET_PD_REG CYREG_CM0_ISPR
+
+/* TimerInterrupt */
+#define TimerInterrupt__INTC_CLR_EN_REG CYREG_CM0_ICER
+#define TimerInterrupt__INTC_CLR_PD_REG CYREG_CM0_ICPR
+#define TimerInterrupt__INTC_MASK 0x40000u
+#define TimerInterrupt__INTC_NUMBER 18u
+#define TimerInterrupt__INTC_PRIOR_MASK 0xC00000u
+#define TimerInterrupt__INTC_PRIOR_NUM 3u
+#define TimerInterrupt__INTC_PRIOR_REG CYREG_CM0_IPR4
+#define TimerInterrupt__INTC_SET_EN_REG CYREG_CM0_ISER
+#define TimerInterrupt__INTC_SET_PD_REG CYREG_CM0_ISPR
 
 /* Miscellaneous */
 #define CY_PROJECT_NAME "EZtimer"

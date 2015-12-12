@@ -18,10 +18,11 @@
 ##################################################################### 
                     1::Clock Frequency Summary
 ===================================================================== 
-Number of clocks: 15
+Number of clocks: 16
 Clock: Clock_Beep        | N/A                   | Target: 0.01 MHz   | 
 Clock: Clock_Beep(FFB)   | N/A                   | Target: 0.01 MHz   | 
 Clock: Clock_PWM         | Frequency: 43.16 MHz  | Target: 1.00 MHz   | 
+Clock: Clock_PWM(FFB)    | N/A                   | Target: 1.00 MHz   | 
 Clock: CyECO             | N/A                   | Target: 24.00 MHz  | 
 Clock: CyHFCLK           | N/A                   | Target: 24.00 MHz  | 
 Clock: CyILO             | N/A                   | Target: 0.03 MHz   | 
@@ -69,13 +70,13 @@ Port Name  Setup to Clk  Clock Name:Phase
 -----------------------3.2::Clock to Out
 ----------------------------------------
 
-Port Name          Clock to Out  Clock Name:Phase   
------------------  ------------  -----------------  
-Pin_beep(0)_PAD    14456         Clock_Beep(FFB):R  
-Pin_servo1(0)_PAD  21747         Clock_PWM:R        
-Pin_servo2(0)_PAD  22516         Clock_PWM:R        
-Pin_servo3(0)_PAD  22704         Clock_PWM:R        
-Pin_servo4(0)_PAD  22216         Clock_PWM:R        
+Port Name          Clock to Out  Clock Name:Phase  
+-----------------  ------------  ----------------  
+Pin_beep(0)_PAD    14456         Clock_PWM(FFB):R  
+Pin_servo1(0)_PAD  21747         Clock_PWM:R       
+Pin_servo2(0)_PAD  22516         Clock_PWM:R       
+Pin_servo3(0)_PAD  22704         Clock_PWM:R       
+Pin_servo4(0)_PAD  22216         Clock_PWM:R       
 
 
                          3.3::Pad to Pad

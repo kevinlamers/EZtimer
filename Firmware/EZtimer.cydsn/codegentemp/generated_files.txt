@@ -101,6 +101,11 @@
   <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\UART_SPI_UART_PVT.h" value="NONE;UART" />
   <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\UART_PVT.h" value="NONE;UART" />
   <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\UART_BOOT.h" value="NONE;UART" />
+  <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\Timer_10ms.c" value="ARM_C_FILE;Timer_10ms" />
+  <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\Timer_10ms.h" value="NONE;Timer_10ms" />
+  <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\Timer_10ms_PM.c" value="ARM_C_FILE;Timer_10ms" />
+  <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\TimerInterrupt.c" value="ARM_C_FILE;TimerInterrupt" />
+  <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\TimerInterrupt.h" value="NONE;TimerInterrupt" />
   <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\BLE_bless_isr.c" value="ARM_C_FILE;BLE_bless_isr" />
   <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\BLE_bless_isr.h" value="NONE;BLE_bless_isr" />
   <file name="C:\Users\Kevin\Documents\GitHub\EZtimer\Firmware\EZtimer.cydsn\codegentemp\SPI_SCBCLK.c" value="ARM_C_FILE;SPI_SCBCLK" />

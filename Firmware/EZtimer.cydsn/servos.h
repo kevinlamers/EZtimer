@@ -59,6 +59,9 @@
 
 /******************************* Function Declaration **********************************/
 void UpdateServoPWM(uint8*);
+
+void ServoNextPosition(void);
+void ServoStartPosition(void);
 /***************************************************************************************/
 
 /* [] END OF FILE */

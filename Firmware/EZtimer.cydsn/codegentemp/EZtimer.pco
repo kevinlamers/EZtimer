@@ -1,5 +1,5 @@
 # EZtimer
-# 2015-12-09 22:23:09Z
+# 2015-12-11 09:10:32Z
 
 dont_use_location p4csdcell -1 -1 0
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
@@ -36,6 +36,8 @@ set_location "\PWM_12:PWMUDB:sP16:pwmdp:u0\" 1 0 2
 set_location "\PWM_12:PWMUDB:sP16:pwmdp:u1\" 0 0 2
 set_location "\SPI:SCB\" m0s8scbcell -1 -1 0
 set_location "\UART:SCB\" m0s8scbcell -1 -1 1
+set_location "\Timer_10ms:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 1
+set_location "TimerInterrupt" interrupt -1 -1 18
 set_location "\PWM_34:PWMUDB:runmode_enable\" 1 1 0 0
 set_location "\PWM_34:PWMUDB:prevCompare1\" 1 1 1 0
 set_location "\PWM_34:PWMUDB:prevCompare2\" 1 1 1 2

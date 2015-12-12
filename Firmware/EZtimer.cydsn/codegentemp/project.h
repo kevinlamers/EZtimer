@@ -68,6 +68,8 @@
 #include "UART_SPI_UART_PVT.h"
 #include "UART_PVT.h"
 #include "UART_BOOT.h"
+#include "Timer_10ms.h"
+#include "TimerInterrupt.h"
 #include "BLE_bless_isr.h"
 #include "SPI_SCBCLK.h"
 #include "SPI_sclk_m.h"

@@ -431,6 +431,8 @@ net ClockBlock_HFCLK
 	term   ":udb@[UDB=(1,0)]:dp_wrapper:datapath.busclk"
 	switch ":m0s8clockblockcell.hfclk==>:udb@[UDB=(0,0)]:dp_wrapper:datapath.busclk"
 	term   ":udb@[UDB=(0,0)]:dp_wrapper:datapath.busclk"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_18.clock"
+	term   ":interrupt_18.clock"
 end ClockBlock_HFCLK
 net Net_1561
 	term   ":m0s8tcpwmcell_0.line_out"
@@ -505,6 +507,12 @@ net Net_3525
 	switch ":ioport1:hsiom_out2.hsiom2_out==>:ioport1:pin2.pin_input"
 	term   ":ioport1:pin2.pin_input"
 end Net_3525
+net Net_3688
+	term   ":m0s8tcpwmcell_1.interrupt"
+	switch ":m0s8tcpwmcell_1.interrupt==>:interrupt_idmux_18.in_0"
+	switch ":interrupt_idmux_18.interrupt_idmux_18__out==>:interrupt_18.interrupt"
+	term   ":interrupt_18.interrupt"
+end Net_3688
 net Net_386
 	term   ":logicalport_3.interrupt"
 	switch ":logicalport_3.interrupt==>Stub-:dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:v21+:dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:v23"
