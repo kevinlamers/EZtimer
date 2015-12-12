@@ -1,14 +1,11 @@
-codegentemp/
-CortexM0/
-.DS_Store
 *.cywrk.*
 *.cyprj.*
 *.cycdx
 *.cyfit
 *.rpt
-*.uvopt
-*.uvproj
 *_timing.html
+*.svd
 *.cydsn/codegentemp
-*.cydsn/DP8051
 *.cydsn/Generated_Source
+*.cydsn/CortexM0
+*.cydsn/Export

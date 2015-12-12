@@ -22,7 +22,6 @@ void ServoNextPosition()
 void ServoStartPosition()
 {
     uint16 servo1_posStart = DataSet[SERVO1_POSSTART_INDEX] | (DataSet[SERVO1_POSSTART_INDEX+1]<<8);
-    
     PWM_12_Start();
     PWM_12_WriteCompare1(servo1_posStart);
     

@@ -63,14 +63,10 @@ void GeneralEventHandler(uint32 event, void * eventParam)
                 }
 
                 Pin_BLUE_Write(0u); //Blue on
-                //CyDelay(300u);
-                
-                //CyDelay(300u);
                 
                 /* Write new DataSet to SFlash */
                 WriteArraySFlash(DataSet, DATA_SET_LEN);
    
-
                 /* Update the GATT DB for DataSet characteristics*/
                 UpdateServocharacteristic(DataSet, sizeof(DataSet),CYBLE_SERVOS_SERVO_CONTROL_CHAR_HANDLE);
                 
@@ -101,9 +97,6 @@ void GeneralEventHandler(uint32 event, void * eventParam)
 void UpdateServocharacteristic(uint8* DataSet, uint8 len, uint16 attrHandle)
 {
     Pin_RED_Write(0u); //Red on
-    //CyDelay(300u);
-    
-    //CyDelay(300u);
     
 	/* 'rgbHandle' stores RGB control data parameters */
 	CYBLE_GATT_HANDLE_VALUE_PAIR_T		dataHandle;

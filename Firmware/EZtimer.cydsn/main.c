@@ -24,7 +24,6 @@ CY_ISR(SWPin_Control)
     else
     {
         PWM_Beep_WriteCompare(0u);
-        //UpdateServoPWM(DataSet);
         flight_fase = fase_Flight;
         PWM_Beep_Stop();
         time_10ms = 0;
@@ -36,8 +35,7 @@ CY_ISR(TimerStep)
 {
     time_10ms++;
     uint32 source = Timer_10ms_GetInterruptSourceMasked();
-    Timer_10ms_ClearInterrupt(source);
-    
+    Timer_10ms_ClearInterrupt(source);  
 }
 
 int main()
@@ -55,21 +53,15 @@ int main()
     UART_UartPutString("\r\n");
     UART_UartPutString("\r\n");
     UART_UartPutString("UART Initialised\r\n");
-    
-   
                 
     flight_fase = fase_Standby;
     
     /* Read DataSet from SFlash */
     ReadArraySFlash(DataSet, DATA_SET_LEN);
-    
+    ProcessDataSet();
    
-    
     UpdateServocharacteristic(DataSet, sizeof(DataSet), CYBLE_SERVOS_SERVO_CONTROL_CHAR_HANDLE);
 
-    ProcessDataSet();
-
-   
     for(;;)
     {
         /* Place your application code here. */
@@ -92,24 +84,10 @@ int main()
             break;
             
             case fase_Flight:
-                /* This event is generated when airplane is flying */
-                    
-                        
+                /* This event is generated when airplane is flying */                        
                     Timer_10ms_Start();
-                    //UART_UartPutString("Timer Initialised\r\n");
+                    UART_UartPutString("Timer started\r\n");
 
-                    /*sprintf(str, "servotimes[0]: %d\r\n", servoTimes[0]);
-                    UART_UartPutString(str);
-               
-                    sprintf(str, "servotimes[0]: %d\r\n", servoTimes[0]);
-                    UART_UartPutString(str);
-                    sprintf(str, "servotimes[0]: %d\r\n", servoTimes[0]);
-                    UART_UartPutString(str);
-                    sprintf(str, "Dataset[i]: %d\r\n", (DataSet[TIME1_INDEX] | (DataSet[TIME1_INDEX+1]<<8)));
-                    UART_UartPutString(str);*/
-                    
-//                  
-                   // UART_UartPutString("bla \r\n");
                     if (time_10ms > servoTimes[timeStep])
                     {
                         UART_UartPutString("Next Servo Position!\r\n");
